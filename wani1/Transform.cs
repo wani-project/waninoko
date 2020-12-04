@@ -213,7 +213,7 @@ namespace wani1
                                 dog1count++;
                                 dog.Name = "dog_face" + dog1count;
                                 dog.BackColor = Color.Transparent;
-                                dog.Image = Image.FromFile("C:\\Users\\s3a2\\source\\repos\\wani1\\wani1\\bin\\Release\\images\\DOG\\face.png");
+                                dog.Image = Image.FromFile(learn.FilePath + "\\images\\DOG\\face.png");
                                 dog.Parent = learn.panel1;
                                 dog1name = dog.Name;
                                 learn.questControl.Add(dog.Name);
