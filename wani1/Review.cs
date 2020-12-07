@@ -19,9 +19,10 @@ namespace wani1
         public int questNum;
         public string questTitle;
         public ArrayList questControl = new ArrayList();
+        public int[] ControlCount = {0,0,0};//Lcat,cat,dog
         public Boolean talkflg = false;
         public int MeatCount = 0;
-        public int ComboCount = 0;
+        public int ConCount = 0;
         //ファイルパスの保持
         public string FilePath = Directory.GetCurrentDirectory();
         public Review()
@@ -271,28 +272,40 @@ namespace wani1
                     PictureBox Lcat = new PictureBox();
                     
 
-                    Scat.Size = new Size(400, 500);
+                    Scat.Size = new Size(400, 580);
                     Scat.SizeMode = PictureBoxSizeMode.StretchImage;
                     Scat.Location = new Point(40,10);
                     Scat.Image = Image.FromFile(FilePath + "\\images\\docat\\Scat.png");
 
                     Lcat.Size = new Size(260,240);
                     Lcat.SizeMode = PictureBoxSizeMode.StretchImage;
+                    Lcat.Name = "Lcat";
                     Lcat.Location = new Point(35, 115);
                     Lcat.Image = Image.FromFile(FilePath + "\\images\\docat\\Lcat.png");
                     Lcat.BackColor = Color.White;
+                    Lcat.MouseDown += new MouseEventHandler(this.Control_MouseDown);
+                    Lcat.MouseMove += new MouseEventHandler(this.Control_MouseMove);
+                    Lcat.MouseUp += new MouseEventHandler(this.Control_MouseUp);
 
                     cat.Size = new Size(260, 120);
                     cat.SizeMode = PictureBoxSizeMode.StretchImage;
+                    cat.Name = "cat";
                     cat.Location = new Point(35, 360);
                     cat.Image = Image.FromFile(FilePath + "\\images\\docat\\cat.png");
                     cat.BackColor = Color.Transparent;
+                    cat.MouseDown += new MouseEventHandler(this.Control_MouseDown);
+                    cat.MouseMove += new MouseEventHandler(this.Control_MouseMove);
+                    cat.MouseUp += new MouseEventHandler(this.Control_MouseUp);
 
                     dog.Size = new Size(260, 120);
                     dog.SizeMode = PictureBoxSizeMode.StretchImage;
+                    dog.Name = "dog";
                     dog.Location = new Point(35, 485);
                     dog.Image = Image.FromFile(FilePath + "\\images\\docat\\dog.png");
                     dog.BackColor = Color.Transparent;
+                    dog.MouseDown += new MouseEventHandler(this.Control_MouseDown);
+                    dog.MouseMove += new MouseEventHandler(this.Control_MouseMove);
+                    dog.MouseUp += new MouseEventHandler(this.Control_MouseUp);
 
 
                     //コントロールの追加
@@ -604,7 +617,7 @@ namespace wani1
             Point loc = new Point(pb.Location.X, panel1.Location.Y);
             if (loc.X >= 379 && loc.Y >= 64)
             {
-                rcc.CreateControls(this, 1, "meat", loc,pb.Name);
+                rcc.CreateControls(this, questNum, "meat", loc,pb.Name);
             }
             pb.Location = test_def;
         }

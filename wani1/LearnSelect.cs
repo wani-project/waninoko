@@ -94,10 +94,14 @@ namespace wani1
             switch (screenflg)
             {
                 case 1:
-                    Learn learn = new Learn();
+                    /*Learn learn = new Learn();
                     learn.questNum = 2;
                     learn.questTitle = "イヌ→ネコのじゅんばんで３かいならべるとどれになる？";
                     learn.Show();
+                    */
+                    L2 l2 = new L2();
+                    
+                    l2.Show();
                     break;
                 case 2:
                     Review review = new Review();

@@ -177,7 +177,7 @@ namespace wani1
                     //色
                     wani.BackColor = Color.FromName("Transparent");
                     //画像
-                    wani.Image = Image.FromFile("C:\\Users\\s3a2\\source\\repos\\wani1\\wani1\\bin\\Release\\images\\wani_block.png");
+                    wani.Image = Image.FromFile(learn.FilePath + "\\images\\wani_block.png");
                     //透過？
                     Bitmap bitmap = new Bitmap(wani.Image);
                     bitmap.MakeTransparent();
@@ -213,7 +213,7 @@ namespace wani1
                                 dog1count++;
                                 dog.Name = "dog_face" + dog1count;
                                 dog.BackColor = Color.Transparent;
-                                dog.Image = Image.FromFile("C:\\Users\\s3a2\\source\\repos\\wani1\\wani1\\bin\\Release\\images\\DOG\\face.png");
+                                dog.Image = Image.FromFile(learn.FilePath + "\\images\\DOG\\face.png");
                                 dog.Parent = learn.panel1;
                                 dog1name = dog.Name;
                                 learn.questControl.Add(dog.Name);
@@ -242,7 +242,7 @@ namespace wani1
                                 dog2count++;
                                 dog.Name = "dog_parts" + dog2count;
                                 dog.BackColor = Color.Transparent;
-                                dog.Image = Image.FromFile("C:\\Users\\s3a2\\source\\repos\\wani1\\wani1\\bin\\Release\\images\\DOG\\parts.png");
+                                dog.Image = Image.FromFile(learn.FilePath + "\\images\\DOG\\parts.png");
                                 dog2name = dog.Name;
                                 learn.questControl.Add(dog.Name);
                                 if (dog1count == 1)
@@ -269,7 +269,7 @@ namespace wani1
                                 dog3count++;
                                 dog.Name = "dog_ears" + dog3count;
                                 dog.BackColor = Color.Transparent;
-                                dog.Image = Image.FromFile("C:\\Users\\s3a2\\source\\repos\\wani1\\wani1\\bin\\Release\\images\\DOG\\ears.png");
+                                dog.Image = Image.FromFile(learn.FilePath + "\\images\\DOG\\ears.png");
                                 dog3name = dog.Name;
                                 learn.questControl.Add(dog.Name);
                                 if (dog1count == 1)
@@ -313,9 +313,6 @@ namespace wani1
                         learn.panel1.Controls.Add(dog);
                         dog.BringToFront();
                     }
-                    break;
-                case "DogCat":
-
                     break;
                 default:
                     break;
