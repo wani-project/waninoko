@@ -34,6 +34,7 @@
             this.learn_button = new System.Windows.Forms.Button();
             this.review_button = new System.Windows.Forms.Button();
             this.PictureBook = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.Main_Group.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBook)).BeginInit();
             this.SuspendLayout();
@@ -94,11 +95,22 @@
             this.PictureBook.TabStop = false;
             this.PictureBook.Click += new System.EventHandler(this.PictureBook_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("MS UI Gothic", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label1.Location = new System.Drawing.Point(473, 73);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(350, 97);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "PROCK";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.PictureBook);
             this.Controls.Add(this.Main_Group);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -119,6 +131,7 @@
         private System.Windows.Forms.Button learn_button;
         private System.Windows.Forms.Button review_button;
         private System.Windows.Forms.PictureBox PictureBook;
+        private System.Windows.Forms.Label label1;
     }
 }
 

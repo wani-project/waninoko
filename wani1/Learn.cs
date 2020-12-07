@@ -60,8 +60,6 @@ namespace wani1
                     break;
                 default:
                     wani_block.Visible = true;
-                    //tf.TransformControl(test, "test");
-                    //tf.TransformControl(wani, "wani");
                     break;
             }
             //-----------------------------------------------------

@@ -134,35 +134,6 @@ namespace wani1
         {
             switch (kinds)
             {
-                case "test":
-                    //追加カウント
-                    Addcount++;
-                    //パネルインスタンス
-                    Panel panel = new Panel();
-                    //名前
-                    panel.Name = "alligator_" + Addcount;
-                    //サイズ
-                    panel.Size = size;
-                    //色
-                    panel.BackColor = Color.FromArgb(192, 255, 192);
-                    //座標
-                    panel.Location = new Point(location.X - 379, location.Y - 64);
-                    //変形処理
-                    TransformControl(panel, "test");
-                    //イベントハンドラーの追加----------------------------------------------------------
-                    panel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_MouseDown);
-                    panel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel_MouseMove);
-                    panel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel_MouseUp);
-                    //----------------------------------------------------------------------------------
-                    //作業領域に追加
-                    learn.panel1.Controls.Add(panel);
-                    //最前面に設定
-                    panel.BringToFront();
-                    //追加した部品の名前を保持-------------------------------------
-                    Array.Resize(ref learn.AddAnimal, learn.AddAnimal.Length + 1);
-                    learn.AddAnimal.SetValue(panel.Name, Addcount);
-                    //-------------------------------------------------------------
-                    break;
                 case "wani":
                     //追加カウント
                     Addcount++;
