@@ -204,7 +204,7 @@ namespace wani1
                     PictureBox dog = new PictureBox();
                     //作成判定フラグ
                     Boolean flg = false;
-                    //名前、画像
+                    //名前、画像111
                     switch (sender)
                     {
                         case "dog_face0":
