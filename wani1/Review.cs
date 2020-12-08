@@ -19,10 +19,16 @@ namespace wani1
         public int questNum;
         public string questTitle;
         public ArrayList questControl = new ArrayList();
-        public int[] ControlCount = {0,0,0};//Lcat,cat,dog
+        public int[] ControlCount = { 0, 0, 0 };//Lcat,cat,dog
+        public int[] rank = { 0, 0, 0 };
+        private int[] cardCount = { 0, 0 };
         public Boolean talkflg = false;
+        private Boolean hukiflg = false;
+        private Boolean cardflg = false;
         public int MeatCount = 0;
         public int ConCount = 0;
+        public int loopCount = 0;
+        private Point docatP = new Point(430,200);
         //ファイルパスの保持
         public string FilePath = Directory.GetCurrentDirectory();
         public Review()
@@ -33,6 +39,38 @@ namespace wani1
         {
             switch (num)
             {
+                case 0:
+                    //パネルインスタンス
+                    PictureBox wani = new PictureBox();
+                    //名前
+                    wani.Name = "waniChara";
+                    //サイズ設定
+                    wani.SizeMode = PictureBoxSizeMode.Zoom;
+                    //サイズ
+                    wani.Size = new Size(200, 200);
+                    //画像
+                    if (talkflg == false)
+                    {
+                        wani.Image = Image.FromFile(FilePath + "\\images\\Idle.gif");
+                    }
+                    else if (talkflg == true)
+                    {
+                        wani.Image = Image.FromFile(FilePath + "\\images\\talk.gif");
+                    }
+
+                    //色
+                    wani.BackColor = Color.FromName("Transparent");
+                    //透過？
+                    Bitmap bitmap = new Bitmap(wani.Image);
+                    //bitmap.MakeTransparent(Color.FromArgb(0, 255, 255));
+                    //wani.Image = bitmap;
+                    //座標
+                    wani.Location = new Point(641, 388);
+                    //作業領域に追加
+                    panel4.Controls.Add(wani);
+                    //最前面に設定
+                    wani.BringToFront();
+                    break;
                 //------------------------------------------------
                 case 1:
                     //フローチャートの肉部品の追加
@@ -274,7 +312,8 @@ namespace wani1
 
                     Scat.Size = new Size(400, 580);
                     Scat.SizeMode = PictureBoxSizeMode.StretchImage;
-                    Scat.Location = new Point(40,10);
+                    Scat.Name = "Scat";
+                    Scat.Location = new Point(10,10);
                     Scat.Image = Image.FromFile(FilePath + "\\images\\docat\\Scat.png");
 
                     Lcat.Size = new Size(260,240);
@@ -307,7 +346,6 @@ namespace wani1
                     dog.MouseMove += new MouseEventHandler(this.Control_MouseMove);
                     dog.MouseUp += new MouseEventHandler(this.Control_MouseUp);
 
-
                     //コントロールの追加
                     panel4.Controls.Add(Scat);
                     Controls.Add(Lcat);
@@ -320,6 +358,47 @@ namespace wani1
                     dog.BringToFront();
                     break;
                 //--------------------------------------------------------
+                case 21:
+                    //2問目のイヌネコカードの生成
+                    //ネコ
+                    PictureBox catC = new PictureBox();
+                    //ネコ
+                    cardCount[1]++;
+                    catC.Name = "catC_" + cardCount[1];
+                    catC.Size = new Size(65, 80);
+                    catC.SizeMode = PictureBoxSizeMode.StretchImage;
+                    catC.BackColor = Color.Transparent;
+                    catC.Location = docatP;
+                    catC.Image = Image.FromFile(FilePath + "\\images\\docat\\catC.png");
+
+                    docatP = new Point(docatP.X + 70, docatP.Y);
+
+                    //追加
+                    panel4.Controls.Add(catC);
+                    //最前面配置
+                    catC.BringToFront();
+                    break;
+                case 22:
+                    //2問目のイヌネコカードの生成
+                    //イヌ
+                    PictureBox dogC = new PictureBox();
+                    //イヌ
+                    cardCount[0]++;
+                    dogC.Name = "dogC_" + cardCount[0];
+                    dogC.Size = new Size(65, 80);
+                    dogC.SizeMode = PictureBoxSizeMode.StretchImage;
+                    dogC.BackColor = Color.Transparent;
+                    dogC.Location = docatP;
+                    dogC.Image = Image.FromFile(FilePath + "\\images\\docat\\dogC.png");
+
+                    docatP = new Point(docatP.X + 70, docatP.Y);
+
+                    //追加
+                    panel4.Controls.Add(dogC);
+                    //最前面配置
+                    dogC.BringToFront();
+                    break;
+
                 default:
                     break;
             }
@@ -334,22 +413,7 @@ namespace wani1
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            switch (questNum)
-            {
-                case 1:
-                    Start(1);
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-                case 4:
-                    break;
-                case 5:
-                    break;
-                default:
-                    break;
-            }
+            Start(questNum);
         }
 
 
@@ -559,6 +623,159 @@ namespace wani1
 
                     }
                     break;
+                case 2:
+                    Control[] loop = new Control[0];
+                    loop = panel4.Controls.Find("loopCount",true);
+                    foreach(Control con in loop)
+                    {
+                        loopCount = int.Parse(con.Text);
+                    }
+                    if(hukiflg == false)
+                    {
+                        //吹き出し表示
+                        PictureBox huki = new PictureBox();
+                        huki.Size = new Size(500, 200);
+                        huki.SizeMode = PictureBoxSizeMode.StretchImage;
+                        huki.Location = new Point(385, 125);
+                        huki.BackColor = Color.Transparent;
+                        huki.Image = Image.FromFile(FilePath + "\\images\\docat\\hukidashi.png");
+                        panel4.Controls.Add(huki);
+                        huki.BringToFront();
+                        hukiflg = true;
+                        await Task.Delay(1000);
+                    }
+                    if(cardflg == true)
+                    {
+                        //表示済みカードの削除
+                        if (cardCount[0] < cardCount[1])
+                        {
+                            cardCount[0] = cardCount[1];
+                        }
+                        for(int i = 1; i <= cardCount[0]; i++)
+                        {
+                            Control[] cards = new Control[0];
+                            cards = panel4.Controls.Find("catC_" + i, true);
+                            foreach (Control c in cards)
+                            {
+                                panel4.Controls.Remove(c);
+                            }
+                            cards = panel4.Controls.Find("dogC_" + i, true);
+                            foreach (Control c in cards)
+                            {
+                                panel4.Controls.Remove(c);
+                            }
+                        }
+                        docatP = new Point(430, 200);
+                        cardflg = false;
+                        await Task.Delay(1000);
+                    }
+                    //ループ判定
+                    if (rank[0] == 1)
+                    {
+                        //ループ開始
+                        for (int i = 0; i < loopCount; i++)
+                        {
+                            if (rank[1] > rank[2]) //cat > dog
+                            {
+                                if (rank[1] >= 1)
+                                {
+                                    CreateControls(this, 22);
+                                    await Task.Delay(1000);
+                                }
+                                if (rank[2] >= 1)
+                                {
+                                    CreateControls(this, 21);
+                                }
+                            }
+                            else if (rank[2] > rank[1])
+                            {
+                                if (rank[2] >= 1)
+                                {
+                                    CreateControls(this, 21);
+                                    await Task.Delay(1000);
+                                }
+                                if (rank[1] >= 1)
+                                {
+                                    CreateControls(this, 22);
+                                }
+                            }
+                            await Task.Delay(1000);
+                        }
+                    }
+                    else if(rank[0] == 2)
+                    {
+                        if (rank[1] == 1)
+                        {
+                            CreateControls(this, 21);
+                            await Task.Delay(1000);
+                        }
+                        if (rank[2] == 1)
+                        {
+                            CreateControls(this, 22);
+                            await Task.Delay(1000);
+                        }
+                        //ループ開始
+                        for (int i = 0; i < loopCount; i++)
+                        {
+
+                            if (rank[1] == 3)
+                            {
+                                CreateControls(this, 21);
+                            }
+                            if (rank[2] == 3)
+                            {
+                                CreateControls(this, 22);
+                            }
+                            
+                            await Task.Delay(1000);
+                        }
+                    }
+                    else
+                    {
+                        if (rank[1] > rank[2]) //cat > dog
+                        {
+                            if (rank[1] >= 1)
+                            {
+                                CreateControls(this, 22);
+                                await Task.Delay(1000);
+                            }
+                            if (rank[2] >= 1)
+                            {
+                                CreateControls(this, 21);
+                            }
+                        }
+                        else if (rank[2] > rank[1])
+                        {
+                            if (rank[2] >= 1)
+                            {
+                                CreateControls(this, 21);
+                                await Task.Delay(1000);
+                            }
+                            if (rank[1] >= 1)
+                            {
+                                CreateControls(this, 22);
+                            }
+                        }
+                        await Task.Delay(1000);
+                    }
+                    //正誤判定
+                    if (loopCount == 3)
+                    {
+                        if (rank[1] == 3 || rank[2] == 2)
+                        {
+                            MessageBox.Show("せいかい！！");
+                        }
+                        else
+                        {
+                            MessageBox.Show("ちがうよ！！");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("ちがうよ！！");
+                    }
+                    cardflg = true;
+                    break;
                 default:
                     break;
             }
@@ -675,6 +892,34 @@ namespace wani1
                         MeatCount = 0;
                     break;
                 case 2:
+                    for(int i = 0;i < ControlCount.Length; i++)
+                    {
+                        ControlCount[i] = 0;
+                    }
+                    for(int i = 0;i < rank.Length; i++)
+                    {
+                        rank[i] = 0;
+                    }
+                    ConCount = 0;
+                    hukiflg = false;
+                    cardflg = false;
+                    panel4.Controls.Clear();
+                    docatP = new Point(430, 200);
+                    Button b = new Button();
+                    b.Name = "button_2";
+                    b.Anchor = AnchorStyles.Top;
+                    b.Anchor = AnchorStyles.Right;
+                    b.Font = new Font(b.Font.FontFamily, 18);
+                    b.Text = "さいしょから";
+                    b.BackColor = Color.FromArgb(128, 255, 128);
+                    b.FlatStyle = FlatStyle.Flat;
+                    b.FlatAppearance.BorderSize = 0;
+                    b.Size = new Size(126, 32);
+                    b.Location = new Point(768, 3);
+                    b.Click += new EventHandler(this.button2_Click);
+                    panel4.Controls.Add(b);
+                    b.BringToFront();
+                    CreateControls(this, 2);
                     break;
                 default:
                     break;

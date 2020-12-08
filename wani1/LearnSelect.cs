@@ -106,7 +106,7 @@ namespace wani1
                 case 2:
                     Review review = new Review();
                     review.questNum = 2;
-                    review.questTitle = "イヌ→ネコのじゅんばんで３かいならべるとどれになる？";
+                    review.questTitle = "イヌ→ネコのじゅんばんで３かいならべよう！";
                     review.Show();
                     break;
                 default:

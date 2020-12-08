@@ -113,9 +113,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.button2);
-            this.panel4.Location = new System.Drawing.Point(379, 64);
+            this.panel4.Location = new System.Drawing.Point(328, 64);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(846, 587);
+            this.panel4.Size = new System.Drawing.Size(897, 587);
             this.panel4.TabIndex = 2;
             // 
             // button2
@@ -125,7 +125,7 @@
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button2.Location = new System.Drawing.Point(717, 3);
+            this.button2.Location = new System.Drawing.Point(768, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(126, 32);
             this.button2.TabIndex = 4;

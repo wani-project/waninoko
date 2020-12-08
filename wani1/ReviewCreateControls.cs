@@ -161,15 +161,16 @@ namespace wani1
                     PictureBox cat = new PictureBox();
                     PictureBox dog = new PictureBox();
 
-                    TextBox upT = new TextBox();
+                    NumericUpDown upT = new NumericUpDown();
                     Label catL = new Label();
                     //ループ回数テキストボックス設定
-                    upT.Text = "";
+                    upT.Text = "1";
                     upT.Name = "loopCount";
                     upT.Font = new Font(upT.Font.FontFamily, 20);
                     upT.TextAlign = HorizontalAlignment.Center;
-                    upT.Size = new Size(40, 30);
+                    upT.Size = new Size(45, 30);
                     upT.Location = new Point(50,25);
+                    upT.Maximum = 9;
                     upT.KeyPress += countBox_KeyPress;
                     upT.Parent = Lcat;
 
@@ -178,7 +179,7 @@ namespace wani1
                     label.Font = new Font(upT.Font.FontFamily, 20);
                     label.Size = new Size(140, 30);
                     label.BackColor = Color.FromArgb(235, 235, 235);
-                    label.Location = new Point(90, 30);
+                    label.Location = new Point(95, 30);
                     label.Parent = Lcat;
 
                     Boolean flg = false;
@@ -190,17 +191,18 @@ namespace wani1
                             {
                                 review.ControlCount[0]++;
                                 review.ConCount++;
+                                review.rank[0] = review.ConCount;
                                 Lcat.SizeMode = PictureBoxSizeMode.StretchImage;
                                 Lcat.Name = "Lcat1";
                                 switch (review.ConCount)
                                 {
                                     case 1:
-                                        Lcat.Location = new Point(90, 130);
+                                        Lcat.Location = new Point(60, 130);
                                         Lcat.Size = new Size(300, 400);
                                         flg = true;
                                         break;
                                     case 2:
-                                        Lcat.Location = new Point(90, 250);
+                                        Lcat.Location = new Point(60, 250);
                                         Lcat.Size = new Size(300, 280);
                                         flg = true;
                                         break;
@@ -210,7 +212,6 @@ namespace wani1
                                 
                                 Lcat.Image = Image.FromFile(review.FilePath + "\\images\\docat\\Lcat.png");
                                 Lcat.BackColor = Color.White;
-                                
                             }
                             if(flg == true)
                             {
@@ -226,33 +227,34 @@ namespace wani1
                             {
                                 review.ControlCount[1]++;
                                 review.ConCount++;
+                                review.rank[1] = review.ConCount;
                                 cat.Size = new Size(260, 120);
                                 cat.SizeMode = PictureBoxSizeMode.StretchImage;
                                 cat.Name = "cat1";
                                 switch (review.ConCount)
                                 {
                                     case 1:
-                                        cat.Location = new Point(90, 130);
+                                        cat.Location = new Point(60, 130);
                                         break;
                                     case 2:
                                         if (review.ControlCount[0] == 1)
                                         {
-                                            cat.Location = new Point(135, 205);
+                                            cat.Location = new Point(105, 205);
                                         }
                                         else
                                         {
-                                            cat.Location = new Point(90, 255);
+                                            cat.Location = new Point(60, 255);
                                         }
                                         
                                         break;
                                     case 3:
                                         if (review.ControlCount[0] == 1)
                                         {
-                                            cat.Location = new Point(135, 335);
+                                            cat.Location = new Point(105, 335);
                                         }
                                         else
                                         {
-                                            cat.Location = new Point(90, 335);
+                                            cat.Location = new Point(60, 335);
                                         }
                                         break;
                                     default:
@@ -276,33 +278,34 @@ namespace wani1
                             {
                                 review.ControlCount[2]++;
                                 review.ConCount++;
+                                review.rank[2] = review.ConCount;
                                 dog.Size = new Size(260, 120);
                                 dog.SizeMode = PictureBoxSizeMode.StretchImage;
                                 dog.Name = "dog1";
                                 switch (review.ConCount)
                                 {
                                     case 1:
-                                        dog.Location = new Point(90, 130);
+                                        dog.Location = new Point(60, 130);
                                         break;
                                     case 2:
                                         if(review.ControlCount[0] == 1)
                                         {
-                                            dog.Location = new Point(135, 205);
+                                            dog.Location = new Point(105, 205);
                                         }
                                         else
                                         {
-                                            dog.Location = new Point(90, 255);
+                                            dog.Location = new Point(60, 255);
                                         }
                                         
                                         break;
                                     case 3:
                                         if(review.ControlCount[0] == 1)
                                         {
-                                            dog.Location = new Point(135, 335);
+                                            dog.Location = new Point(105, 335);
                                         }
                                         else
                                         {
-                                            dog.Location = new Point(90, 335);
+                                            dog.Location = new Point(60, 335);
                                         }
                                         
                                         break;
