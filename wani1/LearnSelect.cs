@@ -117,7 +117,20 @@ namespace wani1
 
         private void quest3_Click(object sender, EventArgs e)
         {
-
+            switch (screenflg)
+            {
+                case 1:
+                    L6 l6 = new L6();
+                    l6.Show();
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                default:
+                    break;
+            }
+            
         }
 
         private void quest4_Click(object sender, EventArgs e)
