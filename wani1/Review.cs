@@ -28,6 +28,7 @@ namespace wani1
         public int MeatCount = 0;
         public int ConCount = 0;
         public int loopCount = 0;
+        public int[] singleCount = { 0, 0, 0 };
         private Point docatP = new Point(430,200);
         //ファイルパスの保持
         public string FilePath = Directory.GetCurrentDirectory();
@@ -734,19 +735,56 @@ namespace wani1
                     }
                     else
                     {
-                        if (rank[1] > rank[2]) //cat > dog
+                        for(int i = 0;i < singleCount.Length; i++)
                         {
-                            if (rank[1] >= 1)
+                            switch (singleCount[i])
+                            {
+                                case 1://ネコ
+                                    CreateControls(this, 21);
+                                    await Task.Delay(1000);
+                                    break;
+                                case 2://イヌ
+                                    CreateControls(this, 22);
+                                    await Task.Delay(1000);
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                        /*
+                            if (rank[1] == 1)
                             {
                                 CreateControls(this, 22);
                                 await Task.Delay(1000);
                             }
-                            if (rank[2] >= 1)
+                            if (rank[2] == 1)
+                            {
+                                CreateControls(this, 21);
+                                await Task.Delay(1000);
+                            }
+                            if (rank[2] == 2)
+                            {
+                                CreateControls(this, 21);
+                                await Task.Delay(1000);
+                            }
+                            if (rank[1] == 2)
+                            {
+                                CreateControls(this, 22);
+                                await Task.Delay(1000);
+                            }
+                            if (rank[2] == 3)
                             {
                                 CreateControls(this, 21);
                             }
-                        }
-                        else if (rank[2] > rank[1])
+                            if (rank[1] == 3)
+                            {
+                                CreateControls(this, 22);
+                            }
+                            await Task.Delay(1000);
+                        
+                        
+
+                        /*if (rank[2] > rank[1])
                         {
                             if (rank[2] >= 1)
                             {
@@ -758,7 +796,8 @@ namespace wani1
                                 CreateControls(this, 22);
                             }
                         }
-                        await Task.Delay(1000);
+                        */
+                        
                     }
                     //正誤判定
                     if (loopCount == 3)

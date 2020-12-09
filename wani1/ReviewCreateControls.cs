@@ -215,6 +215,7 @@ namespace wani1
                             }
                             if(flg == true)
                             {
+                                review.singleCount[review.ConCount - 1] = 0;
                                 //追加
                                 review.panel4.Controls.Add(Lcat);
                                 //追加コントロールの最前面配置
@@ -223,8 +224,9 @@ namespace wani1
                             }
                             break;
                         case "cat":
-                            if (review.ControlCount[1] != 1)
+                            if (review.ControlCount[1] != 3)
                             {
+                                if (review.ConCount == 3) break;
                                 review.ControlCount[1]++;
                                 review.ConCount++;
                                 review.rank[1] = review.ConCount;
@@ -254,7 +256,7 @@ namespace wani1
                                         }
                                         else
                                         {
-                                            cat.Location = new Point(60, 335);
+                                            cat.Location = new Point(60, 380);
                                         }
                                         break;
                                     default:
@@ -266,6 +268,7 @@ namespace wani1
                             }
                             if(flg == true)
                             {
+                                review.singleCount[review.ConCount - 1] = 1;
                                 //追加
                                 review.panel4.Controls.Add(cat);
                                 //追加コントロールの最前面配置
@@ -274,8 +277,9 @@ namespace wani1
                             }
                             break;
                         case "dog":
-                            if(review.ControlCount[2] != 1)
+                            if(review.ControlCount[2] != 3)
                             {
+                                if (review.ConCount == 3) break;
                                 review.ControlCount[2]++;
                                 review.ConCount++;
                                 review.rank[2] = review.ConCount;
@@ -305,7 +309,7 @@ namespace wani1
                                         }
                                         else
                                         {
-                                            dog.Location = new Point(60, 335);
+                                            dog.Location = new Point(60, 380);
                                         }
                                         
                                         break;
@@ -318,6 +322,7 @@ namespace wani1
                             }
                             if(flg == true)
                             {
+                                review.singleCount[review.ConCount - 1] = 2;
                                 //追加
                                 review.panel4.Controls.Add(dog);
                                 //追加コントロールの最前面配置
