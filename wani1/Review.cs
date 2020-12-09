@@ -57,13 +57,8 @@ namespace wani1
                     {
                         wani.Image = Image.FromFile(FilePath + "\\images\\talk.gif");
                     }
-
                     //色
                     wani.BackColor = Color.FromName("Transparent");
-                    //透過？
-                    Bitmap bitmap = new Bitmap(wani.Image);
-                    //bitmap.MakeTransparent(Color.FromArgb(0, 255, 255));
-                    //wani.Image = bitmap;
                     //座標
                     wani.Location = new Point(641, 388);
                     //作業領域に追加
@@ -910,6 +905,7 @@ namespace wani1
                     ConCount = 0;
                     hukiflg = false;
                     cardflg = false;
+                    loopCount = 0;
                     panel4.Controls.Clear();
                     docatP = new Point(430, 200);
                     Button b = new Button();

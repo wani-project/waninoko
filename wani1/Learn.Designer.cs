@@ -104,7 +104,6 @@
             this.textTitle.Name = "textTitle";
             this.textTitle.Size = new System.Drawing.Size(846, 39);
             this.textTitle.TabIndex = 5;
-            this.textTitle.Text = "――――――――――――――ここが問題文――――――――――――――――――";
             // 
             // button1
             // 
@@ -130,9 +129,9 @@
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.wani_block);
-            this.panel1.Location = new System.Drawing.Point(379, 64);
+            this.panel1.Location = new System.Drawing.Point(353, 64);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(846, 593);
+            this.panel1.Size = new System.Drawing.Size(872, 593);
             this.panel1.TabIndex = 2;
             // 
             // button2
