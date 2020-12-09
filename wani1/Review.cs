@@ -624,12 +624,7 @@ namespace wani1
                     }
                     break;
                 case 2:
-                    Control[] loop = new Control[0];
-                    loop = panel4.Controls.Find("loopCount",true);
-                    foreach(Control con in loop)
-                    {
-                        loopCount = int.Parse(con.Text);
-                    }
+                    loopCount = 0;
                     if(hukiflg == false)
                     {
                         //吹き出し表示
@@ -672,6 +667,12 @@ namespace wani1
                     //ループ判定
                     if (rank[0] == 1)
                     {
+                        Control[] loop = new Control[0];
+                        loop = panel4.Controls.Find("loopCount", true);
+                        foreach (Control con in loop)
+                        {
+                            loopCount = int.Parse(con.Text);
+                        }
                         //ループ開始
                         for (int i = 0; i < loopCount; i++)
                         {
@@ -704,6 +705,12 @@ namespace wani1
                     }
                     else if(rank[0] == 2)
                     {
+                        Control[] loop = new Control[0];
+                        loop = panel4.Controls.Find("loopCount", true);
+                        foreach (Control con in loop)
+                        {
+                            loopCount = int.Parse(con.Text);
+                        }
                         if (rank[1] == 1)
                         {
                             CreateControls(this, 21);
