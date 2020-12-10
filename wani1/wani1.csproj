@@ -81,6 +81,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="L6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="L6.designer.cs">
+      <DependentUpon>L6.cs</DependentUpon>
+    </Compile>
     <Compile Include="Learn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="L6.resx">
+      <DependentUpon>L6.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Learn.resx">
       <DependentUpon>Learn.cs</DependentUpon>
