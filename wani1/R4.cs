@@ -49,102 +49,27 @@ namespace wani1
 
         private void textBox7_TextChanged(object sender, EventArgs e)
         {
-            // Random クラスの新しいインスタンスを生成する
-            Random cRandom = new System.Random();
-
-            int iResult1 = cRandom.Next();
-
-            int iResult2 = cRandom.Next(51);
-
-            // 10 以上 51 未満の乱数を取得する
-            int iResult3 = cRandom.Next(10, 51);
-
-            // 取得した乱数を表示する
-            MessageBox.Show(
-                iResult1.ToString() + System.Environment.NewLine +
-                iResult2.ToString() + System.Environment.NewLine +
-                iResult3.ToString()
-            );
+        
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-            // Random クラスの新しいインスタンスを生成する
-            Random cRandom = new System.Random();
-
-            int iResult1 = cRandom.Next();
-
-            int iResult2 = cRandom.Next(51);
-
-            // 10 以上 51 未満の乱数を取得する
-            int iResult3 = cRandom.Next(10, 51);
-
-            // 取得した乱数を表示する
-            MessageBox.Show(
-                iResult1.ToString() + System.Environment.NewLine +
-                iResult2.ToString() + System.Environment.NewLine +
-                iResult3.ToString()
-            );
+ 
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-            // Random クラスの新しいインスタンスを生成する
-            Random cRandom = new System.Random();
 
-            int iResult1 = cRandom.Next();
-
-            int iResult2 = cRandom.Next(51);
-
-            // 10 以上 51 未満の乱数を取得する
-            int iResult3 = cRandom.Next(10, 51);
-
-            // 取得した乱数を表示する
-            MessageBox.Show(
-                iResult1.ToString() + System.Environment.NewLine +
-                iResult2.ToString() + System.Environment.NewLine +
-                iResult3.ToString()
-            );
         }
 
         private void textBox8_TextChanged(object sender, EventArgs e)
         {
-            // Random クラスの新しいインスタンスを生成する
-            Random cRandom = new System.Random();
 
-            int iResult1 = cRandom.Next();
-
-            int iResult2 = cRandom.Next(51);
-
-            // 10 以上 51 未満の乱数を取得する
-            int iResult3 = cRandom.Next(10, 51);
-
-            // 取得した乱数を表示する
-            MessageBox.Show(
-                iResult1.ToString() + System.Environment.NewLine +
-                iResult2.ToString() + System.Environment.NewLine +
-                iResult3.ToString()
-            );
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
-            // Random クラスの新しいインスタンスを生成する
-            Random cRandom = new System.Random();
 
-            int iResult1 = cRandom.Next();
-
-            int iResult2 = cRandom.Next(51);
-
-            // 10 以上 51 未満の乱数を取得する
-            int iResult3 = cRandom.Next(10, 51);
-
-            // 取得した乱数を表示する
-            MessageBox.Show(
-                iResult1.ToString() + System.Environment.NewLine +
-                iResult2.ToString() + System.Environment.NewLine +
-                iResult3.ToString()
-            );
         }
     }
 }

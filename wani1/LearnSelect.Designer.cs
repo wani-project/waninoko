@@ -61,7 +61,7 @@
             // 
             // quest1
             // 
-            this.quest1.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.quest1.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.quest1.Location = new System.Drawing.Point(3, 3);
             this.quest1.Name = "quest1";
             this.quest1.Size = new System.Drawing.Size(494, 84);
@@ -72,7 +72,7 @@
             // 
             // quest2
             // 
-            this.quest2.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.quest2.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.quest2.Location = new System.Drawing.Point(3, 93);
             this.quest2.Name = "quest2";
             this.quest2.Size = new System.Drawing.Size(494, 84);
@@ -83,7 +83,7 @@
             // 
             // quest3
             // 
-            this.quest3.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.quest3.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.quest3.Location = new System.Drawing.Point(3, 183);
             this.quest3.Name = "quest3";
             this.quest3.Size = new System.Drawing.Size(494, 84);
@@ -94,7 +94,7 @@
             // 
             // quest4
             // 
-            this.quest4.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.quest4.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.quest4.Location = new System.Drawing.Point(3, 273);
             this.quest4.Name = "quest4";
             this.quest4.Size = new System.Drawing.Size(494, 84);
@@ -117,10 +117,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("ＭＳ ゴシック", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.Location = new System.Drawing.Point(382, 89);
+            this.label1.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label1.Location = new System.Drawing.Point(441, 91);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(510, 48);
+            this.label1.Size = new System.Drawing.Size(392, 59);
             this.label1.TabIndex = 1;
             this.label1.Text = "もんだいをえらんでね";
             // 
