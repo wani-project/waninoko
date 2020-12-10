@@ -751,59 +751,18 @@ namespace wani1
                                     break;
                             }
                         }
-                        /*
-                            if (rank[1] == 1)
-                            {
-                                CreateControls(this, 22);
-                                await Task.Delay(1000);
-                            }
-                            if (rank[2] == 1)
-                            {
-                                CreateControls(this, 21);
-                                await Task.Delay(1000);
-                            }
-                            if (rank[2] == 2)
-                            {
-                                CreateControls(this, 21);
-                                await Task.Delay(1000);
-                            }
-                            if (rank[1] == 2)
-                            {
-                                CreateControls(this, 22);
-                                await Task.Delay(1000);
-                            }
-                            if (rank[2] == 3)
-                            {
-                                CreateControls(this, 21);
-                            }
-                            if (rank[1] == 3)
-                            {
-                                CreateControls(this, 22);
-                            }
-                            await Task.Delay(1000);
-                        
-                        
-
-                        /*if (rank[2] > rank[1])
-                        {
-                            if (rank[2] >= 1)
-                            {
-                                CreateControls(this, 21);
-                                await Task.Delay(1000);
-                            }
-                            if (rank[1] >= 1)
-                            {
-                                CreateControls(this, 22);
-                            }
-                        }
-                        */
-                        
                     }
                     //正誤判定
                     if (loopCount == 3)
                     {
                         if (rank[1] == 3 || rank[2] == 2)
                         {
+                            PictureBox yes = new PictureBox();
+                            yes.Size = new Size(897, 587);
+                            yes.SizeMode = PictureBoxSizeMode.StretchImage;
+                            yes.Parent = panel4;
+                            panel4.Controls.Add(yes);
+                            yes.BringToFront();
                             MessageBox.Show("せいかい！！");
                         }
                         else

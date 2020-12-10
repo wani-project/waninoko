@@ -17,7 +17,7 @@ namespace wani1
         public Boolean talkflg = false;
         //ファイルパスの保持
         public string FilePath = Directory.GetCurrentDirectory();
-        public string[] AddAnimal = { "動物名" };
+        //じゃんけんの手を保持
         private int hanako = 0;
         private int satoshi = 0;
         private int ans = 0;
@@ -28,7 +28,7 @@ namespace wani1
         }
 
 
-        //開始時の部品作成処理（左側の部品一覧やカードの初期配置等）a
+        //開始時の部品作成処理（左側の部品一覧やカードの初期配置等）
         public void CreateControl(string kinds, int count)
         {
             switch (kinds)
@@ -53,7 +53,6 @@ namespace wani1
                     {
                         wani.Image = Image.FromFile(FilePath + "\\images\\talk.gif");
                     }
-
                     //色
                     wani.BackColor = Color.FromName("Transparent");
                     //座標
@@ -64,10 +63,6 @@ namespace wani1
                     wani.BringToFront();
                     break;
             }
-
-            
-
-
         }
 
         //さとし--------------------------------------------------------------
@@ -157,7 +152,10 @@ namespace wani1
             ans = 2;
         }
 
-
+        private void review_back_button_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }
 
