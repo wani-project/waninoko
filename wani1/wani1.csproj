@@ -81,6 +81,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="L3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="L3.Designer.cs">
+      <DependentUpon>L3.cs</DependentUpon>
+    </Compile>
     <Compile Include="L6.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="L3.resx">
+      <DependentUpon>L3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="L6.resx">
       <DependentUpon>L6.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,6 +156,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="R4.resx">
       <DependentUpon>R4.cs</DependentUpon>
@@ -167,6 +177,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\タコブロック21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\アヒルブロック1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\カエルブロック2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\スクリーンショット 2020-12-18 121058.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\スクリーンショット 2020-12-18 121146.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\スクリーンショット 2020-12-18 121303.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\スクリーンショット 2020-12-18 121312.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WANIGIF.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hanasu%28siro%29.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
