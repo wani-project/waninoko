@@ -51,7 +51,7 @@
             // 
             // challenge_button
             // 
-            this.challenge_button.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.challenge_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.challenge_button.Location = new System.Drawing.Point(139, 346);
             this.challenge_button.Name = "challenge_button";
             this.challenge_button.Size = new System.Drawing.Size(406, 58);
@@ -62,7 +62,7 @@
             // 
             // learn_button
             // 
-            this.learn_button.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.learn_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.learn_button.Location = new System.Drawing.Point(139, 89);
             this.learn_button.Name = "learn_button";
             this.learn_button.Size = new System.Drawing.Size(406, 58);
@@ -73,7 +73,7 @@
             // 
             // review_button
             // 
-            this.review_button.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.review_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.review_button.Location = new System.Drawing.Point(139, 211);
             this.review_button.Name = "review_button";
             this.review_button.Size = new System.Drawing.Size(406, 58);
@@ -102,6 +102,7 @@
             this.Controls.Add(this.PictureBook);
             this.Controls.Add(this.Main_Group);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Test";
