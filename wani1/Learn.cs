@@ -607,7 +607,7 @@ namespace wani1
                         panel1.Controls.Remove(c);
                     }
                     foreach (Control c in d2)
-                    {
+                         {
                         panel1.Controls.Remove(c);
                     }
                     foreach (Control c in d3)
@@ -667,3 +667,4 @@ namespace wani1
         //-------------------------------------------------------
     }
 }
+  

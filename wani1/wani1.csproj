@@ -42,6 +42,8 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -54,6 +56,7 @@
     <Reference Include="System.Data.SQLite.Linq, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SQLite.Linq.1.0.113.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
+    <Reference Include="System.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -78,11 +81,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="L5.cs">
+    <Compile Include="L3.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="L5.Designer.cs">
-      <DependentUpon>L5.cs</DependentUpon>
+    <Compile Include="L3.Designer.cs">
+      <DependentUpon>L3.cs</DependentUpon>
     </Compile>
     <Compile Include="L6.cs">
       <SubType>Form</SubType>
@@ -130,8 +133,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="L5.resx">
-      <DependentUpon>L5.cs</DependentUpon>
+    <EmbeddedResource Include="L3.resx">
+      <DependentUpon>L3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="L6.resx">
       <DependentUpon>L6.cs</DependentUpon>
@@ -153,6 +156,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="R4.resx">
       <DependentUpon>R4.cs</DependentUpon>
@@ -173,6 +177,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\タコブロック21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\アヒルブロック1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\カエルブロック2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\スクリーンショット 2020-12-18 121058.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\スクリーンショット 2020-12-18 121146.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\スクリーンショット 2020-12-18 121303.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\スクリーンショット 2020-12-18 121312.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WANIGIF.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hanasu%28siro%29.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
