@@ -147,10 +147,10 @@ namespace wani1
 
         }
 
-        private int Random()
+        private int Random(int i)
         {
             //時刻からシード値を取得
-            int seed = Environment.TickCount;
+            int seed = Environment.TickCount + i;
             //ランダム変数のインスタンス化
             Random random = new Random(seed++);
             //randNumに0～50のランダムな値を代入
@@ -159,11 +159,14 @@ namespace wani1
 
         private void R4_Load(object sender, EventArgs e)
         {
-            labelsu1.Text = Random().ToString();
-            labelsu2.Text = Random().ToString();
-            labelsu3.Text = Random().ToString();
-            labelsu4.Text = Random().ToString();
-            labelsu5.Text = Random().ToString();
+            for (int i = 1; i <= 5;i++)
+            {
+                Control[] label = panel4.Controls.Find("labelsu" + i, true);
+                foreach(Control c in label)
+                {
+                    c.Text = Random(i).ToString();
+                }
+            }
         }
     }
 }
