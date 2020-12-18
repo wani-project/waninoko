@@ -119,7 +119,7 @@ namespace wani1
                 case 1:
                     Learn learn = new Learn();
                     learn.questNum = 3;
-                    learn.questTitle = "";
+                    learn.questTitle = "わにがいどうつかうエネルギーはいくつかな？";
                     learn.Show();
                     break;
                 case 2:
@@ -138,7 +138,7 @@ namespace wani1
 
         private void quest5_Click(object sender, EventArgs e)
         {
-
+        
         }
     }
 }
