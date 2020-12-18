@@ -12,71 +12,18 @@ namespace wani1
 {
     public partial class R4 : Form
     {
+        private int[] ans = { 0, 0, 0 };
+        private int[] answer = { 0, 0, 0 };
+
         public R4()
         {
             InitializeComponent();
         }
-
-        private void listView2_SelectedIndexChanged(object sender, EventArgs e)
+        private void R4_Load(object sender, EventArgs e)
         {
-
+            CreateEnergy();
+            GetNum();
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox8_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void review_back_button_Click(object sender, EventArgs e)
         {
 
@@ -85,68 +32,17 @@ namespace wani1
             }
 
         }
-
-
-        private void label8_Click(object sender, EventArgs e)
+        //回答ボタン
+        private void button_answer_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-            
-        {
-          
-            {
-
-                for (int i = 0; i < 50; i++)
-                {
-                    //コンストラクタに引数を指定しないでインスタンスを作成
-                    Random rnd = new Random();
-
-                    for (int j = 0; j < 10; j++)
-                    {
-                        Console.Write("{0} ", rnd.Next(10, 100));
-                    }
-                }//for(i)文の終わり
-            }
-        }
-    }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-        }
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-        
-        }
-
-        private void labelsu3_Click(object sender, EventArgs e)
-        {
-
-         
-        }
-
-        private void labelsu4_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void kaitou1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
+            Start();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
 
         }
-
+        //エネルギーの値をランダムで取得
         private int Random(int i)
         {
             //時刻からシード値を取得
@@ -154,18 +50,111 @@ namespace wani1
             //ランダム変数のインスタンス化
             Random random = new Random(seed++);
             //randNumに0～50のランダムな値を代入
-            return ((int)random.Next(0, 50)/10)*10;
+            return ((int)random.Next(10, 50)/10)*10;
         }
-
-        private void R4_Load(object sender, EventArgs e)
+        private void Start()
         {
-            for (int i = 1; i <= 5;i++)
+            try
+            {
+                for (int i = 1; i <= 3; i++)
+                {
+                    Control[] label = panel1.Controls.Find("kaitou" + i, true);
+                    foreach (Control c in label)
+                    {
+                        ans[i - 1] = int.Parse(c.Text);
+                    }
+                }
+                if(ans[0] == answer[0])
+                {
+                    MessageBox.Show("1問目正解");
+                }
+                else
+                {
+                    MessageBox.Show("1問目不正解");
+                }
+
+                if (ans[1] == answer[1])
+                {
+                    MessageBox.Show("2問目正解");
+                }
+                else
+                {
+                    MessageBox.Show("2問目不正解");
+                }
+
+                if (ans[2] == answer[2])
+                {
+                    MessageBox.Show("3問目正解");
+                }
+                else
+                {
+                    MessageBox.Show("3問目不正解");
+                }
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("こたえをかいてね！\r\n" + e);
+
+            }
+        }
+        
+        private void CreateEnergy()
+        {
+            for (int i = 1; i <= 5; i++)
             {
                 Control[] label = panel4.Controls.Find("labelsu" + i, true);
-                foreach(Control c in label)
+                foreach (Control c in label)
                 {
                     c.Text = Random(i).ToString();
                 }
+            }
+        }
+        private void GetNum()
+        {
+            Control[] l = panel4.Controls.Find("labelsu3", true);
+            foreach (Control c in l)
+            {
+                answer[0] = int.Parse(c.Text);
+            }
+            l = panel4.Controls.Find("labelsu1", true);
+            foreach (Control c in l)
+            {
+                answer[1] = answer[0] + int.Parse(c.Text);
+            }
+            l = panel4.Controls.Find("labelsu2", true);
+            foreach(Control c in l)
+            {
+                answer[2] = answer[1] + int.Parse(c.Text);
+            }
+        }
+        //最初からボタン
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Reset();
+            CreateEnergy();
+            GetNum();
+        }
+        //初期化処理
+        private void Reset()
+        {
+            ans.Initialize();
+            answer.Initialize();
+            for (int i = 1; i <= 3; i++)
+            {
+                Control[] label = panel1.Controls.Find("kaitou" + i, true);
+                foreach (Control c in label)
+                {
+                    c.Text = null;
+                }
+            }
+        }
+        //数値のみの入力に制限
+        private void kaitou_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < '0' || '9' < e.KeyChar) && e.KeyChar != '\b')
+            {
+                //押されたキーが 0～9でない場合は、イベントをキャンセルする
+                e.Handled = true;
             }
         }
     }
