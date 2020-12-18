@@ -54,7 +54,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -114,6 +113,7 @@
             this.review_back_button.TabIndex = 1;
             this.review_back_button.Text = "もどる";
             this.review_back_button.UseVisualStyleBackColor = true;
+            this.review_back_button.Click += new System.EventHandler(this.review_back_button_Click);
             // 
             // textBox2
             // 
@@ -153,7 +153,6 @@
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.pictureBox7);
             this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.button2);
             this.panel4.Controls.Add(this.groupBox1);
             this.panel4.Location = new System.Drawing.Point(6, 64);
             this.panel4.Name = "panel4";
@@ -178,7 +177,7 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("MS UI Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.label11.Location = new System.Drawing.Point(1050, 445);
+            this.label11.Location = new System.Drawing.Point(1050, 472);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(45, 48);
             this.label11.TabIndex = 41;
@@ -287,7 +286,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("ＭＳ ゴシック", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(707, 372);
+            this.button3.Location = new System.Drawing.Point(693, 370);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(321, 55);
             this.button3.TabIndex = 4;
@@ -386,20 +385,6 @@
             this.label1.Size = new System.Drawing.Size(457, 27);
             this.label1.TabIndex = 16;
             this.label1.Text = "さとしくんは　　　　　　　　をとりました。";
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button2.Location = new System.Drawing.Point(1090, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(126, 32);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "さいしょから";
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // groupBox1
             // 
@@ -533,7 +518,10 @@
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.Review_Group);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "L6";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ようじむけもーど";
             this.Load += new System.EventHandler(this.L6_Load);
             this.Review_Group.ResumeLayout(false);
@@ -563,7 +551,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button3;
         public System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button2;
         public System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label9;

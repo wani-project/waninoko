@@ -11,24 +11,21 @@ using System.Windows.Forms;
 
 namespace wani1
 {
-    public partial class L6 : Form
+    public partial class L5 : Form
     {
-
         public Boolean talkflg = false;
         //ファイルパスの保持
         public string FilePath = Directory.GetCurrentDirectory();
         public string[] AddAnimal = { "動物名" };
-        private int hanako = 0;
-        private int satoshi = 0;
-        private int ans = 0;
+        public int ans = 0;
+        
 
-        public L6()
+        public L5()
         {
             InitializeComponent();
         }
 
 
-        //開始時の部品作成処理（左側の部品一覧やカードの初期配置等）a
         public void CreateControl(string kinds, int count)
         {
             switch (kinds)
@@ -87,72 +84,83 @@ namespace wani1
                     break;
             }
 
-            
+
 
 
         }
 
-        //さとし--------------------------------------------------------------
-        private void button5_Click(object sender, EventArgs e)
-        {
-            //グー
-            satoshi = 1;
-        }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            //チョキ
-            satoshi = 2;
-        }
-
+        //まちがい　--------------------------------------------------------------------
         private void button7_Click(object sender, EventArgs e)
         {
-            //パー
-            satoshi = 3;
-        }
-        //はなこ------------------------------------------------------
-        private void button10_Click(object sender, EventArgs e)
-        {
-            //グー
-            hanako = 1;
+            Start(0);
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            //チョキ
-            hanako = 2;
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            //パー
-            hanako = 3;
-        }
-
-        //------------------------------------------------------------------------
-        private void L6_Load(object sender, EventArgs e)
-        {
-            CreateControl("waniChara", 0);
+            Start(0);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Start();
+            Start(0);
         }
 
-        private async void Start()
+        private void button4_Click(object sender, EventArgs e)
         {
+            Start(0);
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Start(0);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Start(0);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Start(0);
+        }
+
+        //=============================================
+
+
+
+        //せいかい　-----------------------------------------------------------
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Start(1);
+        }
+
+        private async void waniTalk()
+        {
+            //========================================
+            talkflg = true;
+            CreateControl("waniChara", 0);
+            await Task.Delay(5000);
+            talkflg = false;
+            CreateControl("waniChara", 0);
+
+            //========================================
+        }
+
+
+        private async void Start(int num)
+        {      
             //分岐処理部分----------------------------------------------------------------------
-            if (satoshi == 2)
-            {
-                if (hanako == 1 && ans == 2)
+                if (num == 1)
                 {
                     textBox1.Text = "せいかい！！すごい！！！";
                     CreateControl("seikai", 2);
                     await Task.Delay(2825);
                     Control[] re = new Control[0];
                     re = panel4.Controls.Find("seikai", true);
-                    foreach(Control c in re)
+                    foreach (Control c in re)
                     {
                         panel4.Controls.Remove(c);
                     }
@@ -178,79 +186,17 @@ namespace wani1
 
                     //========================================
 
-                }
-            }
-            else if(hanako == 1)
-            {
-                textBox1.Text = "まちがい...つぎはできるよ！\r\nがんばって！！！";
-                CreateControl("miss", 2);
-                await Task.Delay(2800);
-                Control[] re = new Control[0];
-                re = panel4.Controls.Find("miss", true);
-                foreach (Control c in re)
-                {
-                    panel4.Controls.Remove(c);
-                }
-
-                //========================================
-                waniTalk();
-
-                //========================================
-            }
-            else
-            {
-                textBox1.Text = "まちがい...つぎはできるよ！\r\nがんばって！！！";
-                CreateControl("miss", 2);
-                await Task.Delay(2800);
-                Control[] re = new Control[0];
-                re = panel4.Controls.Find("miss", true);
-                foreach (Control c in re)
-                {
-                    panel4.Controls.Remove(c);
-                }
-
-                //========================================
-                waniTalk();
-
-                //========================================
-            }
-        }
-        
-        //---------------------------------------------------------------------
-        private async void waniTalk()
-        {
-            //========================================
-            talkflg = true;
-            CreateControl("waniChara", 0);
-            await Task.Delay(5000);
-            talkflg = false;
-            CreateControl("waniChara", 0);
-
-            //========================================
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //せいかい
-            ans = 1;
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            //はずれ
-            ans = 2;
+                }         
         }
 
         private void review_back_button_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
+
+        private void L5_Load(object sender, EventArgs e)
+        {
+            CreateControl("waniChara", 0);
+        }
     }
 }
-
-
-
-
-
-
-    
