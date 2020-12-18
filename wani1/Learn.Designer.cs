@@ -33,7 +33,6 @@
             this.comboKinds = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.learn_back_button = new System.Windows.Forms.Button();
-            this.textTitle = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
@@ -42,6 +41,7 @@
             this.wani_block = new System.Windows.Forms.PictureBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label_title = new System.Windows.Forms.Label();
             this.Learn_Group.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -77,8 +77,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.label_title);
             this.panel2.Controls.Add(this.learn_back_button);
-            this.panel2.Controls.Add(this.textTitle);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Location = new System.Drawing.Point(6, 19);
             this.panel2.Name = "panel2";
@@ -95,15 +95,6 @@
             this.learn_back_button.Text = "もどる";
             this.learn_back_button.UseVisualStyleBackColor = true;
             this.learn_back_button.Click += new System.EventHandler(this.learn_back_button_Click);
-            // 
-            // textTitle
-            // 
-            this.textTitle.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textTitle.Location = new System.Drawing.Point(373, 0);
-            this.textTitle.Multiline = true;
-            this.textTitle.Name = "textTitle";
-            this.textTitle.Size = new System.Drawing.Size(846, 39);
-            this.textTitle.TabIndex = 5;
             // 
             // button1
             // 
@@ -175,7 +166,7 @@
             // wani_block
             // 
             this.wani_block.Image = ((System.Drawing.Image)(resources.GetObject("wani_block.Image")));
-            this.wani_block.Location = new System.Drawing.Point(3, 32);
+            this.wani_block.Location = new System.Drawing.Point(29, 26);
             this.wani_block.Name = "wani_block";
             this.wani_block.Size = new System.Drawing.Size(294, 355);
             this.wani_block.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -199,6 +190,15 @@
             this.panel3.Size = new System.Drawing.Size(200, 100);
             this.panel3.TabIndex = 5;
             this.panel3.Visible = false;
+            // 
+            // label_title
+            // 
+            this.label_title.AutoSize = true;
+            this.label_title.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label_title.Location = new System.Drawing.Point(373, 6);
+            this.label_title.Name = "label_title";
+            this.label_title.Size = new System.Drawing.Size(0, 24);
+            this.label_title.TabIndex = 7;
             // 
             // Learn
             // 
@@ -229,7 +229,6 @@
         private System.Windows.Forms.GroupBox Learn_Group;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button learn_back_button;
-        private System.Windows.Forms.TextBox textTitle;
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Panel panel3;
@@ -239,5 +238,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         public System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label_title;
     }
 }

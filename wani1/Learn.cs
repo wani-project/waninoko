@@ -48,14 +48,14 @@ namespace wani1
                 case 1:
                     CreateControl("dog", 1);
                     wani_block.Visible = false;
-                    textTitle.Text = questTitle;
+                    label_title.Text = questTitle;
                     textBox1.Text = "じゅんばんにきをつけてね！";
                     comboKinds.Visible = false;
                     break;
                 case 2:
                     wani_block.Visible = false;
                     CreateControl("docat", 2);
-                    textTitle.Text = questTitle;
+                    label_title.Text = questTitle;
                     comboKinds.Visible = false;
                     break;
                 default:
@@ -126,12 +126,13 @@ namespace wani1
             pb.Location = test_def;
         }
         //-------------------------------------------------------------------
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             switch (questNum)
             {
 
                 case 1:
+                    RemoveWani();
                     talkflg = true;
                     CreateControl("waniChara", 0);
                     string ans = "";
@@ -139,8 +140,7 @@ namespace wani1
                     {
                         ans += tf.dogAns[i];
                     }
-                    Timer timer = new Timer();
-                    timer.Start();
+                    
 
                     if (ans == "123")
                     {
@@ -151,19 +151,21 @@ namespace wani1
                     {
                         textBox1.Text = "じゅんばんがまちがってるよ！！";
                     }
-                    while (timer.Interval >= 500)
-                    {
-                        if (timer.Interval >= 300)
-                        {
-                            timer.Stop();
-                            talkflg = false;
-                            CreateControl("waniChara", 0);
-                            break;
-                        }
-                    }
+                    await Task.Delay(5000);
+                    RemoveWani();
+                    talkflg = false;
+                    CreateControl("waniChara", 0);
                     break;
                 default:
                     break;
+            }
+        }
+        private void RemoveWani()
+        {
+            Control[] con = panel1.Controls.Find("waniGif", true);
+            foreach(Control c in con)
+            {
+                panel1.Controls.Remove(c);
             }
         }
         //開始時の部品作成処理（左側の部品一覧やカードの初期配置等）
@@ -177,7 +179,7 @@ namespace wani1
                     //パネルインスタンス
                     PictureBox wani = new PictureBox();
                     //名前
-                    wani.Name = "waniGif_" + count;
+                    wani.Name = "waniGif";
                     //サイズ設定
                     wani.SizeMode = PictureBoxSizeMode.Zoom;
                     //サイズ
@@ -191,7 +193,6 @@ namespace wani1
                     {
                         wani.Image = Image.FromFile(FilePath + "\\images\\talk.gif");
                     }
-
                     //色
                     wani.BackColor = Color.FromName("Transparent");
                     //透過？

@@ -31,12 +31,12 @@
             this.Review_Group = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.review_back_button = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.listView2 = new System.Windows.Forms.ListView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label_title = new System.Windows.Forms.Label();
             this.Review_Group.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -61,8 +61,8 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.label_title);
             this.panel3.Controls.Add(this.review_back_button);
-            this.panel3.Controls.Add(this.textBox2);
             this.panel3.Controls.Add(this.button3);
             this.panel3.Location = new System.Drawing.Point(6, 19);
             this.panel3.Name = "panel3";
@@ -79,17 +79,6 @@
             this.review_back_button.Text = "もどる";
             this.review_back_button.UseVisualStyleBackColor = true;
             this.review_back_button.Click += new System.EventHandler(this.review_back_button_Click);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox2.Location = new System.Drawing.Point(373, 0);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(846, 39);
-            this.textBox2.TabIndex = 5;
             // 
             // button3
             // 
@@ -154,6 +143,15 @@
             this.panel1.TabIndex = 6;
             this.panel1.Visible = false;
             // 
+            // label_title
+            // 
+            this.label_title.AutoSize = true;
+            this.label_title.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label_title.Location = new System.Drawing.Point(373, 6);
+            this.label_title.Name = "label_title";
+            this.label_title.Size = new System.Drawing.Size(0, 24);
+            this.label_title.TabIndex = 6;
+            // 
             // Review
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -179,11 +177,11 @@
         private System.Windows.Forms.GroupBox Review_Group;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button review_back_button;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.Button button2;
         public System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label_title;
     }
 }

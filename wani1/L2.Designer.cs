@@ -31,12 +31,12 @@
             this.Learn_Group = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.learn_back_button = new System.Windows.Forms.Button();
-            this.textTitle = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label_title = new System.Windows.Forms.Label();
             this.Learn_Group.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -56,8 +56,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.label_title);
             this.panel2.Controls.Add(this.learn_back_button);
-            this.panel2.Controls.Add(this.textTitle);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Location = new System.Drawing.Point(6, 19);
             this.panel2.Name = "panel2";
@@ -74,16 +74,6 @@
             this.learn_back_button.Text = "もどる";
             this.learn_back_button.UseVisualStyleBackColor = true;
             this.learn_back_button.Click += new System.EventHandler(this.learn_back_button_Click);
-            // 
-            // textTitle
-            // 
-            this.textTitle.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textTitle.Location = new System.Drawing.Point(373, 0);
-            this.textTitle.Multiline = true;
-            this.textTitle.Name = "textTitle";
-            this.textTitle.Size = new System.Drawing.Size(846, 39);
-            this.textTitle.TabIndex = 5;
-            this.textTitle.Text = "イヌ→ネコのじゅんばんで３かいならべるとどれになる？";
             // 
             // button1
             // 
@@ -150,6 +140,16 @@
             this.label1.TabIndex = 2;
             this.label1.Text = ">";
             // 
+            // label_title
+            // 
+            this.label_title.AutoSize = true;
+            this.label_title.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label_title.Location = new System.Drawing.Point(373, 6);
+            this.label_title.Name = "label_title";
+            this.label_title.Size = new System.Drawing.Size(533, 24);
+            this.label_title.TabIndex = 7;
+            this.label_title.Text = "イヌ→ネコのじゅんばんで３かいならべるとどれになる？";
+            // 
             // L2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -175,11 +175,11 @@
         private System.Windows.Forms.GroupBox Learn_Group;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button learn_back_button;
-        private System.Windows.Forms.TextBox textTitle;
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button2;
         public System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_title;
     }
 }

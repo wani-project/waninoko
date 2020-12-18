@@ -26,7 +26,7 @@ namespace wani1
                     Label labelL = new Label();
                     //labelL設定
                     labelL.Font = new Font(labelL.Font.FontFamily, 16, FontStyle.Bold);
-                    labelL.Size = new Size(200, 40);
+                    labelL.Size = new Size(220, 40);
                     labelL.ForeColor = Color.White;
                     labelL.BackColor = Color.Transparent;
                     labelL.Parent = meat;
@@ -78,11 +78,11 @@ namespace wani1
                             meat.Location = new Point(0, 145);
                             if(name == "catfish_0")
                             {
-                                countBox.Location = new Point(120, 165);//20
+                                countBox.Location = new Point(123, 165);//20
                             }
                             else if(name == "crab_0")
                             {
-                                countBox.Location = new Point(120, 185);//40
+                                countBox.Location = new Point(123, 185);//40
                             }
                             else
                             {
@@ -176,7 +176,7 @@ namespace wani1
 
                     Label label = new Label();
                     label.Text = "回くりかえす";
-                    label.Font = new Font(upT.Font.FontFamily, 20);
+                    label.Font = new Font(label.Font.FontFamily, 20);
                     label.Size = new Size(140, 30);
                     label.BackColor = Color.FromArgb(235, 235, 235);
                     label.Location = new Point(95, 30);

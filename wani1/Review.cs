@@ -30,6 +30,8 @@ namespace wani1
         public int loopCount = 0;
         public int[] singleCount = { 0, 0, 0 };
         private Point docatP = new Point(430,200);
+        private Size hukiS = new Size(500, 200);
+        private int randomAns = 0;
         //ファイルパスの保持
         public string FilePath = Directory.GetCurrentDirectory();
         public Review()
@@ -304,14 +306,17 @@ namespace wani1
                     PictureBox Scat = new PictureBox();
                     //ループネコブロック
                     PictureBox Lcat = new PictureBox();
-                    
+                    //ループネコブロック説明ラベル
+                    Label LcatL = new Label();
 
+                    //はじめネコブロック設定
                     Scat.Size = new Size(400, 580);
                     Scat.SizeMode = PictureBoxSizeMode.StretchImage;
                     Scat.Name = "Scat";
                     Scat.Location = new Point(10,10);
                     Scat.Image = Image.FromFile(FilePath + "\\images\\docat\\Scat.png");
 
+                    //ループネコブロック設定
                     Lcat.Size = new Size(260,240);
                     Lcat.SizeMode = PictureBoxSizeMode.StretchImage;
                     Lcat.Name = "Lcat";
@@ -321,7 +326,18 @@ namespace wani1
                     Lcat.MouseDown += new MouseEventHandler(this.Control_MouseDown);
                     Lcat.MouseMove += new MouseEventHandler(this.Control_MouseMove);
                     Lcat.MouseUp += new MouseEventHandler(this.Control_MouseUp);
+                    Lcat.MouseHover += new EventHandler(this.Control_MouseHover);
 
+                    //ループネコブロック説明ラベル設定
+                    LcatL.Name = "LcatL";
+                    LcatL.Parent = Lcat;
+                    LcatL.Text = "くりかえし";
+                    LcatL.Size = new Size(110,25);
+                    LcatL.Font = new Font(LcatL.Font.FontFamily, 20);
+                    LcatL.BackColor = Color.Transparent;
+                    LcatL.Location = new Point(40, 10);
+
+                    //ネコブロック設定
                     cat.Size = new Size(260, 120);
                     cat.SizeMode = PictureBoxSizeMode.StretchImage;
                     cat.Name = "cat";
@@ -331,7 +347,9 @@ namespace wani1
                     cat.MouseDown += new MouseEventHandler(this.Control_MouseDown);
                     cat.MouseMove += new MouseEventHandler(this.Control_MouseMove);
                     cat.MouseUp += new MouseEventHandler(this.Control_MouseUp);
+                    cat.MouseHover += new EventHandler(this.Control_MouseHover);
 
+                    //イヌブロック設定
                     dog.Size = new Size(260, 120);
                     dog.SizeMode = PictureBoxSizeMode.StretchImage;
                     dog.Name = "dog";
@@ -341,6 +359,7 @@ namespace wani1
                     dog.MouseDown += new MouseEventHandler(this.Control_MouseDown);
                     dog.MouseMove += new MouseEventHandler(this.Control_MouseMove);
                     dog.MouseUp += new MouseEventHandler(this.Control_MouseUp);
+                    dog.MouseHover += new EventHandler(this.Control_MouseHover);
 
                     //コントロールの追加
                     panel4.Controls.Add(Scat);
@@ -354,6 +373,18 @@ namespace wani1
                     dog.BringToFront();
                     break;
                 //--------------------------------------------------------
+                case 20:
+                    //吹き出し
+                    PictureBox huki = new PictureBox();
+                    huki.Size = hukiS;
+                    huki.Name = "huki";
+                    huki.SizeMode = PictureBoxSizeMode.StretchImage;
+                    huki.Location = new Point(385, 125);
+                    huki.BackColor = Color.Transparent;
+                    huki.Image = Image.FromFile(FilePath + "\\images\\docat\\hukidashi.png");
+                    panel4.Controls.Add(huki);
+                    huki.BringToFront();
+                    break;
                 case 21:
                     //2問目のイヌネコカードの生成
                     //ネコ
@@ -401,6 +432,26 @@ namespace wani1
 
         }
 
+        private void Control_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            switch (((PictureBox)sender).Name)
+            {
+                case "Lcat":
+                    tt.SetToolTip((PictureBox)sender, "くりかえしブロックです");
+                    break;
+                case "cat":
+                    tt.SetToolTip((PictureBox)sender, "ネコカードひょうじブロックです");
+                    break;
+                case "dog":
+                    tt.SetToolTip((PictureBox)sender, "イヌカードひょうじブロックです");
+                    break;
+                default:
+                    break;
+            }
+            
+        }
+
         private void review_back_button_Click(object sender, EventArgs e)
         {
             Form1 f1 = new Form1();
@@ -417,7 +468,13 @@ namespace wani1
         {
             this.MaximizeBox = false;
             CreateControls(this, questNum);
-            textBox2.Text = questTitle;
+            label_title.Text = questTitle;
+            if(questNum == 2)
+            {
+                randomAns = Random();
+                questTitle = "イヌ→ネコのじゅんばんで" + randomAns + "かいならべよう！";
+                label_title.Text = questTitle;
+            }
         }
 
         private async void MoveChara(string direction)
@@ -479,29 +536,6 @@ namespace wani1
                                 }
                             }
 
-                            break;
-                        case "down":
-                            p = table.GetCellPosition(charaP);
-                            if (p.Row != 3)
-                            {
-                                if (table.GetControlFromPosition(p.Column, p.Row + 1) == null)
-                                {
-                                    p.Row += 1;
-                                    table.SetCellPosition(charaP, p);
-                                }
-                            }
-                            break;
-                        case "left":
-                            p = table.GetCellPosition(charaP);
-                            if (p.Column != 0)
-                            {
-                                if (table.GetControlFromPosition(p.Column - 1, p.Row) == null)
-                                {
-                                    p.Column -= 1;
-                                    table.SetCellPosition(charaP, p);
-                                }
-
-                            }
                             break;
                         case "right":
                             p = table.GetCellPosition(charaP);
@@ -620,21 +654,6 @@ namespace wani1
                     }
                     break;
                 case 2:
-                    loopCount = 0;
-                    if(hukiflg == false)
-                    {
-                        //吹き出し表示
-                        PictureBox huki = new PictureBox();
-                        huki.Size = new Size(500, 200);
-                        huki.SizeMode = PictureBoxSizeMode.StretchImage;
-                        huki.Location = new Point(385, 125);
-                        huki.BackColor = Color.Transparent;
-                        huki.Image = Image.FromFile(FilePath + "\\images\\docat\\hukidashi.png");
-                        panel4.Controls.Add(huki);
-                        huki.BringToFront();
-                        hukiflg = true;
-                        await Task.Delay(1000);
-                    }
                     if(cardflg == true)
                     {
                         //表示済みカードの削除
@@ -644,8 +663,7 @@ namespace wani1
                         }
                         for(int i = 1; i <= cardCount[0]; i++)
                         {
-                            Control[] cards = new Control[0];
-                            cards = panel4.Controls.Find("catC_" + i, true);
+                            Control[] cards = panel4.Controls.Find("catC_" + i, true);
                             foreach (Control c in cards)
                             {
                                 panel4.Controls.Remove(c);
@@ -656,8 +674,23 @@ namespace wani1
                                 panel4.Controls.Remove(c);
                             }
                         }
+                        Control[] huki = panel4.Controls.Find("huki", true);
+                        foreach (Control c in huki)
+                        {
+                            panel4.Controls.Remove(c);
+                        }
+                        loopCount = 0;
                         docatP = new Point(430, 200);
+                        hukiS = new Size(500, 200);
+                        hukiflg = false;
                         cardflg = false;
+                        await Task.Delay(1000);
+                    }
+                    //吹き出し表示
+                    if (hukiflg == false)
+                    {
+                        CreateControls(this, 20);
+                        hukiflg = true;
                         await Task.Delay(1000);
                     }
                     //ループ判定
@@ -672,31 +705,69 @@ namespace wani1
                         //ループ開始
                         for (int i = 0; i < loopCount; i++)
                         {
-                            if (rank[1] > rank[2]) //cat > dog
+                            //カードの改行
+                            if (i == 3 || i == 6)
                             {
-                                if (rank[1] >= 1)
+                                Control[] huki = panel4.Controls.Find("huki", true);
+                                foreach (Control c in huki)
                                 {
-                                    CreateControls(this, 22);
-                                    await Task.Delay(1000);
+                                    PictureBox p = (PictureBox)c;
+                                    p.Size = new Size(p.Width, p.Height + 120);
+                                    p.Image = Image.FromFile(FilePath + "\\images\\docat\\hukidashi" + i + ".png");
                                 }
-                                if (rank[2] >= 1)
+                                //hukiS.Height += 100;
+                                //CreateControls(this, 20);
+                                docatP = new Point(430, docatP.Y + 100);
+                            }
+                            if(rank[1] != 0 && rank[2] != 0)
+                            {
+                                if (rank[1] > rank[2]) //cat > dog
                                 {
-                                    CreateControls(this, 21);
+                                    if (rank[1] >= 1)
+                                    {
+                                        CreateControls(this, 22);
+                                        await Task.Delay(1000);
+                                    }
+                                    if (rank[2] >= 1)
+                                    {
+                                        CreateControls(this, 21);
+                                    }
+                                }
+                                else if (rank[2] > rank[1])
+                                {
+                                    if (rank[2] >= 1)
+                                    {
+                                        CreateControls(this, 21);
+                                        await Task.Delay(1000);
+                                    }
+                                    if (rank[1] >= 1)
+                                    {
+                                        CreateControls(this, 22);
+                                    }
+                                }
+                                await Task.Delay(1000);
+                            }else
+                            {
+                                if(rank[1] != 0 || rank[2] != 0)
+                                {
+                                    for (int y = 0; y < singleCount.Length; y++)
+                                    {
+                                        switch (singleCount[y])
+                                        {
+                                            case 1://ネコ
+                                                CreateControls(this, 21);
+                                                await Task.Delay(1000);
+                                                break;
+                                            case 2://イヌ
+                                                CreateControls(this, 22);
+                                                await Task.Delay(1000);
+                                                break;
+                                            default:
+                                                break;
+                                        }
+                                    }
                                 }
                             }
-                            else if (rank[2] > rank[1])
-                            {
-                                if (rank[2] >= 1)
-                                {
-                                    CreateControls(this, 21);
-                                    await Task.Delay(1000);
-                                }
-                                if (rank[1] >= 1)
-                                {
-                                    CreateControls(this, 22);
-                                }
-                            }
-                            await Task.Delay(1000);
                         }
                     }
                     else if(rank[0] == 2)
@@ -720,7 +791,22 @@ namespace wani1
                         //ループ開始
                         for (int i = 0; i < loopCount; i++)
                         {
-
+                            //カードの改行
+                            if (i == 5 || i == 9)
+                            {
+                                Control[] huki = panel4.Controls.Find("huki", true);
+                                foreach (Control c in huki)
+                                {
+                                    PictureBox p = (PictureBox)c;
+                                    p.Size = new Size(p.Width, p.Height + 120);
+                                    p.Image = Image.FromFile(FilePath + "\\images\\docat\\hukidashi3.png");
+                                }
+                                //hukiS.Height += 100;
+                                //CreateControls(this, 20);
+                                docatP = new Point(430, docatP.Y + 100);
+                            }
+                                
+                            
                             if (rank[1] == 3)
                             {
                                 CreateControls(this, 21);
@@ -729,8 +815,8 @@ namespace wani1
                             {
                                 CreateControls(this, 22);
                             }
-                            
                             await Task.Delay(1000);
+                            
                         }
                     }
                     else
@@ -753,26 +839,59 @@ namespace wani1
                         }
                     }
                     //正誤判定
-                    if (loopCount == 3)
+                    if (loopCount == randomAns)
                     {
                         if (rank[1] == 3 || rank[2] == 2)
                         {
                             PictureBox yes = new PictureBox();
+                            yes.Name = "yes";
                             yes.Size = new Size(897, 587);
                             yes.SizeMode = PictureBoxSizeMode.StretchImage;
+                            yes.Image = Image.FromFile(FilePath + "\\images\\seikai.gif");
                             yes.Parent = panel4;
                             panel4.Controls.Add(yes);
                             yes.BringToFront();
-                            MessageBox.Show("せいかい！！");
+                            await Task.Delay(2800);
+                            Control[] c = panel4.Controls.Find("yes", true);
+                            foreach(Control con in c)
+                            {
+                                panel4.Controls.Remove(con);
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("ちがうよ！！");
+                            PictureBox no = new PictureBox();
+                            no.Name = "no";
+                            no.Size = new Size(897, 587);
+                            no.SizeMode = PictureBoxSizeMode.StretchImage;
+                            no.Image = Image.FromFile(FilePath + "\\images\\matigai.gif");
+                            no.Parent = panel4;
+                            panel4.Controls.Add(no);
+                            no.BringToFront();
+                            await Task.Delay(2800);
+                            Control[] c = panel4.Controls.Find("no", true);
+                            foreach (Control con in c)
+                            {
+                                panel4.Controls.Remove(con);
+                            }
                         }
                     }
                     else
                     {
-                        MessageBox.Show("ちがうよ！！");
+                        PictureBox no = new PictureBox();
+                        no.Name = "no";
+                        no.Size = new Size(897, 587);
+                        no.SizeMode = PictureBoxSizeMode.StretchImage;
+                        no.Image = Image.FromFile(FilePath + "\\images\\matigai.gif");
+                        no.Parent = panel4;
+                        panel4.Controls.Add(no);
+                        no.BringToFront();
+                        await Task.Delay(2800);
+                        Control[] c = panel4.Controls.Find("no", true);
+                        foreach (Control con in c)
+                        {
+                            panel4.Controls.Remove(con);
+                        }
                     }
                     cardflg = true;
                     break;
@@ -784,7 +903,6 @@ namespace wani1
         //移動処理の初期変数---------
         bool _isDraging = false;
         Point? _diffPoint = null;
-        Control cont0;
         Point test_def = new Point(45, 90);
         //---------------------------
         private void Control_MouseDown(object sender, MouseEventArgs e)
@@ -904,6 +1022,7 @@ namespace wani1
                     hukiflg = false;
                     cardflg = false;
                     loopCount = 0;
+                    hukiS = new Size(500, 200);
                     panel4.Controls.Clear();
                     docatP = new Point(430, 200);
                     Button b = new Button();
@@ -927,5 +1046,15 @@ namespace wani1
             }
         }
         //-------------------------------------------------------------------------
+
+        private int Random()
+        {
+            int seed = Environment.TickCount;
+            int ans = 0;
+
+            Random random = new Random(seed++);
+            ans = (int)random.Next(2, 9);
+            return ans;
+        }
     }
 }

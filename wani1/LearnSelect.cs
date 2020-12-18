@@ -44,6 +44,7 @@ namespace wani1
                 case 2:
                     quest1.Text = "キャラクターをうごかそう！";
                     quest2.Text = "イヌとネコをならべよう！";
+                    quest3.Text = "ワニをおよがせよう！";
                     break;
                 default:
                     break;
@@ -109,8 +110,6 @@ namespace wani1
                     review.questTitle = "イヌ→ネコのじゅんばんで３かいならべよう！";
                     review.Show();
                     break;
-                default:
-                    break;
             }
             
         }
@@ -120,27 +119,36 @@ namespace wani1
             switch (screenflg)
             {
                 case 1:
+
                     L6 l6 = new L6();
                     l6.Show();
                     break;
                 case 2:
+                    L3 l3 = new L3();
+                    l3.Show();
                     break;
-                case 3:
-                    break;
-                default:
-                    break;
-            }
-            
+            }            
         }
 
         private void quest4_Click(object sender, EventArgs e)
         {
-
+            switch (screenflg)
+            {
+                case 1:
+                    break;
+                case 2:
+                    break;
+            }
         }
-
         private void quest5_Click(object sender, EventArgs e)
         {
-
+            switch (screenflg)
+            {
+                case 1:
+                    break;
+                case 2:
+                    break;
+            }
         }
     }
 }

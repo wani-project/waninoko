@@ -84,6 +84,12 @@
     <Compile Include="L2.Designer.cs">
       <DependentUpon>L2.cs</DependentUpon>
     </Compile>
+    <Compile Include="L3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="L3.Designer.cs">
+      <DependentUpon>L3.cs</DependentUpon>
+    </Compile>
     <Compile Include="L6.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="L2.resx">
       <DependentUpon>L2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="L3.resx">
+      <DependentUpon>L3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="L6.resx">
       <DependentUpon>L6.cs</DependentUpon>

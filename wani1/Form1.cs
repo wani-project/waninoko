@@ -64,9 +64,6 @@ namespace wani1
             {
                 challenge.WindowState = FormWindowState.Normal;
             }
-            
-
-
         }
         //図鑑ボタン
         private void PictureBook_Click(object sender, EventArgs e)
@@ -81,7 +78,6 @@ namespace wani1
                 zukan.WindowState = FormWindowState.Normal;
             }
         }
-
         //画面遷移
         public void ScreenSwitch()
         {
