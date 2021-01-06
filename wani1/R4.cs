@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,8 +13,10 @@ namespace wani1
 {
     public partial class R4 : Form
     {
+        private string FilePath = Directory.GetCurrentDirectory();
         private int[] ans = { 0, 0, 0 };
         private int[] answer = { 0, 0, 0 };
+        private Point[] points = { new Point(27, 54), new Point(245, 54), new Point(473, 54) };
 
         public R4()
         {
@@ -21,6 +24,7 @@ namespace wani1
         }
         private void R4_Load(object sender, EventArgs e)
         {
+            CreateChara();
             CreateEnergy();
             GetNum();
         }
@@ -50,9 +54,9 @@ namespace wani1
             //ランダム変数のインスタンス化
             Random random = new Random(seed++);
             //randNumに0～50のランダムな値を代入
-            return ((int)random.Next(10, 50)/10)*10;
+            return ((int)random.Next(10, 50) / 10) * 10;
         }
-        private void Start()
+        private async void Start()
         {
             try
             {
@@ -64,40 +68,44 @@ namespace wani1
                         ans[i - 1] = int.Parse(c.Text);
                     }
                 }
-                if(ans[0] == answer[0])
+                if (ans[0] == answer[0])
                 {
+                    MoveChara(0);
                     MessageBox.Show("1問目正解");
                 }
                 else
                 {
                     MessageBox.Show("1問目不正解");
                 }
-
+                await Task.Delay(2000);
                 if (ans[1] == answer[1])
                 {
+                    MoveChara(1);
                     MessageBox.Show("2問目正解");
                 }
                 else
                 {
                     MessageBox.Show("2問目不正解");
                 }
-
+                await Task.Delay(2000);
                 if (ans[2] == answer[2])
                 {
+                    MoveChara(2);
                     MessageBox.Show("3問目正解");
                 }
                 else
                 {
                     MessageBox.Show("3問目不正解");
                 }
+                await Task.Delay(2000);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
-                MessageBox.Show("こたえをかいてね！\r\n" + e);
+                MessageBox.Show("こたえをかいてね！\r\n");
 
             }
         }
-        
+
         private void CreateEnergy()
         {
             for (int i = 1; i <= 5; i++)
@@ -122,7 +130,7 @@ namespace wani1
                 answer[1] = answer[0] + int.Parse(c.Text);
             }
             l = panel4.Controls.Find("labelsu2", true);
-            foreach(Control c in l)
+            foreach (Control c in l)
             {
                 answer[2] = answer[1] + int.Parse(c.Text);
             }
@@ -156,6 +164,46 @@ namespace wani1
                 //押されたキーが 0～9でない場合は、イベントをキャンセルする
                 e.Handled = true;
             }
+        }
+
+        //ワニ作成処理
+        private void CreateChara()
+        {
+            //設定
+            PictureBox wani = new PictureBox();
+            wani.Name = "wani";
+            wani.Location = new Point(245, 445);
+            wani.Size = new Size(111, 102);
+            wani.SizeMode = PictureBoxSizeMode.StretchImage;
+            wani.BackColor = Color.Transparent;
+            wani.Image = Image.FromFile(FilePath + "\\images\\idle.gif");
+            //追加
+            panel4.Controls.Add(wani);
+            wani.BringToFront();
+        }
+        //ワニ移動処理
+        private async void MoveChara(int point)
+        {
+            Control[] controls = panel4.Controls.Find("wani", true);
+            foreach(PictureBox c in controls)
+            {
+                //走るGIFに画像を変更
+                c.Image = Image.FromFile(FilePath + "\\images\\Run.gif");
+                if(c.Location.Y != 54)
+                {
+                    for (int y = 54; y < c.Location.Y; y -= 3)
+                    {
+                        c.Location = new Point(c.Location.X, c.Location.Y - 3);
+                        if (c.Location.X > points[point].X)
+                        {
+                            c.Location = new Point(c.Location.X - 2, c.Location.Y);//途中
+                        }
+                        await Task.Delay(25);
+                    }
+                }
+                
+            }
+            await Task.Delay(1000);
         }
     }
 }

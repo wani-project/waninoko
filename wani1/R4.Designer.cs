@@ -51,7 +51,6 @@
             this.labelsu2 = new System.Windows.Forms.Label();
             this.labelsu1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -265,7 +264,6 @@
             this.panel4.Controls.Add(this.labelsu2);
             this.panel4.Controls.Add(this.labelsu1);
             this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.textBox9);
             this.panel4.Controls.Add(this.pictureBox3);
             this.panel4.Controls.Add(this.pictureBox2);
             this.panel4.Controls.Add(this.pictureBox1);
@@ -334,16 +332,6 @@
             this.label2.Size = new System.Drawing.Size(264, 31);
             this.label2.TabIndex = 17;
             this.label2.Text = "エネルギーをつかうデータ";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox9.Location = new System.Drawing.Point(271, 466);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(59, 47);
-            this.textBox9.TabIndex = 14;
-            this.textBox9.Text = "わに";
             // 
             // pictureBox3
             // 
@@ -423,9 +411,9 @@
             this.lineShape3.Enabled = false;
             this.lineShape3.Name = "lineShape3";
             this.lineShape3.X1 = 529;
-            this.lineShape3.X2 = 325;
+            this.lineShape3.X2 = 296;
             this.lineShape3.Y1 = 154;
-            this.lineShape3.Y2 = 492;
+            this.lineShape3.Y2 = 509;
             // 
             // lineShape2
             // 
@@ -433,9 +421,9 @@
             this.lineShape2.Enabled = false;
             this.lineShape2.Name = "lineShape2";
             this.lineShape2.X1 = 297;
-            this.lineShape2.X2 = 297;
+            this.lineShape2.X2 = 295;
             this.lineShape2.Y1 = 156;
-            this.lineShape2.Y2 = 474;
+            this.lineShape2.Y2 = 510;
             // 
             // lineShape1
             // 
@@ -443,9 +431,9 @@
             this.lineShape1.Enabled = false;
             this.lineShape1.Name = "lineShape1";
             this.lineShape1.X1 = 75;
-            this.lineShape1.X2 = 271;
+            this.lineShape1.X2 = 294;
             this.lineShape1.Y1 = 156;
-            this.lineShape1.Y2 = 491;
+            this.lineShape1.Y2 = 511;
             // 
             // R4
             // 
@@ -485,7 +473,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.TextBox textBox9;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape4;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape3;
