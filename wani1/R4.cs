@@ -77,7 +77,7 @@ namespace wani1
                 {
                     MessageBox.Show("1問目不正解");
                 }
-                await Task.Delay(2000);
+                await Task.Delay(5000);
                 if (ans[1] == answer[1])
                 {
                     MoveChara(1);
@@ -87,7 +87,7 @@ namespace wani1
                 {
                     MessageBox.Show("2問目不正解");
                 }
-                await Task.Delay(2000);
+                await Task.Delay(5000);
                 if (ans[2] == answer[2])
                 {
                     MoveChara(2);
@@ -97,7 +97,7 @@ namespace wani1
                 {
                     MessageBox.Show("3問目不正解");
                 }
-                await Task.Delay(2000);
+                await Task.Delay(5000);
             }
             catch (Exception e)
             {
@@ -155,6 +155,11 @@ namespace wani1
                     c.Text = null;
                 }
             }
+            Control[] chara = panel4.Controls.Find("wani", true);
+            foreach(PictureBox c in chara)
+            {
+                c.Location = new Point(245, 445);
+            }
         }
         //数値のみの入力に制限
         private void kaitou_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
@@ -189,19 +194,50 @@ namespace wani1
             {
                 //走るGIFに画像を変更
                 c.Image = Image.FromFile(FilePath + "\\images\\Run.gif");
-                if(c.Location.Y != 54)
+                
+                if(c.Location.Y != 52)//ワニが上まで行ってなかったら
                 {
-                    for (int y = 54; y < c.Location.Y; y -= 3)
+                    //ワニを上に動かす
+                    for (int y = c.Location.Y; y > 54; y -= 3)
                     {
+                        //y座標をマイナスしてワニを上へ
                         c.Location = new Point(c.Location.X, c.Location.Y - 3);
-                        if (c.Location.X > points[point].X)
+                        //上にいくと同時に左右の移動も行う
+                        if (c.Location.X > points[point].X)//ワニがポイントより右にいたら
                         {
-                            c.Location = new Point(c.Location.X - 2, c.Location.Y);//途中
+                            //x座標をマイナスしてワニを左へ
+                            c.Location = new Point(c.Location.X - 2, c.Location.Y);
+                        }
+                        else if (c.Location.X < points[point].X)//ワニがポイントより左にいたら
+                        {
+                            //x座標をプラスしてワニを右へ
+                            c.Location = new Point(c.Location.X + 2, c.Location.Y);
+
                         }
                         await Task.Delay(25);
                     }
+                }else
+                {
+                    //ワニを左右に動かす
+                    if (c.Location.X < points[point].X)//ワニがポイントより左にいたら
+                    {
+                        for(int x = c.Location.X; x < points[point].X; x += 2)
+                        {
+                            //x座標をプラスしてワニを右へ
+                            c.Location = new Point(c.Location.X + 2, c.Location.Y);
+                            await Task.Delay(25);
+                        }
+                    }else if(c.Location.X > points[point].X)//ワニがポイントより右にいたら
+                    {
+                        for (int x = c.Location.X; x > points[point].X; x -= 2)
+                        {
+                            //x座標をマイナスしてワニを左へ
+                            c.Location = new Point(c.Location.X - 2, c.Location.Y);
+                            await Task.Delay(25);
+                        }
+                    }
+                    
                 }
-                
             }
             await Task.Delay(1000);
         }
