@@ -113,7 +113,6 @@
             this.review_back_button.TabIndex = 1;
             this.review_back_button.Text = "もどる";
             this.review_back_button.UseVisualStyleBackColor = true;
-            this.review_back_button.Click += new System.EventHandler(this.review_back_button_Click);
             // 
             // textBox2
             // 
@@ -385,21 +384,6 @@
             this.label1.Size = new System.Drawing.Size(406, 31);
             this.label1.TabIndex = 16;
             this.label1.Text = "さとしくんは　　　　　　　　をとりました。";
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button2.Location = new System.Drawing.Point(1090, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(126, 32);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "さいしょから";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox1
             // 
