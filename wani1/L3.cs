@@ -11,29 +11,15 @@ using System.Windows.Forms;
 
 namespace wani1
 {
-    public partial class L4 : Form
+    public partial class L3 : Form
     {
         private string FilePath = Directory.GetCurrentDirectory();
-        public L4()
+        PictureBox Chara;
+        public L3()
         {
             InitializeComponent();
         }
-        public Bitmap Rotate(PictureBox pictureBox, int Rotate)
-        {
-            Bitmap bitmap = new Bitmap(pictureBox.Image);
-            switch (Rotate)
-            {
-                case 0:
-                    break;
-                case 1:
-                    bitmap.RotateFlip(RotateFlipType.Rotate270FlipXY);
-                    break;
-                case 2:
-                    bitmap.RotateFlip(RotateFlipType.Rotate90FlipXY);
-                    break;
-            }
-            return bitmap;
-        }
+        
         private void tableLayoutPanel1_Click(object sender, EventArgs e)
         {
             Start(1);
@@ -53,23 +39,23 @@ namespace wani1
             await Task.Delay(500);
             TableLayoutPanelCellPosition p = new TableLayoutPanelCellPosition(0, 3);
             Control[] controls = panel4.Controls.Find("chara", true);
-            foreach(Control con in controls)
+            foreach(PictureBox con in controls)
             {
-
+                Chara = con;
             }
-            PictureBox Chara = controls;
+            
             //前に進む
             if (p.Row != 0)
             {
                 p.Row -= 1;
-                //field.SetCellPosition(Chara, p);
-                field.Controls.Remove(Chara);
+                field.SetCellPosition(Chara, p);
                 field.Controls.Add(CreateLine(1), p.Column, p.Row + 1);
                 await Task.Delay(1000);
             }
 
             //右に進む
-            Chara.Image = Rotate(Chara, 1);
+            //Chara.Image = Rotate(Chara, 1);
+            Chara.Image = Image.FromFile(FilePath + "\\images\\L4\\charaR.gif");
             await Task.Delay(1000);
             for (int r = 0; r < 3; r++)
             {
@@ -89,7 +75,7 @@ namespace wani1
                 }
             }
             //左に進む
-            Chara.Image = Rotate(Chara, 2);
+            Chara.Image = Image.FromFile(FilePath + "\\images\\L4\\chara.gif");
             await Task.Delay(1000);
             for (int l = 0;l < 2; l++)
             {
@@ -152,7 +138,7 @@ namespace wani1
         {
             PictureBox chara = new PictureBox();
             chara.Name = "chara";
-            chara.Image = Image.FromFile(FilePath + "\\images\\L3\\chara.gif");
+            chara.Image = Image.FromFile(FilePath + "\\images\\L4\\chara.gif");
             chara.Size = new Size(110, 108);
             chara.SizeMode = PictureBoxSizeMode.StretchImage;
             chara.BackColor = Color.Transparent;
@@ -168,7 +154,7 @@ namespace wani1
                 case 1://straight
                     //縦線設定
                     rt.Name = "straight";
-                    rt.Image = Image.FromFile(FilePath + "\\images\\L3\\straight.png");
+                    rt.Image = Image.FromFile(FilePath + "\\images\\L4\\straight.png");
                     rt.Size = new Size(110, 108);
                     rt.BackColor = Color.Transparent;
                     rt.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -176,7 +162,7 @@ namespace wani1
                 case 2://right
                     //横線設定
                     rt.Name = "right";
-                    rt.Image = Image.FromFile(FilePath + "\\images\\L3\\right.png");
+                    rt.Image = Image.FromFile(FilePath + "\\images\\L4\\right.png");
                     rt.Size = new Size(110, 108);
                     rt.BackColor = Color.Transparent;
                     rt.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -184,7 +170,7 @@ namespace wani1
                 case 3://turnR
                     //右折線設定
                     rt.Name = "turnR";
-                    rt.Image = Image.FromFile(FilePath + "\\images\\L3\\turnR.png");
+                    rt.Image = Image.FromFile(FilePath + "\\images\\L4\\turnR.png");
                     rt.Size = new Size(110, 108);
                     rt.BackColor = Color.Transparent;
                     rt.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -193,7 +179,7 @@ namespace wani1
                     //左折線設定
                     PictureBox turnL = new PictureBox();
                     rt.Name = "turnL";
-                    rt.Image = Image.FromFile(FilePath + "\\images\\L3\\turnL.png");
+                    rt.Image = Image.FromFile(FilePath + "\\images\\L4\\turnL.png");
                     rt.Size = new Size(110, 108);
                     rt.BackColor = Color.Transparent;
                     rt.SizeMode = PictureBoxSizeMode.StretchImage;

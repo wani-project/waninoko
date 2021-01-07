@@ -84,11 +84,11 @@
     <Compile Include="L2.Designer.cs">
       <DependentUpon>L2.cs</DependentUpon>
     </Compile>
-    <Compile Include="L4.cs">
+    <Compile Include="L3.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="L4.Designer.cs">
-      <DependentUpon>L4.cs</DependentUpon>
+    <Compile Include="L3.Designer.cs">
+      <DependentUpon>L3.cs</DependentUpon>
     </Compile>
     <Compile Include="L6.cs">
       <SubType>Form</SubType>
@@ -133,8 +133,8 @@
     <EmbeddedResource Include="L2.resx">
       <DependentUpon>L2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="L4.resx">
-      <DependentUpon>L4.cs</DependentUpon>
+    <EmbeddedResource Include="L3.resx">
+      <DependentUpon>L3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="L6.resx">
       <DependentUpon>L6.cs</DependentUpon>
