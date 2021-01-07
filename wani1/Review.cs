@@ -554,7 +554,6 @@ namespace wani1
         //移動処理の初期変数---------
         bool _isDraging = false;
         Point? _diffPoint = null;
-        Control cont0;
         Point test_def = new Point(45, 90);
         //---------------------------
         private void Control_MouseDown(object sender, MouseEventArgs e)
