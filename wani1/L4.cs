@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace wani1
 {
-    public partial class L3 : Form
+    public partial class L4 : Form
     {
         private string FilePath = Directory.GetCurrentDirectory();
-        public L3()
+        public L4()
         {
             InitializeComponent();
         }
@@ -52,13 +52,18 @@ namespace wani1
             Reset();
             await Task.Delay(500);
             TableLayoutPanelCellPosition p = new TableLayoutPanelCellPosition(0, 3);
-            PictureBox Chara = (PictureBox)field.GetControlFromPosition(0, 3);
+            Control[] controls = panel4.Controls.Find("chara", true);
+            foreach(Control con in controls)
+            {
+
+            }
+            PictureBox Chara = controls;
             //前に進む
             if (p.Row != 0)
             {
                 p.Row -= 1;
-                field.SetCellPosition(Chara, p);
-                
+                //field.SetCellPosition(Chara, p);
+                field.Controls.Remove(Chara);
                 field.Controls.Add(CreateLine(1), p.Column, p.Row + 1);
                 await Task.Delay(1000);
             }
@@ -141,18 +146,18 @@ namespace wani1
 
         private void L3_Load(object sender, EventArgs e)
         {
-            CreateChara();
+            CreateChara(0,3);
         }
-        private void CreateChara()
+        private void CreateChara(int column,int row)
         {
             PictureBox chara = new PictureBox();
             chara.Name = "chara";
-            chara.Image = Image.FromFile(FilePath + "\\images\\L3\\chara.png");
+            chara.Image = Image.FromFile(FilePath + "\\images\\L3\\chara.gif");
             chara.Size = new Size(110, 108);
             chara.SizeMode = PictureBoxSizeMode.StretchImage;
             chara.BackColor = Color.Transparent;
 
-            field.Controls.Add(chara, 0, 3);
+            field.Controls.Add(chara, column, row);
         }
         private PictureBox CreateLine(int i)
         {
@@ -204,7 +209,7 @@ namespace wani1
         private void Reset()
         {
             field.Controls.Clear();
-            CreateChara();
+            CreateChara(0,3);
         }
 
         private void review_back_button_Click(object sender, EventArgs e)

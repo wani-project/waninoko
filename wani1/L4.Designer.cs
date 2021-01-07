@@ -1,6 +1,6 @@
 ﻿namespace wani1
 {
-    partial class L3
+    partial class L4
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(L3));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(L4));
             this.Review_Group = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.review_back_button = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label1_title2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -55,7 +56,6 @@
             this.field = new System.Windows.Forms.TableLayoutPanel();
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1_title2 = new System.Windows.Forms.Label();
             this.Review_Group.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -137,6 +137,17 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1219, 587);
             this.panel4.TabIndex = 2;
+            // 
+            // label1_title2
+            // 
+            this.label1_title2.AutoSize = true;
+            this.label1_title2.BackColor = System.Drawing.Color.Transparent;
+            this.label1_title2.Font = new System.Drawing.Font("MS UI Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label1_title2.Location = new System.Drawing.Point(3, 37);
+            this.label1_title2.Name = "label1_title2";
+            this.label1_title2.Size = new System.Drawing.Size(545, 33);
+            this.label1_title2.TabIndex = 5;
+            this.label1_title2.Text = "つぎのめいれいではどのようになりますか？";
             // 
             // tableLayoutPanel3
             // 
@@ -417,18 +428,7 @@
             this.panel1.TabIndex = 8;
             this.panel1.Visible = false;
             // 
-            // label1_title2
-            // 
-            this.label1_title2.AutoSize = true;
-            this.label1_title2.BackColor = System.Drawing.Color.Transparent;
-            this.label1_title2.Font = new System.Drawing.Font("MS UI Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1_title2.Location = new System.Drawing.Point(3, 37);
-            this.label1_title2.Name = "label1_title2";
-            this.label1_title2.Size = new System.Drawing.Size(545, 33);
-            this.label1_title2.TabIndex = 5;
-            this.label1_title2.Text = "つぎのめいれいではどのようになりますか？";
-            // 
-            // L3
+            // L4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -437,9 +437,9 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "L3";
+            this.Name = "L4";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "L3";
+            this.Text = "わにをおよがせよう！";
             this.Load += new System.EventHandler(this.L3_Load);
             this.Review_Group.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
