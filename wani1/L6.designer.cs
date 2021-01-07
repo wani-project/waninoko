@@ -54,7 +54,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -114,6 +113,7 @@
             this.review_back_button.TabIndex = 1;
             this.review_back_button.Text = "もどる";
             this.review_back_button.UseVisualStyleBackColor = true;
+            this.review_back_button.Click += new System.EventHandler(this.review_back_button_Click);
             // 
             // textBox2
             // 
@@ -153,7 +153,6 @@
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.pictureBox7);
             this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.button2);
             this.panel4.Controls.Add(this.groupBox1);
             this.panel4.Location = new System.Drawing.Point(6, 64);
             this.panel4.Name = "panel4";
@@ -400,6 +399,7 @@
             this.button2.TabIndex = 4;
             this.button2.Text = "さいしょから";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox1
             // 
@@ -533,7 +533,10 @@
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.Review_Group);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "L6";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ようじむけもーど";
             this.Load += new System.EventHandler(this.L6_Load);
             this.Review_Group.ResumeLayout(false);
@@ -563,7 +566,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button3;
         public System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button2;
         public System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label9;
