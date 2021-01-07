@@ -124,7 +124,7 @@ namespace wani1
                     l6.Show();
                     break;
                 case 2:
-                    L3 l3 = new L3();
+                    R3 l3 = new R3();
                     l3.Show();
                     break;
             }            

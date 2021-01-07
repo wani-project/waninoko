@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace wani1
 {
-    public partial class L3 : Form
+    public partial class R3 : Form
     {
         private string FilePath = Directory.GetCurrentDirectory();
         PictureBox Chara;
-        public L3()
+        public R3()
         {
             InitializeComponent();
         }
