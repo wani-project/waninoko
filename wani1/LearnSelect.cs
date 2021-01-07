@@ -117,14 +117,11 @@ namespace wani1
             switch (screenflg)
             {
                 case 1:
-                    Learn learn = new Learn();
-                    learn.questNum = 3;
-                    learn.questTitle = "わにがいどうつかうエネルギーはいくつかな？";
-                    learn.Show();
+                    L6 l6 = new L6();
+                    l6.Show();
                     break;
                 case 2:
-                    R4 r4 = new R4();
-                    r4.Show();
+                    
                     break;
                 default:
                     break;
@@ -133,7 +130,16 @@ namespace wani1
 
         private void quest4_Click(object sender, EventArgs e)
         {
-
+            switch (screenflg)
+            {
+                case 1:
+                    break;
+                case 2:
+                    R4 r4 = new R4();
+                    r4.Show();
+                    break;
+            }
+            
         }
 
         private void quest5_Click(object sender, EventArgs e)
