@@ -30,13 +30,13 @@
         {
             this.Review_Group = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label_title = new System.Windows.Forms.Label();
             this.review_back_button = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.listView2 = new System.Windows.Forms.ListView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label_title = new System.Windows.Forms.Label();
             this.Review_Group.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -68,6 +68,15 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1219, 39);
             this.panel3.TabIndex = 3;
+            // 
+            // label_title
+            // 
+            this.label_title.AutoSize = true;
+            this.label_title.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label_title.Location = new System.Drawing.Point(373, 6);
+            this.label_title.Name = "label_title";
+            this.label_title.Size = new System.Drawing.Size(0, 24);
+            this.label_title.TabIndex = 6;
             // 
             // review_back_button
             // 
@@ -142,15 +151,6 @@
             this.panel1.Size = new System.Drawing.Size(200, 100);
             this.panel1.TabIndex = 6;
             this.panel1.Visible = false;
-            // 
-            // label_title
-            // 
-            this.label_title.AutoSize = true;
-            this.label_title.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label_title.Location = new System.Drawing.Point(373, 6);
-            this.label_title.Name = "label_title";
-            this.label_title.Size = new System.Drawing.Size(0, 24);
-            this.label_title.TabIndex = 6;
             // 
             // Review
             // 

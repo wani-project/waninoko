@@ -119,7 +119,6 @@ namespace wani1
             switch (screenflg)
             {
                 case 1:
-
                     L6 l6 = new L6();
                     l6.Show();
                     break;

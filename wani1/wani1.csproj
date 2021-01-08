@@ -163,6 +163,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="R6.resx">
+      <DependentUpon>R6.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Review.resx">
       <DependentUpon>Review.cs</DependentUpon>
     </EmbeddedResource>
