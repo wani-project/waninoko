@@ -40,7 +40,8 @@ namespace wani1
                 case 1:
                     quest1.Text = "イヌのかおをつくろう！";
                     quest2.Text = "イヌとネコをならべよう！";
-                    quest3.Text = "シールでじゃんけん！";
+                    quest3.Text = "つみきあそび！";
+                    quest5.Text = "シールでじゃんけん！";
                     break;
                 case 2:
                     quest1.Text = "キャラクターをうごかそう！";
@@ -118,12 +119,11 @@ namespace wani1
             switch (screenflg)
             {
                 case 1:
-                    L6 l6 = new L6();
-                    l6.Show();
+                    L3 l3 = new L3();
+                    l3.Show();
                     break;
                 case 2:
-                    R4 r4 = new R4();
-                    r4.Show();
+                    
                     break;
                 default:
                     break;
@@ -132,18 +132,13 @@ namespace wani1
 
         private void quest4_Click(object sender, EventArgs e)
         {
-            switch(screenflg)
-            {
-                case 1:
-                    break;
-                case 2:
-                    break;
-            }
+
         }
 
         private void quest5_Click(object sender, EventArgs e)
         {
-        
+            L6 l6 = new L6();
+            l6.Show();
         }
     }
 }

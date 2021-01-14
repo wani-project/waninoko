@@ -241,13 +241,11 @@ namespace wani1
             ans = 2;
         }
 
-        private void review_back_button_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-    }
 
+    }
 }
+
+
 
 
 

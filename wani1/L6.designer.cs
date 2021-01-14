@@ -113,7 +113,6 @@
             this.review_back_button.TabIndex = 1;
             this.review_back_button.Text = "もどる";
             this.review_back_button.UseVisualStyleBackColor = true;
-            this.review_back_button.Click += new System.EventHandler(this.review_back_button_Click);
             // 
             // textBox2
             // 
