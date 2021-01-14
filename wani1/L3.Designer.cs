@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(L3));
             this.Learn_Group = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.learn_back_button = new System.Windows.Forms.Button();
@@ -127,6 +128,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "すたーと";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel1
             // 
@@ -153,7 +155,7 @@
             // 
             // pictureBox10
             // 
-            this.pictureBox10.Image = global::wani1.Properties.Resources.hanasu_siro_;
+            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
             this.pictureBox10.Location = new System.Drawing.Point(410, 359);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(205, 252);
@@ -164,7 +166,7 @@
             // 
             // pictureBox9
             // 
-            this.pictureBox9.Image = global::wani1.Properties.Resources.スクリーンショット_2020_12_18_121146;
+            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
             this.pictureBox9.Location = new System.Drawing.Point(771, 219);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(145, 248);
@@ -175,7 +177,7 @@
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Image = global::wani1.Properties.Resources.スクリーンショット_2020_12_18_121312;
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
             this.pictureBox8.Location = new System.Drawing.Point(1053, 219);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(149, 248);
@@ -186,7 +188,7 @@
             // 
             // pictureBox7
             // 
-            this.pictureBox7.Image = global::wani1.Properties.Resources.スクリーンショット_2020_12_18_121303;
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
             this.pictureBox7.Location = new System.Drawing.Point(922, 236);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(125, 211);
@@ -197,7 +199,7 @@
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Image = global::wani1.Properties.Resources.スクリーンショット_2020_12_18_121058;
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
             this.pictureBox6.Location = new System.Drawing.Point(621, 219);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(144, 248);
@@ -218,7 +220,7 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = global::wani1.Properties.Resources.カエルブロック2;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
             this.pictureBox5.Location = new System.Drawing.Point(916, 46);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(97, 41);
@@ -228,11 +230,11 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::wani1.Properties.Resources.タコブロック2;
-            this.pictureBox4.Location = new System.Drawing.Point(734, 46);
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(725, 46);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(97, 39);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.Size = new System.Drawing.Size(106, 41);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 8;
             this.pictureBox4.TabStop = false;
             // 
@@ -313,7 +315,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::wani1.Properties.Resources.カエルブロック2;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(72, 234);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(130, 55);
@@ -323,7 +325,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::wani1.Properties.Resources.アヒルブロック;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(72, 148);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(130, 54);
@@ -333,7 +335,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::wani1.Properties.Resources.タコブロック2;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(72, 64);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(130, 55);

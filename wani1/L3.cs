@@ -14,8 +14,8 @@ namespace wani1
     public partial class L3 : Form
     {
         private string FilePath = Directory.GetCurrentDirectory();
-        private Point[] points = { new Point(621, 219), new Point(771, 219), new Point(922,219), new Point(1053, 219) };
-        private int[] count = { 0, 0, 0, 0 };
+        private Point[] points = {new Point(621, 219), new Point(771, 219), new Point(922,219), new Point(1053, 219) };
+        private int[] count = { 9, 9, 9, 9 };
         private Boolean flg = false;
         public L3()
         {
@@ -29,7 +29,7 @@ namespace wani1
 
         private void pictureBox10_Click(object sender, EventArgs e)
         {
-            pictureBox10.Image = Image.FromFile(@"C:\anime.gif");
+
         }
         //正解
         private void pictureBox6_Click(object sender, EventArgs e)
@@ -71,6 +71,10 @@ namespace wani1
         }
         private void SetRandomPos()
         {
+            for(int i = 0; i < 4; i++)
+            {
+                count[i] = 9;
+            }
             //時刻からシード値を取得
             int seed = Environment.TickCount;
             for (int i = 6; i <= 9; i++)
@@ -79,27 +83,28 @@ namespace wani1
                 foreach(PictureBox con in controls)
                 {
                     //ランダム変数のインスタンス化
-                    Random random = new Random(seed++);
+                    Random random = new Random(seed += 3);
                     //randNumに0～3のランダムな値を代入
                     int index = ((int)random.Next(3));
-                    count[i - 6] = index;
-                    if(flg == false)
+                    int buf = 0;
+                    for(int x = 0; x < 4; x++)
                     {
-                        flg = true;
-                    }
-                    else
-                    {
-                        if(count[i - 7] == count[i - 6])
+                        if(count[x] == index)
                         {
-                            switch (index)
+                            flg = true;
+                            if(index < 3)
                             {
-                                case 0:break;
-                                case 1:break;
-                                case 2:break;
-                                case 3:break;
+                                index++;
                             }
+                            else
+                            {
+                                index = 0;
+                            }
+                            buf = x;
+                            x = -1;
                         }
                     }
+                    count[i - 6] = index;
                     con.Location = new Point(points[index].X, con.Location.Y);
                 }
             }
@@ -111,10 +116,15 @@ namespace wani1
             //ランダム変数のインスタンス化
             Random random = new Random(seed++);
             //randNumに0～50のランダムな値を代入
-            return ((int)random.Next(0, 4));
+            return ((int)random.Next(0, 3));
         }
 
         private void L3_Load(object sender, EventArgs e)
+        {
+            SetRandomPos();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
             SetRandomPos();
         }
