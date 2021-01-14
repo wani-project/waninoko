@@ -125,6 +125,7 @@ namespace wani1
                     //========================================
 
                 }
+            ans = 0;
         }
 
         private async void waniTalk()
@@ -142,6 +143,16 @@ namespace wani1
         private void button3_Click(object sender, EventArgs e)
         {
             Start();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            ans = 1;
+        }
+
+        private void matigai_button_Click(object sender, EventArgs e)
+        {
+            ans = 0;
         }
     }
 }
