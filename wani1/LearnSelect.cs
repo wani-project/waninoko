@@ -134,6 +134,8 @@ namespace wani1
             switch (screenflg)
             {
                 case 1:
+                    L4 l4 = new L4();
+                    l4.Show();
                     break;
                 case 2:
                     
