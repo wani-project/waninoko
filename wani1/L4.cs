@@ -18,8 +18,6 @@ namespace wani1
         //ファイルパスの保持
         public string FilePath = Directory.GetCurrentDirectory();
         public string[] AddAnimal = { "動物名" };
-        private int hanako = 0;
-        private int satoshi = 0;
         private int ans = 0;
 
         public L4()
@@ -33,12 +31,10 @@ namespace wani1
             switch (kinds)
             {
                 case "waniChara":
-                    //追加カウント
-                    count++;
                     //パネルインスタンス
                     PictureBox wani = new PictureBox();
                     //名前
-                    wani.Name = "waniGif_" + count;
+                    wani.Name = "wani";
                     //サイズ設定
                     wani.SizeMode = PictureBoxSizeMode.Zoom;
                     //サイズ
@@ -131,11 +127,19 @@ namespace wani1
         private async void waniTalk()
         {
             //========================================
-            talkflg = true;
+            Control[] controls = panel4.Controls.Find("wani", true);
+            foreach(PictureBox c in controls)
+            {
+                c.Image = Image.FromFile(FilePath + "\\images\\talk.gif");
+                await Task.Delay(5000);
+                c.Image = Image.FromFile(FilePath + "\\images\\Idle.gif");
+            }
+            /*talkflg = true;
             CreateControl("waniChara", 0);
             await Task.Delay(5000);
             talkflg = false;
             CreateControl("waniChara", 0);
+            */
 
             //========================================
         }
@@ -153,6 +157,11 @@ namespace wani1
         private void matigai_button_Click(object sender, EventArgs e)
         {
             ans = 0;
+        }
+
+        private void L4_Load(object sender, EventArgs e)
+        {
+            CreateControl("waniChara", 0);
         }
     }
 }
