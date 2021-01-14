@@ -30,11 +30,9 @@ namespace wani1
         }
         private void review_back_button_Click(object sender, EventArgs e)
         {
-
             {
                 this.Dispose();
             }
-
         }
         //回答ボタン
         private void button_answer_Click(object sender, EventArgs e)

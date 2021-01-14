@@ -131,7 +131,18 @@ namespace wani1
 
         private void quest4_Click(object sender, EventArgs e)
         {
+            switch (screenflg)
+            {
+                case 1:
+                    R4 R4 = new R4();
+                    R4.Show();
+                    break;
+                case 2:
 
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void quest5_Click(object sender, EventArgs e)
