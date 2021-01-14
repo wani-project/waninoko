@@ -40,6 +40,9 @@ namespace wani1
                 case 1:
                     quest1.Text = "イヌのかおをつくろう！";
                     quest2.Text = "イヌとネコをならべよう！";
+                    quest3.Text = "どうぶつシールでじゃんけん！";
+                    quest4.Text = "ふくをわけよう！";
+                    quest5.Text = "つみきゲーム！";
                     break;
                 case 2:
                     quest1.Text = "キャラクターをうごかそう！";
@@ -147,6 +150,8 @@ namespace wani1
             switch (screenflg)
             {
                 case 1:
+                    L3 l3 = new L3();
+                    l3.Show();
                     break;
                 case 2:
                     break;
