@@ -14,8 +14,8 @@ namespace wani1
     public partial class R4 : Form
     {
         private string FilePath = Directory.GetCurrentDirectory();
-        private int[] ans = { 0, 0, 0 };
-        private int[] answer = { 0, 0, 0 };
+        private int[] ans = { 0, 0, 0, 0};
+        private int[] answer = { 0, 0, 0, 0 };
         private Point[] points = { new Point(27, 54), new Point(245, 54), new Point(473, 54) };
 
         public R4()
@@ -39,10 +39,7 @@ namespace wani1
             Start();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
+       
         //エネルギーの値をランダムで取得
         private int Random(int i)
         {
@@ -57,7 +54,7 @@ namespace wani1
         {
             try
             {
-                for (int i = 1; i <= 3; i++)
+                for (int i = 1; i <= 4; i++)
                 {
                     Control[] label = panel1.Controls.Find("kaitou" + i, true);
                     foreach (Control c in label)
@@ -95,6 +92,25 @@ namespace wani1
                     MessageBox.Show("3問目不正解");
                 }
                 await Task.Delay(5000);
+                Control[] chara = panel4.Controls.Find("wani", true);
+                foreach (PictureBox c in chara)
+                {
+                    c.Location = new Point(245, 445);
+                }
+                if (ans[3] == answer[3])
+                {
+                    MessageBox.Show("4問目正解");
+                    MoveChara(2);
+                    await Task.Delay(5000);
+                    MoveChara(1);
+                    await Task.Delay(5000);
+                    MoveChara(0);
+                }
+                else
+                {
+                    MessageBox.Show("4問目不正解");
+                }
+                await Task.Delay(5000);
             }
             catch (Exception e)
             {
@@ -116,6 +132,7 @@ namespace wani1
         }
         private void GetNum()
         {
+            answer[3] = 0;
             Control[] l = panel4.Controls.Find("labelsu3", true);
             foreach (Control c in l)
             {
@@ -125,11 +142,18 @@ namespace wani1
             foreach (Control c in l)
             {
                 answer[1] = answer[0] + int.Parse(c.Text);
+                answer[3] = answer[3] + int.Parse(c.Text);
             }
             l = panel4.Controls.Find("labelsu2", true);
             foreach (Control c in l)
             {
                 answer[2] = answer[1] + int.Parse(c.Text);
+                answer[3] = answer[3] + int.Parse(c.Text);
+            }
+            l = panel4.Controls.Find("labelsu5", true);
+            foreach (Control c in l)
+            {
+                answer[3] = answer[3] + int.Parse(c.Text);
             }
         }
         //最初からボタン
@@ -144,7 +168,7 @@ namespace wani1
         {
             ans.Initialize();
             answer.Initialize();
-            for (int i = 1; i <= 3; i++)
+            for (int i = 1; i <= 4; i++)
             {
                 Control[] label = panel1.Controls.Find("kaitou" + i, true);
                 foreach (Control c in label)
