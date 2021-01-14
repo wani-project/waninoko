@@ -134,12 +134,7 @@ namespace wani1
                 await Task.Delay(5000);
                 c.Image = Image.FromFile(FilePath + "\\images\\Idle.gif");
             }
-            /*talkflg = true;
-            CreateControl("waniChara", 0);
-            await Task.Delay(5000);
-            talkflg = false;
-            CreateControl("waniChara", 0);
-            */
+            
 
             //========================================
         }

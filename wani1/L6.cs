@@ -220,11 +220,13 @@ namespace wani1
         private async void waniTalk()
         {
             //========================================
-            talkflg = true;
-            CreateControl("waniChara", 0);
-            await Task.Delay(5000);
-            talkflg = false;
-            CreateControl("waniChara", 0);
+            Control[] controls = panel4.Controls.Find("wani", true);
+            foreach (PictureBox c in controls)
+            {
+                c.Image = Image.FromFile(FilePath + "\\images\\talk.gif");
+                await Task.Delay(5000);
+                c.Image = Image.FromFile(FilePath + "\\images\\Idle.gif");
+            }
 
             //========================================
         }
