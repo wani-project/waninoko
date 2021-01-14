@@ -144,10 +144,6 @@ namespace wani1
                             break;
                     }
                     meat.BackColor = Color.FromName("White");
-                    
-                    //meat.MouseDown += new MouseEventHandler(this.panel_MouseDown);
-                    //meat.MouseMove += new MouseEventHandler(this.panel_MouseMove);
-                    //meat.MouseUp += new MouseEventHandler(this.panel_MouseUp);
                     //追加
                     review.panel4.Controls.Add(meat);
                     review.panel4.Controls.Add(countBox);
