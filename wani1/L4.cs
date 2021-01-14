@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace wani1
 {
-    public partial class L6 : Form
+    public partial class L4 : Form
     {
 
         public Boolean talkflg = false;
@@ -22,13 +22,12 @@ namespace wani1
         private int satoshi = 0;
         private int ans = 0;
 
-        public L6()
+        public L4()
         {
             InitializeComponent();
         }
 
 
-        //開始時の部品作成処理（左側の部品一覧やカードの初期配置等）a
         public void CreateControl(string kinds, int count)
         {
             switch (kinds)
@@ -86,73 +85,20 @@ namespace wani1
                     miss.BringToFront();
                     break;
             }
-
-            
-
-
-        }
-
-        //さとし--------------------------------------------------------------
-        private void button5_Click(object sender, EventArgs e)
-        {
-            //グー
-            satoshi = 1;
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            //チョキ
-            satoshi = 2;
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            //パー
-            satoshi = 3;
-        }
-        //はなこ------------------------------------------------------
-        private void button10_Click(object sender, EventArgs e)
-        {
-            //グー
-            hanako = 1;
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            //チョキ
-            hanako = 2;
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            //パー
-            hanako = 3;
-        }
-
-        //------------------------------------------------------------------------
-        private void L6_Load(object sender, EventArgs e)
-        {
-            CreateControl("waniChara", 0);
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Start();
         }
 
         private async void Start()
         {
             //分岐処理部分----------------------------------------------------------------------
-            if (satoshi == 2)
-            {
-                if (hanako == 1 && ans == 2)
+            
+                if (ans == 1)
                 {
                     textBox1.Text = "せいかい！！すごい！！！";
                     CreateControl("seikai", 2);
                     await Task.Delay(2825);
                     Control[] re = new Control[0];
                     re = panel4.Controls.Find("seikai", true);
-                    foreach(Control c in re)
+                    foreach (Control c in re)
                     {
                         panel4.Controls.Remove(c);
                     }
@@ -179,44 +125,8 @@ namespace wani1
                     //========================================
 
                 }
-            }
-            else if(hanako == 1)
-            {
-                textBox1.Text = "まちがい...つぎはできるよ！\r\nがんばって！！！";
-                CreateControl("miss", 2);
-                await Task.Delay(2800);
-                Control[] re = new Control[0];
-                re = panel4.Controls.Find("miss", true);
-                foreach (Control c in re)
-                {
-                    panel4.Controls.Remove(c);
-                }
-
-                //========================================
-                waniTalk();
-
-                //========================================
-            }
-            else
-            {
-                textBox1.Text = "まちがい...つぎはできるよ！\r\nがんばって！！！";
-                CreateControl("miss", 2);
-                await Task.Delay(2800);
-                Control[] re = new Control[0];
-                re = panel4.Controls.Find("miss", true);
-                foreach (Control c in re)
-                {
-                    panel4.Controls.Remove(c);
-                }
-
-                //========================================
-                waniTalk();
-
-                //========================================
-            }
         }
-        
-        //---------------------------------------------------------------------
+
         private async void waniTalk()
         {
             //========================================
@@ -229,27 +139,9 @@ namespace wani1
             //========================================
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-            //せいかい
-            ans = 1;
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            //はずれ
-            ans = 2;
-        }
-
-
+            Start();
         }
     }
-
-
-
-
-
-
-
-
-    
+}
