@@ -41,6 +41,7 @@ namespace wani1
                     quest1.Text = "イヌのかおをつくろう！";
                     quest2.Text = "イヌとネコをならべよう！";
                     quest3.Text = "シールでじゃんけん！";
+                    quest4.Text = "シールで見分けろ！";
                     break;
                 case 2:
                     quest1.Text = "キャラクターをうごかそう！";
