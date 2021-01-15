@@ -48,6 +48,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.Review_Group.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -95,7 +97,7 @@
             // 
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.textBox2.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(74, 0);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
@@ -109,6 +111,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.label6);
+            this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.panel7);
             this.panel4.Controls.Add(this.panel6);
             this.panel4.Controls.Add(this.panel5);
@@ -157,7 +161,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(239, 200);
+            this.pictureBox1.Location = new System.Drawing.Point(253, 200);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(86, 98);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -169,7 +173,7 @@
             this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
             this.pictureBox7.InitialImage = null;
-            this.pictureBox7.Location = new System.Drawing.Point(239, 96);
+            this.pictureBox7.Location = new System.Drawing.Point(253, 96);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(86, 98);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -179,30 +183,30 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(43, 226);
+            this.label4.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(30, 226);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(367, 31);
+            this.label4.Size = new System.Drawing.Size(418, 33);
             this.label4.TabIndex = 44;
             this.label4.Text = "マスの数が２のとき　　　　　をおく。";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(43, 127);
+            this.label3.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(30, 127);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(367, 31);
+            this.label3.Size = new System.Drawing.Size(418, 33);
             this.label3.TabIndex = 43;
             this.label3.Text = "マスの数が１のとき　　　　　をおく。";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(43, 62);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(375, 31);
+            this.label1.Size = new System.Drawing.Size(383, 33);
             this.label1.TabIndex = 42;
             this.label1.Text = "マスの数が０のとき　なにもおかない";
             // 
@@ -220,7 +224,7 @@
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("MS UI Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox1.Location = new System.Drawing.Point(599, 445);
+            this.textBox1.Location = new System.Drawing.Point(7, 434);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(465, 135);
@@ -229,10 +233,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label2.Location = new System.Drawing.Point(21, 16);
+            this.label2.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label2.Location = new System.Drawing.Point(21, 7);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(316, 31);
+            this.label2.Size = new System.Drawing.Size(399, 43);
             this.label2.TabIndex = 7;
             this.label2.Text = "ロボットに次の命令をします。";
             // 
@@ -242,7 +246,7 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("MS UI Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.label11.Location = new System.Drawing.Point(1050, 445);
+            this.label11.Location = new System.Drawing.Point(427, 383);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(45, 48);
             this.label11.TabIndex = 41;
@@ -253,9 +257,9 @@
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button3.Cursor = System.Windows.Forms.Cursors.Default;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("ＭＳ ゴシック", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button3.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(712, 384);
+            this.button3.Location = new System.Drawing.Point(708, 514);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(321, 55);
             this.button3.TabIndex = 4;
@@ -269,6 +273,26 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(5, 585);
             this.panel2.TabIndex = 30;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label5.Location = new System.Drawing.Point(513, 11);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(682, 43);
+            this.label5.TabIndex = 47;
+            this.label5.Text = "ロボットが　つぎのように　くだものを　おいたとき";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label6.Location = new System.Drawing.Point(513, 54);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(537, 43);
+            this.label6.TabIndex = 48;
+            this.label6.Text = "つぎの　マスに　かずを　かきましょう。";
             // 
             // C2
             // 
@@ -310,5 +334,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
     }
 }
