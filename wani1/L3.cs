@@ -109,16 +109,6 @@ namespace wani1
                 }
             }
         }
-        private int CreateRandom()
-        {
-            //時刻からシード値を取得
-            int seed = Environment.TickCount;
-            //ランダム変数のインスタンス化
-            Random random = new Random(seed++);
-            //randNumに0～50のランダムな値を代入
-            return ((int)random.Next(0, 3));
-        }
-
         private void L3_Load(object sender, EventArgs e)
         {
             SetRandomPos();

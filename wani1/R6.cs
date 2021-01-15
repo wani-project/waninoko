@@ -16,5 +16,20 @@ namespace wani1
         {
             InitializeComponent();
         }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Cell_Click(object sender, EventArgs e)
+        {
+            ggwp();
+        }
+
+        private void ggwp()
+        {
+            this.Dispose();
+        }
     }
 }
