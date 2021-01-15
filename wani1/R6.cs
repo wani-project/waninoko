@@ -31,5 +31,32 @@ namespace wani1
         {
             this.Dispose();
         }
+
+        private void R6_Load(object sender, EventArgs e)
+        {
+            
+        }
+        //移動処理の初期変数---------
+        bool _isDraging = false;
+        Point? _diffPoint = null;
+        private void MouseMove(object sender, MouseEventArgs e)
+        {
+            if (!_isDraging)
+            {
+                return;
+            }
+
+        }
+        private void MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                return;
+            }
+            Cursor.Current = Cursors.Hand;
+            _isDraging = true;
+            _diffPoint = e.Location;
+
+        }
     }
 }

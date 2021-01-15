@@ -160,7 +160,6 @@
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox10.TabIndex = 15;
             this.pictureBox10.TabStop = false;
-            this.pictureBox10.Click += new System.EventHandler(this.pictureBox10_Click);
             // 
             // pictureBox9
             // 
@@ -182,6 +181,7 @@
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox8.TabIndex = 13;
             this.pictureBox8.TabStop = false;
+            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
             // 
             // pictureBox7
             // 
@@ -192,6 +192,7 @@
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 12;
             this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
             // pictureBox6
             // 
@@ -202,6 +203,7 @@
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 11;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // label9
             // 
@@ -225,7 +227,7 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::wani1.Properties.Resources.タコブロック2;
+            this.pictureBox4.Image = global::wani1.Properties.Resources.タコブロック21;
             this.pictureBox4.Location = new System.Drawing.Point(722, 46);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(97, 39);
@@ -320,7 +322,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::wani1.Properties.Resources.アヒルブロック;
+            this.pictureBox2.Image = global::wani1.Properties.Resources.アヒルブロック1;
             this.pictureBox2.Location = new System.Drawing.Point(72, 148);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(130, 54);
@@ -330,7 +332,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::wani1.Properties.Resources.タコブロック2;
+            this.pictureBox1.Image = global::wani1.Properties.Resources.タコブロック21;
             this.pictureBox1.Location = new System.Drawing.Point(72, 64);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(130, 55);
@@ -383,6 +385,7 @@
             this.Name = "L3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "L3";
+            this.Load += new System.EventHandler(this.L3_Load_1);
             this.Learn_Group.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
