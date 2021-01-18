@@ -78,7 +78,7 @@ namespace wani1
                 Control[] controls = panel1.Controls.Find("pictureBox" + i, true);
                 foreach (PictureBox con in controls)
                 {
-                    //ランダム変数のインスタンス化
+                    //ランダム変数のインスタンス化qqqqqq
                     Random random = new Random(seed += 3);
                     //randNumに0～3のランダムな値を代入
                     int index = ((int)random.Next(3));
