@@ -40,7 +40,53 @@ namespace wani1
    
         }
 
+        bool _isDraging = false;
+        Point? _diffPoint = null;
 
+        private void Cell_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                return;
+            }
+            _isDraging = true;
+            _diffPoint = e.Location;
+
+            Point mouse = e.Location;
+            GetCellPosition(e.Location);
+
+        }
+
+        private void GetCellPosition(Point point)
+        {
+            int countX = 0;
+            int countY = 0;
+            int height = tableLayoutPanel1.Height;
+            int width = tableLayoutPanel1.Width;
+            int h = height / 5;
+            int w = width / 5;
+            for (int x = w; x <= width; x += w)
+            {
+                int bufX = 0;
+                if (bufX < point.X && point.X < x)
+                {
+                    countX++;
+                    bufX = x;
+
+                    countY = 0;
+                    for (int y = h; y <= height; y += h)
+                    {
+                        int bufY = 0;
+                        if (bufY < point.Y && point.Y < y)
+                        {
+                            countY++;
+                            bufY = y;
+                        }
+                    }
+                }
+            }
+            MessageBox.Show(countX.ToString() + ", " + countY.ToString());
+        }
 
     }
 }

@@ -156,6 +156,7 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(314, 304);
             this.tableLayoutPanel1.TabIndex = 49;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            this.tableLayoutPanel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Cell_MouseDown);
             // 
             // label6
             // 
