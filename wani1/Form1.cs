@@ -87,5 +87,11 @@ namespace wani1
         {
             ls.screenflg = 0;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {          
+                    C2 c2 = new C2();
+                    c2.Show();                   
+        }
     }
 }

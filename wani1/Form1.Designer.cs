@@ -34,6 +34,7 @@
             this.learn_button = new System.Windows.Forms.Button();
             this.review_button = new System.Windows.Forms.Button();
             this.PictureBook = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.Main_Group.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBook)).BeginInit();
             this.SuspendLayout();
@@ -41,6 +42,7 @@
             // Main_Group
             // 
             this.Main_Group.AutoSize = true;
+            this.Main_Group.Controls.Add(this.button1);
             this.Main_Group.Controls.Add(this.challenge_button);
             this.Main_Group.Controls.Add(this.learn_button);
             this.Main_Group.Controls.Add(this.review_button);
@@ -94,6 +96,16 @@
             this.PictureBook.TabStop = false;
             this.PictureBook.Click += new System.EventHandler(this.PictureBook_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(139, 431);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(406, 49);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Test";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -120,6 +132,7 @@
         private System.Windows.Forms.Button learn_button;
         private System.Windows.Forms.Button review_button;
         private System.Windows.Forms.PictureBox PictureBook;
+        private System.Windows.Forms.Button button1;
     }
 }
 

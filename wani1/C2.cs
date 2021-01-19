@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace wani1
 {
     public partial class C2 : Form
@@ -21,5 +23,24 @@ namespace wani1
         {
             this.Dispose();
         }
+
+
+        private async void Start()
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Start();
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+   
+        }
+
+
+
     }
 }
