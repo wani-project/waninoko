@@ -149,6 +149,8 @@ namespace wani1
                     l3.Show();
                     break;
                 case 2:
+                    R6 r6 = new R6();
+                    r6.Show();
                     break;
             }
         }

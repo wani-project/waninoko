@@ -115,13 +115,14 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel1.ColumnCount = 5;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(243, 68);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(305, 37);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -129,13 +130,12 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(505, 373);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(310, 205);
             this.tableLayoutPanel1.TabIndex = 5;
             this.tableLayoutPanel1.Click += new System.EventHandler(this.Cell_Click);
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
-            this.tableLayoutPanel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MouseMove);
-            this.tableLayoutPanel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown);
-
+            this.tableLayoutPanel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Cell_MouseDown);
+            this.tableLayoutPanel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Cell_MouseMove);
             // 
             // button2
             // 

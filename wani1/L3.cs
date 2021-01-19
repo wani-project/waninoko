@@ -16,7 +16,6 @@ namespace wani1
         private string FilePath = Directory.GetCurrentDirectory();
         private Point[] points = { new Point(621, 219), new Point(771, 219), new Point(922, 219), new Point(1053, 219) };
         private int[] count = { 9, 9, 9, 9 };
-        private Boolean flg = false;
         public L3()
         {
             InitializeComponent();
@@ -87,7 +86,6 @@ namespace wani1
                     {
                         if (count[x] == index)
                         {
-                            flg = true;
                             if (index < 3)
                             {
                                 index++;
