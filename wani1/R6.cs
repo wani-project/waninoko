@@ -41,21 +41,12 @@ namespace wani1
         //移動処理の初期変数---------
         bool _isDraging = false;
         Point? _diffPoint = null;
-        private void Cell_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (!_isDraging)
-            {
-                return;
-            }
-
-        }
         private void Cell_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button != MouseButtons.Left)
             {
                 return;
             }
-            _isDraging = true;
             _diffPoint = e.Location;
 
             Point mouse = e.Location;
@@ -71,7 +62,7 @@ namespace wani1
             int width = tableLayoutPanel1.Width;
             int h = height / 5;
             int w = width / 5;
-            for (int x = w; x <= width; x += w)
+            /*for (int x = w; x <= width; x += w)
             {
                 int bufX = w;
                 if(bufX < point.X && point.X < x)
@@ -91,8 +82,29 @@ namespace wani1
                     }
                 }
             }
-            MessageBox.Show(countX.ToString() + ", " + countY.ToString());
+            */
+            Point p  = GetPoint(point);
+            MessageBox.Show(p.ToString());
+            //MessageBox.Show(countX.ToString() + ", " + countY.ToString());
 
+        }
+        private Point GetPoint(Point point)
+        {
+            int countX = 0;
+            int countY = 0;
+            int height = tableLayoutPanel1.Height;
+            int width = tableLayoutPanel1.Width;
+            int h = height / 5;
+            int w = width / 5;
+
+            if(0 < point.X && point.X <= w)
+            {
+                countX = 0;
+            }
+            if(0 < point.Y && point.Y <= h) {
+                countY = 0;
+            }
+            return new Point(countX, countY);
         }
         private void CreateNum()
         {
@@ -116,5 +128,66 @@ namespace wani1
             tableLayoutPanel1.Controls.Add(one,1,1);
             tableLayoutPanel1.Controls.Add(two,2,2);
         }
+
+        //D&D処理
+        Point def;
+        private void Fruits_MouseDown(object sender, MouseEventArgs e)
+        {
+            PictureBox pb = ((PictureBox)sender);
+            def = pb.Location;
+            if (e.Button != MouseButtons.Left)
+            {
+                return;
+            }
+            Cursor.Current = Cursors.Hand;
+            _isDraging = true;
+            _diffPoint = e.Location;
+            
+        }
+        private void Fruits_MouseMove(object sender, MouseEventArgs e)
+        {
+            PictureBox pb = ((PictureBox)sender);
+            if (!_isDraging)
+            {
+                return;
+            }
+
+            int x = pb.Location.X + e.X - _diffPoint.Value.X;
+            int y = pb.Location.Y + e.Y - _diffPoint.Value.Y;
+
+            if (x <= 0) x = 0;
+            if (y <= 0) y = 0;
+            pb.Location = new Point(x, y);
+            pb.BringToFront();
+        }
+        private void Fruits_MouseUp(object sender, MouseEventArgs e)
+        {
+            PictureBox pb = ((PictureBox)sender);
+            Cursor.Current = Cursors.Default;
+            _isDraging = false;
+
+            if (e.Button != MouseButtons.Left)
+            {
+                return;
+            }
+            Point loc = new Point(pb.Location.X, pb.Location.Y);
+            int x = e.X + loc.X;
+            int y = e.Y + loc.Y;
+            if (tableLayoutPanel1.Location.X <= x && x < (tableLayoutPanel1.Location.X + tableLayoutPanel1.Size.Width) && tableLayoutPanel1.Location.Y  <= y && y <= (tableLayoutPanel1.Location.Y + tableLayoutPanel1.Size.Height))
+            {
+                //セルに入れる処理を記述
+                int cX = x - tableLayoutPanel1.Location.X;
+                int cY = y - tableLayoutPanel1.Location.Y;
+                Point c = new Point(cX, cY);
+                GetCellPosition(c);
+
+                
+                //tableLayoutPanel1.GetControlFromPosition();
+            }
+            pb.Location = def;
+        }
+        
+        
+
     }
 }

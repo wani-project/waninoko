@@ -28,17 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(R6));
             this.Review_Group = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label_title = new System.Windows.Forms.Label();
             this.review_back_button = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.Orange = new System.Windows.Forms.PictureBox();
+            this.Apple = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button2 = new System.Windows.Forms.Button();
             this.Review_Group.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Orange)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Apple)).BeginInit();
             this.SuspendLayout();
             // 
             // Review_Group
@@ -106,12 +111,40 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.Orange);
+            this.panel4.Controls.Add(this.Apple);
             this.panel4.Controls.Add(this.tableLayoutPanel1);
             this.panel4.Controls.Add(this.button2);
             this.panel4.Location = new System.Drawing.Point(6, 64);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1219, 587);
             this.panel4.TabIndex = 2;
+            // 
+            // Orange
+            // 
+            this.Orange.Image = ((System.Drawing.Image)(resources.GetObject("Orange.Image")));
+            this.Orange.Location = new System.Drawing.Point(28, 154);
+            this.Orange.Name = "Orange";
+            this.Orange.Size = new System.Drawing.Size(100, 100);
+            this.Orange.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Orange.TabIndex = 7;
+            this.Orange.TabStop = false;
+            this.Orange.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Fruits_MouseDown);
+            this.Orange.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Fruits_MouseMove);
+            this.Orange.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Fruits_MouseUp);
+            // 
+            // Apple
+            // 
+            this.Apple.Image = ((System.Drawing.Image)(resources.GetObject("Apple.Image")));
+            this.Apple.Location = new System.Drawing.Point(28, 37);
+            this.Apple.Name = "Apple";
+            this.Apple.Size = new System.Drawing.Size(100, 100);
+            this.Apple.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Apple.TabIndex = 6;
+            this.Apple.TabStop = false;
+            this.Apple.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Fruits_MouseDown);
+            this.Apple.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Fruits_MouseMove);
+            this.Apple.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Fruits_MouseUp);
             // 
             // tableLayoutPanel1
             // 
@@ -122,7 +155,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(305, 37);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(292, 37);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -135,7 +168,6 @@
             this.tableLayoutPanel1.Click += new System.EventHandler(this.Cell_Click);
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             this.tableLayoutPanel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Cell_MouseDown);
-            this.tableLayoutPanel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Cell_MouseMove);
             // 
             // button2
             // 
@@ -167,6 +199,8 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Orange)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Apple)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -181,5 +215,7 @@
         public System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.PictureBox Orange;
+        private System.Windows.Forms.PictureBox Apple;
     }
 }
