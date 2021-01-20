@@ -36,7 +36,7 @@ namespace wani1
 
         private void R6_Load(object sender, EventArgs e)
         {
-            CreateNum();
+            //CreateNum();
         }
         //移動処理の初期変数---------
         bool _isDraging = false;
@@ -48,64 +48,9 @@ namespace wani1
                 return;
             }
             _diffPoint = e.Location;
-
-            Point mouse = e.Location;
-            GetCellPosition(e.Location);
-            
         }
-
-        private void GetCellPosition(Point point)
-        {
-            int countX = 0;
-            int countY = 0;
-            int height = tableLayoutPanel1.Height;
-            int width = tableLayoutPanel1.Width;
-            int h = height / 5;
-            int w = width / 5;
-            /*for (int x = w; x <= width; x += w)
-            {
-                int bufX = w;
-                if(bufX < point.X && point.X < x)
-                {
-                    countX++;
-                    bufX = x;
-                    
-                    countY = 0;
-                    for(int y = h; y <= height; y += h)
-                    {
-                        int bufY = h;
-                        if(bufY < point.Y && point.Y < y)
-                        {
-                            countY++;
-                            bufY = y;
-                        }
-                    }
-                }
-            }
-            */
-            Point p  = GetPoint(point);
-            MessageBox.Show(p.ToString());
-            //MessageBox.Show(countX.ToString() + ", " + countY.ToString());
-
-        }
-        private Point GetPoint(Point point)
-        {
-            int countX = 0;
-            int countY = 0;
-            int height = tableLayoutPanel1.Height;
-            int width = tableLayoutPanel1.Width;
-            int h = height / 5;
-            int w = width / 5;
-
-            if(0 < point.X && point.X <= w)
-            {
-                countX = 0;
-            }
-            if(0 < point.Y && point.Y <= h) {
-                countY = 0;
-            }
-            return new Point(countX, countY);
-        }
+        
+        
         private void CreateNum()
         {
             PictureBox zero = new PictureBox();
@@ -179,15 +124,98 @@ namespace wani1
                 int cX = x - tableLayoutPanel1.Location.X;
                 int cY = y - tableLayoutPanel1.Location.Y;
                 Point c = new Point(cX, cY);
-                GetCellPosition(c);
+                SetCellItems(GetPoint(c),((PictureBox)sender).Name);
 
                 
                 //tableLayoutPanel1.GetControlFromPosition();
             }
             pb.Location = def;
         }
-        
-        
+        //セル取得処理
+        private Point GetPoint(Point point)
+        {
+            int countX = 0;
+            int countY = 0;
+            int height = tableLayoutPanel1.Height;
+            int width = tableLayoutPanel1.Width;
+            int h = height / 5;
+            int w = width / 5;
+
+            //X座標
+            if (0 < point.X && point.X <= w)
+            {
+                countX = 0;
+            }
+            else if (point.X <= w * 2)
+            {
+                countX = 1;
+            }
+            else if (point.X <= w * 3)
+            {
+                countX = 2;
+            }
+            else if (point.X <= w * 4)
+            {
+                countX = 3;
+            }
+            else if (point.X <= w * 5)
+            {
+                countX = 4;
+            }
+
+            //Y座標
+            if (0 < point.Y && point.Y <= h)
+            {
+                countY = 0;
+            }
+            else if (point.Y <= h * 2)
+            {
+                countY = 1;
+            }
+            else if (point.Y <= h * 3)
+            {
+                countY = 2;
+            }
+            else if (point.Y <= h * 4)
+            {
+                countY = 3;
+            }
+            else if (point.Y <= h * 5)
+            {
+                countY = 4;
+            }
+
+
+            return new Point(countX, countY);
+        }
+        //セルに画像を追加する処理
+        private void SetCellItems(Point point,string name)
+        {
+            if(tableLayoutPanel1.GetControlFromPosition(point.X,point.Y) == null)
+            {
+                tableLayoutPanel1.Controls.Add(CreateFruits(name), point.X, point.Y);
+            }
+        }
+        private Control CreateFruits(string name)
+        {
+            PictureBox fruits = new PictureBox();
+            switch (name)
+            {
+                case "Apple":
+                    fruits.Name = "Apple";
+                    fruits.Size = new Size(100, 100);
+                    fruits.SizeMode = PictureBoxSizeMode.StretchImage;
+                    fruits.Image = Image.FromFile(FilePath + "\\images\\C2\\apple.png");
+                    break;
+                case "Orange":
+                    fruits.Name = "Orange";
+                    fruits.Size = new Size(100, 100);
+                    fruits.SizeMode = PictureBoxSizeMode.StretchImage;
+                    fruits.Image = Image.FromFile(FilePath + "\\images\\C2\\orange.png");
+                    break;
+            }
+            return (Control)fruits;
+        }
 
     }
 }
