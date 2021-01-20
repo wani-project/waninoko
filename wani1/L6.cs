@@ -21,7 +21,11 @@ namespace wani1
         private int hanako = 0;
         private int satoshi = 0;
         private int ans = 0;
-
+        private int hanakoAns = 0;
+        private int satoshiAns = 0;
+        //ランダム
+        private Point[] points = { new Point(75, 27), new Point(75, 141), new Point(75, 256) };
+        private int[] count = { 9, 9, 9 };
         public L6()
         {
             InitializeComponent();
@@ -106,6 +110,8 @@ namespace wani1
         private void L6_Load(object sender, EventArgs e)
         {
             CreateControl("waniChara", 0);
+            SetRandomPos();
+            GetAns();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -116,24 +122,87 @@ namespace wani1
         private void Start()
         {
             //分岐処理部分----------------------------------------------------------------------
-            if (satoshi == 2)
+            if (satoshi == satoshiAns && hanako == hanakoAns)
             {
-                if (hanako == 1 && ans == 2)
+                
+                if (ans == 2)
                 {
-                    textBox1.Text = "せいかい！！";
+                    switch (hanako)
+                    {//はなこが
+                        case 1://グー
+                            if(satoshi == 2)
+                            {
+                                textBox1.Text = "せいかい！！";
+                            }
+                            else
+                            {
+                                textBox1.Text = "まちがい";
+                            }
+                            break;
+                        case 2://チョキ
+                            if(satoshi == 3)
+                            {
+                                textBox1.Text = "せいかい！！";
+                            }
+                            else
+                            {
+                                textBox1.Text = "まちがい";
+                            }
+                            break;
+                        case 3://パー
+                            if(satoshi == 1)
+                            {
+                                textBox1.Text = "せいかい！！";
+                            }
+                            else
+                            {
+                                textBox1.Text = "まちがい";
+                            }
+                            break;
+                    }
+                    
                 }
-                else
+                else if (ans == 1)
                 {
-                    textBox1.Text = "まちがい";
+                    switch (satoshi)
+                    {//さとしが
+                        case 1://グー
+                            if (hanako == 2)
+                            {
+                                textBox1.Text = "せいかい！！";
+                            }
+                            else
+                            {
+                                textBox1.Text = "まちがい";
+                            }
+                            break;
+                        case 2://チョキ
+                            if (hanako == 3)
+                            {
+                                textBox1.Text = "せいかい！！";
+                            }
+                            else
+                            {
+                                textBox1.Text = "まちがい";
+                            }
+                            break;
+                        case 3://パー
+                            if (hanako == 1)
+                            {
+                                textBox1.Text = "せいかい！！";
+                            }
+                            else
+                            {
+                                textBox1.Text = "まちがい";
+                            }
+                            break;
+                    }
+
                 }
-            }
-            else if(hanako == 1)
-            {
-                textBox1.Text = "まちがい";
             }
             else
             {
-                textBox1.Text = "まちがい";
+                textBox1.Text = "てがちがうよ！";
             }
         }
         
@@ -155,6 +224,93 @@ namespace wani1
         private void review_back_button_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+        //ランダム処理
+        private void SetRandomPos()
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                count[i] = 9;
+            }
+            //時刻からシード値を取得
+            int seed = Environment.TickCount;
+            for (int i = 0; i < 3; i++)
+            {
+                Control[] controls = panel4.Controls.Find("pictureBox" + i, true);
+                foreach (PictureBox con in controls)
+                {
+                    //ランダム変数のインスタンス化
+                    Random random = new Random(seed += 3);
+                    //randNumに0～3のランダムな値を代入
+                    int index = ((int)random.Next(3));
+                    int buf = 0;
+                    for (int x = 0; x < 3; x++)
+                    {
+                        if (count[x] == index)
+                        {
+                            if (index < 2)
+                            {
+                                index++;
+                            }
+                            else
+                            {
+                                index = 0;
+                            }
+                            buf = x;
+                            x = -1;
+                        }
+                    }
+                    count[i] = index;
+                    con.Location = new Point(con.Location.X, points[index].Y);
+                }
+            }
+        }
+
+        private void GetAns()
+        {
+            Boolean flg = false;
+            for(int i = 1;i <= 2; i++)
+            {
+                Control[] controls = panel4.Controls.Find("pictureBox" + i, true);
+                foreach(Control c in controls)
+                {
+                    if(c.Location == points[0])
+                    {
+                        if (!flg)
+                        {
+                            satoshiAns = 3;
+                        }
+                        else
+                        {
+                            hanakoAns = 3;
+                        }
+                    }
+                    else if(c.Location == points[1])
+                    {
+                        if (!flg)
+                        {
+                            satoshiAns = 2;
+                        }
+                        else
+                        {
+                            hanakoAns = 2;
+                        }
+                    }
+                    else if (c.Location == points[2])
+                    {
+                        if (!flg)
+                        {
+                            satoshiAns = 1;
+                        }
+                        else
+                        {
+                            hanakoAns = 1;
+                        }
+                    }
+
+                }
+                flg = true;
+            }
         }
     }
 }

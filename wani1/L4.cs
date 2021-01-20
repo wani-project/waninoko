@@ -19,6 +19,8 @@ namespace wani1
         public string FilePath = Directory.GetCurrentDirectory();
         public string[] AddAnimal = { "動物名" };
         private int ans = 0;
+        private Point[] points = { new Point(614, 90), new Point(738, 90), new Point(864, 90), new Point(988, 90), new Point(614, 238), new Point(738, 238), new Point(864, 239), new Point(988, 238)};
+        private int[] count = { 9, 9, 9, 9, 9, 9, 9, 9};
 
         public L4()
         {
@@ -157,11 +159,52 @@ namespace wani1
         private void L4_Load(object sender, EventArgs e)
         {
             CreateControl("waniChara", 0);
+            SetRandomPos();
         }
 
         private void review_back_button_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void SetRandomPos()
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                count[i] = 9;
+            }
+            //時刻からシード値を取得
+            int seed = Environment.TickCount;
+            for (int i = 0; i < 8; i++)
+            {
+                Control[] controls = panel4.Controls.Find("button" + i, true);
+                foreach (Button con in controls)
+                {
+                    //ランダム変数のインスタンス化
+                    Random random = new Random(seed++);
+                    //randNumに0～3のランダムな値を代入
+                    int index = ((int)random.Next(8));
+                    int buf = 0;
+                    for (int x = 0; x < 8; x++)
+                    {
+                        if (count[x] == index)
+                        {
+                            if (index < 7)
+                            {
+                                index++;
+                            }
+                            else
+                            {
+                                index = 0;
+                            }
+                            buf = x;
+                            x = -1;
+                        }
+                    }
+                    count[i] = index;
+                    con.Location = new Point(points[index].X, points[index].Y);
+                }
+            }
         }
     }
 }
