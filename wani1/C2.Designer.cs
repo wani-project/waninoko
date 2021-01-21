@@ -40,8 +40,8 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.Orange = new System.Windows.Forms.PictureBox();
+            this.Apple = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,8 +54,8 @@
             this.Review_Group.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Orange)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Apple)).BeginInit();
             this.SuspendLayout();
             // 
             // Review_Group
@@ -118,8 +118,8 @@
             this.panel4.Controls.Add(this.panel7);
             this.panel4.Controls.Add(this.panel6);
             this.panel4.Controls.Add(this.panel5);
-            this.panel4.Controls.Add(this.pictureBox1);
-            this.panel4.Controls.Add(this.pictureBox7);
+            this.panel4.Controls.Add(this.Orange);
+            this.panel4.Controls.Add(this.Apple);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.label1);
@@ -202,29 +202,33 @@
             this.panel5.Size = new System.Drawing.Size(5, 257);
             this.panel5.TabIndex = 32;
             // 
-            // pictureBox1
+            // Orange
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(227, 200);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(86, 98);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 46;
-            this.pictureBox1.TabStop = false;
+            this.Orange.BackColor = System.Drawing.Color.Transparent;
+            this.Orange.Image = ((System.Drawing.Image)(resources.GetObject("Orange.Image")));
+            this.Orange.InitialImage = null;
+            this.Orange.Location = new System.Drawing.Point(227, 200);
+            this.Orange.Name = "Orange";
+            this.Orange.Size = new System.Drawing.Size(86, 98);
+            this.Orange.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Orange.TabIndex = 46;
+            this.Orange.TabStop = false;
+            this.Orange.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Fruits_MouseMove);
+            this.Orange.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Fruits_MouseUp);
             // 
-            // pictureBox7
+            // Apple
             // 
-            this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.InitialImage = null;
-            this.pictureBox7.Location = new System.Drawing.Point(227, 90);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(86, 98);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 45;
-            this.pictureBox7.TabStop = false;
+            this.Apple.BackColor = System.Drawing.Color.Transparent;
+            this.Apple.Image = ((System.Drawing.Image)(resources.GetObject("Apple.Image")));
+            this.Apple.InitialImage = null;
+            this.Apple.Location = new System.Drawing.Point(227, 90);
+            this.Apple.Name = "Apple";
+            this.Apple.Size = new System.Drawing.Size(86, 98);
+            this.Apple.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Apple.TabIndex = 45;
+            this.Apple.TabStop = false;
+            this.Apple.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Fruits_MouseMove);
+            this.Apple.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Fruits_MouseUp);
             // 
             // label4
             // 
@@ -334,8 +338,8 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Orange)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Apple)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -359,8 +363,8 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox Orange;
+        private System.Windows.Forms.PictureBox Apple;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
