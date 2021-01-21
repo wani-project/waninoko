@@ -138,51 +138,9 @@ namespace wani1
             int h = height / 5;
             int w = width / 5;
 
-            //X座標
-            if (0 < point.X && point.X <= w)
-            {
-                countX = 0;
-            }
-            else if (point.X <= w * 2)
-            {
-                countX = 1;
-            }
-            else if (point.X <= w * 3)
-            {
-                countX = 2;
-            }
-            else if (point.X <= w * 4)
-            {
-                countX = 3;
-            }
-            else if (point.X <= w * 5)
-            {
-                countX = 4;
-            }
-
-            //Y座標
-            if (0 < point.Y && point.Y <= h)
-            {
-                countY = 0;
-            }
-            else if (point.Y <= h * 2)
-            {
-                countY = 1;
-            }
-            else if (point.Y <= h * 3)
-            {
-                countY = 2;
-            }
-            else if (point.Y <= h * 4)
-            {
-                countY = 3;
-            }
-            else if (point.Y <= h * 5)
-            {
-                countY = 4;
-            }
-
-
+            countX = (point.X - ((point.X - 1) % 10)) / w;
+            countY = (point.Y - ((point.Y - 1) % 10)) / h;
+            
             return new Point(countX, countY);
         }
         //セルに画像を追加する処理
