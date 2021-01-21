@@ -45,20 +45,21 @@ namespace wani1
         bool _isDraging = false;
         Point? _diffPoint = null;
 
-        private void Cell_MouseDown(object sender, MouseEventArgs e)
+        
+        Point def;
+        private void Fruits_MouseDown(object sender, MouseEventArgs e)
         {
+            PictureBox pb = ((PictureBox)sender);
+            def = pb.Location;
             if (e.Button != MouseButtons.Left)
             {
                 return;
             }
+            Cursor.Current = Cursors.Hand;
             _isDraging = true;
             _diffPoint = e.Location;
 
-            Point mouse = e.Location;
-            GetPoint(e.Location);
-
         }
-        Point def;
         private void Fruits_MouseMove(object sender, MouseEventArgs e)
         {
             PictureBox pb = ((PictureBox)sender);
@@ -119,6 +120,7 @@ namespace wani1
             if (tableLayoutPanel1.GetControlFromPosition(point.X, point.Y) == null)
             {
                 tableLayoutPanel1.Controls.Add(CreateFruits(name), point.X, point.Y);
+
             }
         }
         private Control CreateFruits(string name)
@@ -130,12 +132,14 @@ namespace wani1
                     fruits.Name = "Apple";
                     fruits.Size = new Size(100, 100);
                     fruits.SizeMode = PictureBoxSizeMode.StretchImage;
+                    fruits.BackColor = Color.Transparent;
                     fruits.Image = Image.FromFile(FilePath + "\\images\\C2\\apple.png");
                     break;
                 case "Orange":
                     fruits.Name = "Orange";
                     fruits.Size = new Size(100, 100);
                     fruits.SizeMode = PictureBoxSizeMode.StretchImage;
+                    fruits.BackColor = Color.Transparent;
                     fruits.Image = Image.FromFile(FilePath + "\\images\\C2\\orange.png");
                     break;
             }

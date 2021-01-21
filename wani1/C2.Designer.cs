@@ -153,10 +153,9 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(314, 304);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(315, 305);
             this.tableLayoutPanel1.TabIndex = 49;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
-            this.tableLayoutPanel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Cell_MouseDown);
             // 
             // label6
             // 
@@ -213,6 +212,7 @@
             this.Orange.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Orange.TabIndex = 46;
             this.Orange.TabStop = false;
+            this.Orange.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Fruits_MouseDown);
             this.Orange.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Fruits_MouseMove);
             this.Orange.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Fruits_MouseUp);
             // 
@@ -227,6 +227,7 @@
             this.Apple.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Apple.TabIndex = 45;
             this.Apple.TabStop = false;
+            this.Apple.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Fruits_MouseDown);
             this.Apple.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Fruits_MouseMove);
             this.Apple.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Fruits_MouseUp);
             // 
@@ -331,7 +332,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.Review_Group);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "C2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "C2";
             this.Review_Group.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
