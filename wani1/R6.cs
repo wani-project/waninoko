@@ -125,9 +125,6 @@ namespace wani1
                 int cY = y - tableLayoutPanel1.Location.Y;
                 Point c = new Point(cX, cY);
                 SetCellItems(GetPoint(c),((PictureBox)sender).Name);
-
-                
-                //tableLayoutPanel1.GetControlFromPosition();
             }
             pb.Location = def;
         }
