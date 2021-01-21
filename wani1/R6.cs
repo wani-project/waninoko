@@ -19,6 +19,11 @@ namespace wani1
             InitializeComponent();
         }
 
+        private void R6_Close(object sender, FormClosedEventArgs e)
+        {
+            Dispose();
+        }
+
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -31,12 +36,30 @@ namespace wani1
 
         private void ggwp()
         {
-            this.Dispose();
+            Dispose();
         }
 
         private void R6_Load(object sender, EventArgs e)
         {
-            //CreateNum();
+            try
+            {
+                for (int i = 0; i < Random(); i++)
+                {
+                    InsertNum(CreateNum(0));
+                }
+                for (int i = 0; i < Random(); i++)
+                {
+                    InsertNum(CreateNum(1));
+                }
+                for (int i = 0; i < Random(); i++)
+                {
+                    InsertNum(CreateNum(2));
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
         //移動処理の初期変数---------
         bool _isDraging = false;
@@ -51,27 +74,71 @@ namespace wani1
         }
         
         
-        private void CreateNum()
+        private Control CreateNum(int num)
         {
-            PictureBox zero = new PictureBox();
-            PictureBox one = new PictureBox();
-            PictureBox two = new PictureBox();
+            PictureBox Number = new PictureBox();
+            Number.Size = new Size(100, 100);
+            Number.SizeMode = PictureBoxSizeMode.StretchImage;
+            switch (num)
+            {
+                case 0:
+                    Number.Name = "zero";
+                    Number.Image = Image.FromFile(FilePath + "\\images\\C2\\0.png");
+                    break;
+                case 1:
+                    Number.Name = "one";
+                    Number.Image = Image.FromFile(FilePath + "\\images\\C2\\1.png");
+                    break;
+                case 2:
+                    Number.Name = "two";
+                    Number.Image = Image.FromFile(FilePath + "\\images\\C2\\2.png");
+                    break;
+            }
+            return Number;
+        }
 
-            zero.Size = new Size(100, 100);
-            zero.SizeMode = PictureBoxSizeMode.StretchImage;
-            zero.Image = Image.FromFile(FilePath + "\\images\\C2\\0.png");
-
-            one.Size = new Size(100, 100);
-            one.SizeMode = PictureBoxSizeMode.StretchImage;
-            one.Image = Image.FromFile(FilePath + "\\images\\C2\\1.png");
-
-            two.Size = new Size(100, 100);
-            two.SizeMode = PictureBoxSizeMode.StretchImage;
-            two.Image = Image.FromFile(FilePath + "\\images\\C2\\2.png");
-
-            tableLayoutPanel1.Controls.Add(zero,0,0);
-            tableLayoutPanel1.Controls.Add(one,1,1);
-            tableLayoutPanel1.Controls.Add(two,2,2);
+        private int Random()
+        {
+            int seed = Environment.TickCount;
+            Random random = new Random(seed++);
+            return (int)random.Next(2,6);
+        }
+        private void InsertNum(Control control)
+        {
+            try
+            {
+                int seed = Environment.TickCount;
+                Random random = new Random();
+                int[] rand = new int[2];
+                for (int i = 0; i < 2; i++)
+                {
+                    random = new Random(seed++);
+                    rand[i] = (int)random.Next(5);
+                }
+                Boolean flg = false;
+                do
+                {
+                    TableLayoutPanelCellPosition p = new TableLayoutPanelCellPosition(rand[0], rand[1]);
+                    if (tableLayoutPanel2.GetControlFromPosition(p.Column, p.Row) == null)
+                    {
+                        tableLayoutPanel2.Controls.Add(control, p.Column, p.Row);
+                        break;
+                    }
+                    else
+                    {
+                        random = new Random(seed++);
+                        p.Row = (int)random.Next(5);
+                        rand[1] = p.Row;
+                        random = new Random(seed++);
+                        p.Column = (int)random.Next(5);
+                        rand[0] = p.Column;
+                    }
+                } while (!flg);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         //D&D処理
@@ -125,9 +192,6 @@ namespace wani1
                 int cY = y - tableLayoutPanel1.Location.Y;
                 Point c = new Point(cX, cY);
                 SetCellItems(GetPoint(c),((PictureBox)sender).Name);
-
-                
-                //tableLayoutPanel1.GetControlFromPosition();
             }
             pb.Location = def;
         }
@@ -175,5 +239,53 @@ namespace wani1
             return (Control)fruits;
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Start();
+        }
+
+        private void Start()
+        {
+            int[] oneX = { 0, 0};
+            int[] oneY = { 0, 0};
+            int[] twoX = { 0, 0};
+            int[] twoY = { 0, 0};
+            int countX = 0;
+            int countY = 0;
+
+            Control[] controls1 = panel4.Controls.Find("Apple", true);
+            Control[] controls2 = panel4.Controls.Find("one", true);
+            foreach(Control c in controls2)
+            {
+                TableLayoutPanelCellPosition p = tableLayoutPanel2.GetCellPosition(c);
+                oneX[countX] = p.Column;
+                oneY[countY] = p.Row;
+                countX++;
+                countY++;
+            }
+            countX = 0;
+            countY = 0;
+            controls2 = panel4.Controls.Find("two", true);
+            foreach(Control c in controls2)
+            {
+                TableLayoutPanelCellPosition p = tableLayoutPanel2.GetCellPosition(c);
+                twoX[countX] = p.Column;
+                twoY[countY] = p.Row;
+                countX++;
+                countY++;
+            }
+            for(int i = 0;i < 2; i++)
+            {
+                
+                MessageBox.Show("one" + oneX[i] + "," + oneY[i]);
+                MessageBox.Show("two" + twoX[i] + "," + twoY[i]);
+            }
+
+        }
+
+        private void review_back_button_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }
