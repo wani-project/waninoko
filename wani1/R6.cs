@@ -14,27 +14,23 @@ namespace wani1
     public partial class R6 : Form
     {
         private string FilePath = Directory.GetCurrentDirectory();
+
+        //照合に必要な変数
+        private Dictionary<string, Point> NumPoint = new Dictionary<string, Point>();
+        private Dictionary<string, Point> ApplePoint = new Dictionary<string, Point>();
+        private Dictionary<string, Point> OrangePoint = new Dictionary<string, Point>();
+        private int countZero = 0;
+        private int countOne = 0;
+        private int countTwo = 0;
+        private int countApple = 0;
+        private int countOrange = 0;
+
         public R6()
         {
             InitializeComponent();
         }
 
         private void R6_Close(object sender, FormClosedEventArgs e)
-        {
-            Dispose();
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Cell_Click(object sender, EventArgs e)
-        {
-            ggwp();
-        }
-
-        private void ggwp()
         {
             Dispose();
         }
@@ -46,13 +42,7 @@ namespace wani1
                 for (int i = 0; i < Random(); i++)
                 {
                     InsertNum(CreateNum(0));
-                }
-                for (int i = 0; i < Random(); i++)
-                {
                     InsertNum(CreateNum(1));
-                }
-                for (int i = 0; i < Random(); i++)
-                {
                     InsertNum(CreateNum(2));
                 }
             }
@@ -76,32 +66,41 @@ namespace wani1
         
         private Control CreateNum(int num)
         {
-            PictureBox Number = new PictureBox();
-            Number.Size = new Size(100, 100);
-            Number.SizeMode = PictureBoxSizeMode.StretchImage;
-            switch (num)
+            try
             {
-                case 0:
-                    Number.Name = "zero";
-                    Number.Image = Image.FromFile(FilePath + "\\images\\C2\\0.png");
-                    break;
-                case 1:
-                    Number.Name = "one";
-                    Number.Image = Image.FromFile(FilePath + "\\images\\C2\\1.png");
-                    break;
-                case 2:
-                    Number.Name = "two";
-                    Number.Image = Image.FromFile(FilePath + "\\images\\C2\\2.png");
-                    break;
+                PictureBox Number = new PictureBox();
+                Number.Size = new Size(100, 100);
+                Number.SizeMode = PictureBoxSizeMode.StretchImage;
+                switch (num)
+                {
+                    case 0:
+                        countZero++;
+                        Number.Name = "zero_" + countZero;
+                        Number.Image = Image.FromFile(FilePath + "\\images\\C2\\0.png");
+                        break;
+                    case 1:
+                        Number.Name = "one_";
+                        Number.Image = Image.FromFile(FilePath + "\\images\\C2\\1.png");
+                        break;
+                    case 2:
+                        Number.Name = "two_";
+                        Number.Image = Image.FromFile(FilePath + "\\images\\C2\\2.png");
+                        break;
+                }
+                return Number;
             }
-            return Number;
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return null;
+            }
         }
 
         private int Random()
         {
             int seed = Environment.TickCount;
             Random random = new Random(seed++);
-            return (int)random.Next(2,6);
+            return (int)random.Next(2,4);
         }
         private void InsertNum(Control control)
         {
@@ -116,22 +115,70 @@ namespace wani1
                     rand[i] = (int)random.Next(5);
                 }
                 Boolean flg = false;
+                int count = 0;
+                int bufX = 999;
+                int bufY = 999;
                 do
                 {
+                    
                     TableLayoutPanelCellPosition p = new TableLayoutPanelCellPosition(rand[0], rand[1]);
                     if (tableLayoutPanel2.GetControlFromPosition(p.Column, p.Row) == null)
                     {
                         tableLayoutPanel2.Controls.Add(control, p.Column, p.Row);
+                        if (control.Name.Equals("one_"))
+                        {
+                            countOne++;
+                            NumPoint.Add(control.Name + countOne, new Point(p.Column, p.Row));
+                        }
+                        if (control.Name.Equals("two_"))
+                        {
+                            countTwo++;
+                            NumPoint.Add(control.Name + countTwo, new Point(p.Column, p.Row));
+                        }
+                        count = 0;
+                        bufX = 999;
+                        bufY = 999;
                         break;
                     }
                     else
                     {
                         random = new Random(seed++);
                         p.Row = (int)random.Next(5);
+                        if(count > 0)
+                        {
+                            if(bufY == p.Row)
+                            {
+                                if (p.Row < 4)
+                                {
+                                    p.Row++;
+                                }
+                                else
+                                {
+                                    p.Row = 0;
+                                }
+                            }
+                        }
                         rand[1] = p.Row;
+                        bufY = p.Row;
                         random = new Random(seed++);
                         p.Column = (int)random.Next(5);
+                        if (count > 0)
+                        {
+                            if (bufX == p.Column)
+                            {
+                                if (p.Column < 4)
+                                {
+                                    p.Column++;
+                                }
+                                else
+                                {
+                                    p.Column = 0;
+                                }
+                            }
+                        }
+                        bufX = p.Column;
                         rand[0] = p.Column;
+                        count++;
                     }
                 } while (!flg);
             }
@@ -205,31 +252,48 @@ namespace wani1
             int h = height / 5;
             int w = width / 5;
 
-            countX = (point.X - ((point.X - 1) % 10)) / w;
-            countY = (point.Y - ((point.Y - 1) % 10)) / h;
+            countX = ((point.X - 1) - ((point.X - 1) % w)) / w;
+            countY = ((point.Y - 1) - ((point.Y - 1) % h)) / h;
 
             return new Point(countX, countY);
         }
         //セルに画像を追加する処理
         private void SetCellItems(Point point,string name)
         {
-            if(tableLayoutPanel1.GetControlFromPosition(point.X,point.Y) == null)
+            string cname;
+            if (tableLayoutPanel1.GetControlFromPosition(point.X,point.Y) == null)
             {
                 tableLayoutPanel1.Controls.Add(CreateFruits(name), point.X, point.Y);
+                cname = tableLayoutPanel1.GetControlFromPosition(point.X, point.Y).Name;
+                switch (cname)
+                {
+                    case "Apple":
+                        cname += "_" + countApple;
+                        tableLayoutPanel1.GetControlFromPosition(point.X, point.Y).Name = cname;
+                        ApplePoint.Add(cname, point);
+                        break;
+                    case "Orange":
+                        cname += "_" + countOrange;
+                        tableLayoutPanel1.GetControlFromPosition(point.X, point.Y).Name = cname;
+                        break;
+                }
             }
         }
+        //フルーツのPictureBoxの生成
         private Control CreateFruits(string name)
         {
             PictureBox fruits = new PictureBox();
             switch (name)
             {
                 case "Apple":
+                    countApple++;
                     fruits.Name = "Apple";
                     fruits.Size = new Size(100, 100);
                     fruits.SizeMode = PictureBoxSizeMode.StretchImage;
                     fruits.Image = Image.FromFile(FilePath + "\\images\\C2\\apple.png");
                     break;
                 case "Orange":
+                    countOrange++;
                     fruits.Name = "Orange";
                     fruits.Size = new Size(100, 100);
                     fruits.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -243,49 +307,103 @@ namespace wani1
         {
             Start();
         }
-
+        //スタート
         private void Start()
         {
-            int[] oneX = { 0, 0};
-            int[] oneY = { 0, 0};
-            int[] twoX = { 0, 0};
-            int[] twoY = { 0, 0};
-            int countX = 0;
-            int countY = 0;
-
-            Control[] controls1 = panel4.Controls.Find("Apple", true);
-            Control[] controls2 = panel4.Controls.Find("one", true);
-            foreach(Control c in controls2)
+            try
             {
-                TableLayoutPanelCellPosition p = tableLayoutPanel2.GetCellPosition(c);
-                oneX[countX] = p.Column;
-                oneY[countY] = p.Row;
-                countX++;
-                countY++;
+                Boolean flg = false;
+                Boolean Aans = false;
+                Boolean Oans = false;
+                for (int i = 1; i <= ApplePoint.Count; i++)
+                {
+                    Control[] controls = panel4.Controls.Find("Apple_" + i, true);
+                    foreach (Control c in controls)
+                    {
+                        TableLayoutPanelCellPosition p = tableLayoutPanel1.GetCellPosition(c);
+                        for(int n = 1;n <= ApplePoint.Count; n++)
+                        {
+                            if (NumPoint["one_" + n] == new Point(p.Column, p.Row))
+                            {
+                                flg = true;
+                            }
+                        }
+                    }
+                    if(flg == true)
+                    {
+                        flg = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("ちがうよ！");
+                        return;
+                    }
+                    if (i == ApplePoint.Count)
+                    {
+                        Aans = true;
+                    }
+                }
+                if (Aans == true)
+                {
+                    //Apple座標一致
+                    for (int i = 1; i <= OrangePoint.Count; i++)
+                    {
+                        Control[] controls = panel4.Controls.Find("Orange_" + i, true);
+                        foreach (Control c in controls)
+                        {
+                            TableLayoutPanelCellPosition p = tableLayoutPanel1.GetCellPosition(c);
+                            for(int n = 1; n <= OrangePoint.Count; n++)
+                            {
+                                if (NumPoint["two_" + n] == new Point(p.Column, p.Row))
+                                {
+                                    flg = true;
+                                }
+                            }
+                        }
+                        if (flg == true)
+                        {
+                            flg = false;
+                        }
+                        else
+                        {
+                            MessageBox.Show("ちがうよ！");
+                            return;
+                        }
+                        if (i == OrangePoint.Count)
+                        {
+                            Oans = true;
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("ちがうよ！");
+                    return;
+                }
+                if (Oans == true && Aans == true)
+                {
+                    //両方の座標一致
+                    MessageBox.Show("せいかい！！！");
+                }
             }
-            countX = 0;
-            countY = 0;
-            controls2 = panel4.Controls.Find("two", true);
-            foreach(Control c in controls2)
+            catch (Exception)
             {
-                TableLayoutPanelCellPosition p = tableLayoutPanel2.GetCellPosition(c);
-                twoX[countX] = p.Column;
-                twoY[countY] = p.Row;
-                countX++;
-                countY++;
+                MessageBox.Show("ちがうよ！！");
             }
-            for(int i = 0;i < 2; i++)
-            {
-                
-                MessageBox.Show("one" + oneX[i] + "," + oneY[i]);
-                MessageBox.Show("two" + twoX[i] + "," + twoY[i]);
-            }
-
         }
 
         private void review_back_button_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            tableLayoutPanel1.Controls.Clear();
+            countApple = 0;
+            countOrange = 0;
+            ApplePoint.Clear();
+            OrangePoint.Clear();
         }
     }
 }
