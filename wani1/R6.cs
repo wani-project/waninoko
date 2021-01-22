@@ -41,7 +41,6 @@ namespace wani1
             {
                 for (int i = 0; i < Random(); i++)
                 {
-                    InsertNum(CreateNum(0));
                     InsertNum(CreateNum(1));
                     InsertNum(CreateNum(2));
                 }
@@ -399,6 +398,11 @@ namespace wani1
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+            Reset();
+        }
+
+        private void Reset()
         {
             tableLayoutPanel1.Controls.Clear();
             countApple = 0;
