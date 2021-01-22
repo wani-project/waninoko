@@ -275,6 +275,7 @@ namespace wani1
                     case "Orange":
                         cname += "_" + countOrange;
                         tableLayoutPanel1.GetControlFromPosition(point.X, point.Y).Name = cname;
+                        OrangePoint.Add(cname, point);
                         break;
                 }
             }
