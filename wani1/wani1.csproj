@@ -69,6 +69,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Block.cs" />
+    <Compile Include="C2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C2.designer.cs">
+      <DependentUpon>C2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Challenge.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </Compile>
     <Compile Include="ReviewCreateControls.cs" />
     <Compile Include="Transform.cs" />
+    <EmbeddedResource Include="C2.resx">
+      <DependentUpon>C2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Challenge.resx">
       <DependentUpon>Challenge.cs</DependentUpon>
     </EmbeddedResource>

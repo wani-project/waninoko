@@ -64,7 +64,7 @@ namespace wani1
                     }
                     else
                     {
-                        MessageBox.Show("ちがうよ！");
+                        Answer(0);
                         return;
                     }
                     if (i == ApplePoint.Count)
@@ -95,7 +95,7 @@ namespace wani1
                         }
                         else
                         {
-                            MessageBox.Show("ちがうよ！");
+                            Answer(0);
                             return;
                         }
                         if (i == OrangePoint.Count)
@@ -106,18 +106,18 @@ namespace wani1
                 }
                 else
                 {
-                    MessageBox.Show("ちがうよ！");
+                    Answer(0);
                     return;
                 }
                 if (Oans == true && Aans == true)
                 {
                     //両方の座標一致
-                    MessageBox.Show("せいかい！！！");
+                    Answer(1);
                 }
             }
             catch (Exception)
             {
-                MessageBox.Show("ちがうよ！！");
+                Answer(0);
             }
         }
 
@@ -255,6 +255,7 @@ namespace wani1
                 PictureBox Number = new PictureBox();
                 Number.Size = new Size(100, 100);
                 Number.SizeMode = PictureBoxSizeMode.StretchImage;
+                Number.BackColor = Color.Transparent;
                 switch (num)
                 {
                     case 0:
@@ -375,6 +376,19 @@ namespace wani1
         {
             try
             {
+                label1.Parent = pictureBox1;
+                label1.Location = new Point(30,40);
+                label3.Parent = pictureBox1;
+                label3.Location = new Point(30, 90);
+                label4.Parent = pictureBox1;
+                label4.Location = new Point(30, 140);
+                pictureBox2.Parent = pictureBox1;
+                pictureBox2.Location = new Point(245,130);//みかん
+                pictureBox3.Parent = pictureBox1;
+                pictureBox3.Location = new Point(245,70);//りんご
+
+                pictureBox2.BringToFront();
+                pictureBox3.BringToFront();
                 for (int i = 0; i < Random(); i++)
                 {
                     InsertNum(CreateNum(1));
@@ -397,6 +411,48 @@ namespace wani1
         private void button1_Click(object sender, EventArgs e)
         {
             Reset();
+        }
+
+        private async void Answer(int ans)
+        {
+            switch (ans)
+            {
+                case 0://不正解
+                    PictureBox no = new PictureBox();
+                    no.Name = "no";
+                    no.Size = new Size(774, 587);
+                    no.Location = new Point(445, 0);
+                    no.SizeMode = PictureBoxSizeMode.StretchImage;
+                    no.Image = Image.FromFile(FilePath + "\\images\\matigai.gif");
+                    no.Parent = panel4;
+                    panel4.Controls.Add(no);
+                    no.BringToFront();
+                    await Task.Delay(2800);
+                    Control[] c = panel4.Controls.Find("no", true);
+                    foreach (Control con1 in c)
+                    {
+                        panel4.Controls.Remove(con1);
+                    }
+                    break;
+                case 1://正解
+                    PictureBox yes = new PictureBox();
+                    yes.Name = "yes";
+                    yes.Size = new Size(774, 587);
+                    yes.Location = new Point(445, 0);
+                    yes.SizeMode = PictureBoxSizeMode.StretchImage;
+                    yes.Image = Image.FromFile(FilePath + "\\images\\seikai.gif");
+                    yes.Parent = panel4;
+                    panel4.Controls.Add(yes);
+                    yes.BringToFront();
+                    await Task.Delay(2800);
+                    Control[] con = panel4.Controls.Find("yes", true);
+                    foreach (Control con2 in con)
+                    {
+                        panel4.Controls.Remove(con2);
+                    }
+                    break;
+            }
+            
         }
     }
 }
