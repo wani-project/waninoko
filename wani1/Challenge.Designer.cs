@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Challenge));
             this.Challenge_Group = new System.Windows.Forms.GroupBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.challenge_back_button = new System.Windows.Forms.Button();
@@ -157,6 +158,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.Challenge_Group);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Challenge";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ちゃれんじもーど";

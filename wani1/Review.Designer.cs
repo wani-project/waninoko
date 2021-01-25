@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Review));
             this.Review_Group = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label_title = new System.Windows.Forms.Label();
@@ -160,6 +161,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Review_Group);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Review";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "しょうがくせいむけもーど";

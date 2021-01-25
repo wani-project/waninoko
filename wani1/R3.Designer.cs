@@ -428,7 +428,7 @@
             this.panel1.TabIndex = 8;
             this.panel1.Visible = false;
             // 
-            // L4
+            // R3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -436,10 +436,11 @@
             this.Controls.Add(this.Review_Group);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "L4";
+            this.Name = "R3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "わにをおよがせよう！";
+            this.Text = "しょうがくせいむけもーど";
             this.Load += new System.EventHandler(this.L3_Load);
             this.Review_Group.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

@@ -32,6 +32,7 @@
             this.Learn_Group = new System.Windows.Forms.GroupBox();
             this.comboKinds = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label_title = new System.Windows.Forms.Label();
             this.learn_back_button = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -41,7 +42,6 @@
             this.wani_block = new System.Windows.Forms.PictureBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label_title = new System.Windows.Forms.Label();
             this.Learn_Group.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -84,6 +84,15 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1219, 39);
             this.panel2.TabIndex = 3;
+            // 
+            // label_title
+            // 
+            this.label_title.AutoSize = true;
+            this.label_title.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label_title.Location = new System.Drawing.Point(373, 6);
+            this.label_title.Name = "label_title";
+            this.label_title.Size = new System.Drawing.Size(0, 24);
+            this.label_title.TabIndex = 7;
             // 
             // learn_back_button
             // 
@@ -191,15 +200,6 @@
             this.panel3.TabIndex = 5;
             this.panel3.Visible = false;
             // 
-            // label_title
-            // 
-            this.label_title.AutoSize = true;
-            this.label_title.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label_title.Location = new System.Drawing.Point(373, 6);
-            this.label_title.Name = "label_title";
-            this.label_title.Size = new System.Drawing.Size(0, 24);
-            this.label_title.TabIndex = 7;
-            // 
             // Learn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -209,6 +209,7 @@
             this.Controls.Add(this.Learn_Group);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Learn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "がくしゅうもーど";

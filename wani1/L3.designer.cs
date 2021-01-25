@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(L3));
             this.Learn_Group = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.learn_back_button = new System.Windows.Forms.Button();
@@ -381,6 +382,7 @@
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.Learn_Group);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "L3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

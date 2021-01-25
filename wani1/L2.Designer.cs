@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(L2));
             this.Learn_Group = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label_title = new System.Windows.Forms.Label();
             this.learn_back_button = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label_title = new System.Windows.Forms.Label();
             this.Learn_Group.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -63,6 +64,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1219, 39);
             this.panel2.TabIndex = 3;
+            // 
+            // label_title
+            // 
+            this.label_title.AutoSize = true;
+            this.label_title.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label_title.Location = new System.Drawing.Point(373, 6);
+            this.label_title.Name = "label_title";
+            this.label_title.Size = new System.Drawing.Size(533, 24);
+            this.label_title.TabIndex = 7;
+            this.label_title.Text = "イヌ→ネコのじゅんばんで３かいならべるとどれになる？";
             // 
             // learn_back_button
             // 
@@ -140,16 +151,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = ">";
             // 
-            // label_title
-            // 
-            this.label_title.AutoSize = true;
-            this.label_title.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label_title.Location = new System.Drawing.Point(373, 6);
-            this.label_title.Name = "label_title";
-            this.label_title.Size = new System.Drawing.Size(533, 24);
-            this.label_title.TabIndex = 7;
-            this.label_title.Text = "イヌ→ネコのじゅんばんで３かいならべるとどれになる？";
-            // 
             // L2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -157,6 +158,7 @@
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.Learn_Group);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "L2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "L2";

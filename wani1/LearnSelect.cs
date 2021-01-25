@@ -16,6 +16,12 @@ namespace wani1
     {
         public int screenflg = 0;
         private string FilePath = Directory.GetCurrentDirectory();
+        private string RO = Directory.GetCurrentDirectory() + "\\images\\Background\\Background_RO.png";
+        private string BG = Directory.GetCurrentDirectory() + "\\images\\Background\\Background_BG.png";
+        private string BP = Directory.GetCurrentDirectory() + "\\images\\Background\\Background_BP.png";
+        private string PP = Directory.GetCurrentDirectory() + "\\images\\Background\\Background_PP.png";
+        private string YG = Directory.GetCurrentDirectory() + "\\images\\Background\\Background_YG.png";
+
         public LearnSelect()
         {
             InitializeComponent();
@@ -68,6 +74,7 @@ namespace wani1
                     Learn learn = new Learn();
                     learn.questNum = 1;
                     learn.questTitle = "シールをかさねてイヌのかおをつくってね！";
+                    learn.BackgroundImage = Image.FromFile(BG);
                     learn.Show();
                     break;
                 case 2:
@@ -98,7 +105,7 @@ namespace wani1
                     Review review = new Review();
                     review.questNum = 2;
                     review.questTitle = "イヌ→ネコのじゅんばんで３かいならべよう！";
-                    review.BackgroundImage = Image.FromFile(FilePath + "\\images\\Background\\Background_RO.png");
+                    review.BackgroundImage = Image.FromFile(RO);
                     review.Show();
                     break;
                 case 3:
@@ -145,8 +152,6 @@ namespace wani1
                     l3.Show();
                     break;
                 case 2:
-                    R6 r6 = new R6();
-                    r6.Show();
                     break;
             }
         }

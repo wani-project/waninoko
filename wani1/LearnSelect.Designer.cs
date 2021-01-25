@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LearnSelect));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.quest1 = new System.Windows.Forms.Button();
             this.quest2 = new System.Windows.Forms.Button();
@@ -145,6 +146,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LearnSelect";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "がくしゅうもーど";
