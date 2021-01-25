@@ -255,6 +255,7 @@ namespace wani1
                 PictureBox Number = new PictureBox();
                 Number.Size = new Size(100, 100);
                 Number.SizeMode = PictureBoxSizeMode.StretchImage;
+                Number.BackColor = Color.Transparent;
                 switch (num)
                 {
                     case 0:
@@ -375,6 +376,19 @@ namespace wani1
         {
             try
             {
+                label1.Parent = pictureBox1;
+                label1.Location = new Point(30,40);
+                label3.Parent = pictureBox1;
+                label3.Location = new Point(30, 90);
+                label4.Parent = pictureBox1;
+                label4.Location = new Point(30, 140);
+                pictureBox2.Parent = pictureBox1;
+                pictureBox2.Location = new Point(245,130);//みかん
+                pictureBox3.Parent = pictureBox1;
+                pictureBox3.Location = new Point(245,70);//りんご
+
+                pictureBox2.BringToFront();
+                pictureBox3.BringToFront();
                 for (int i = 0; i < Random(); i++)
                 {
                     InsertNum(CreateNum(1));
