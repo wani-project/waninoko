@@ -50,6 +50,8 @@ namespace wani1
                     quest1.Text = "キャラクターをうごかそう！";
                     quest2.Text = "イヌとネコをならべよう！";
                     quest3.Text = "ワニをおよがせよう！";
+                    quest4.Text = "";
+                    quest5.Text = "";
                     break;
                 case 3:
                     break;
@@ -131,7 +133,6 @@ namespace wani1
                     l4.Show();
                     break;
                 case 2:
-                    
                     break;
             }
         }
