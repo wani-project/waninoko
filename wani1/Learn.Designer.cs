@@ -226,8 +226,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox Learn_Group;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button learn_back_button;
         private System.Windows.Forms.Button button1;
@@ -240,5 +238,6 @@
         private System.Windows.Forms.Button button2;
         public System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label_title;
+        public System.Windows.Forms.GroupBox Learn_Group;
     }
 }

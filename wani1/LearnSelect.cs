@@ -56,10 +56,20 @@ namespace wani1
                     quest1.Text = "キャラクターをうごかそう！";
                     quest2.Text = "イヌとネコをならべよう！";
                     quest3.Text = "ワニをおよがせよう！";
-                    quest4.Text = "";
-                    quest5.Text = "";
+                    quest4.Text = "じゅんびちゅうだよ！";
+                    quest4.Enabled = false;
+                    quest5.Text = "じゅんびちゅうだよ！";
+                    quest5.Enabled = false;
                     break;
                 case 3:
+                    quest1.Text = "ただしいみちをあるこう！";
+                    quest2.Text = "くだものをますにいれよう！";
+                    quest3.Text = "じゅんびちゅうだよ！";
+                    quest3.Enabled = false;
+                    quest4.Text = "じゅんびちゅうだよ！";
+                    quest4.Enabled = false;
+                    quest5.Text = "じゅんびちゅうだよ！";
+                    quest5.Enabled = false;
                     break;
                 default:
                     break;
@@ -75,6 +85,7 @@ namespace wani1
                     learn.questNum = 1;
                     learn.questTitle = "シールをかさねてイヌのかおをつくってね！";
                     learn.BackgroundImage = Image.FromFile(BG);
+                    learn.Learn_Group.BackgroundImage = Image.FromFile(BG);
                     learn.Show();
                     break;
                 case 2:
