@@ -34,7 +34,6 @@
             this.learn_button = new System.Windows.Forms.Button();
             this.review_button = new System.Windows.Forms.Button();
             this.PictureBook = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.Main_Group.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBook)).BeginInit();
             this.SuspendLayout();
@@ -42,17 +41,22 @@
             // Main_Group
             // 
             this.Main_Group.AutoSize = true;
+            this.Main_Group.BackColor = System.Drawing.Color.Transparent;
             this.Main_Group.Controls.Add(this.challenge_button);
             this.Main_Group.Controls.Add(this.learn_button);
             this.Main_Group.Controls.Add(this.review_button);
-            this.Main_Group.Location = new System.Drawing.Point(293, 122);
+            this.Main_Group.Location = new System.Drawing.Point(290, 201);
             this.Main_Group.Name = "Main_Group";
-            this.Main_Group.Size = new System.Drawing.Size(695, 493);
+            this.Main_Group.Size = new System.Drawing.Size(696, 482);
             this.Main_Group.TabIndex = 4;
             // 
             // challenge_button
             // 
-            this.challenge_button.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.challenge_button.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.challenge_button.FlatAppearance.BorderSize = 5;
+            this.challenge_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.challenge_button.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.challenge_button.ForeColor = System.Drawing.Color.White;
             this.challenge_button.Location = new System.Drawing.Point(139, 346);
             this.challenge_button.Name = "challenge_button";
             this.challenge_button.Size = new System.Drawing.Size(406, 58);
@@ -63,8 +67,11 @@
             // 
             // learn_button
             // 
-            this.learn_button.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.learn_button.Location = new System.Drawing.Point(139, 89);
+            this.learn_button.FlatAppearance.BorderSize = 5;
+            this.learn_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.learn_button.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.learn_button.ForeColor = System.Drawing.Color.White;
+            this.learn_button.Location = new System.Drawing.Point(139, 134);
             this.learn_button.Name = "learn_button";
             this.learn_button.Size = new System.Drawing.Size(406, 58);
             this.learn_button.TabIndex = 2;
@@ -74,19 +81,24 @@
             // 
             // review_button
             // 
-            this.review_button.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.review_button.Location = new System.Drawing.Point(139, 211);
+            this.review_button.BackColor = System.Drawing.Color.Transparent;
+            this.review_button.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.review_button.FlatAppearance.BorderSize = 5;
+            this.review_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.review_button.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.review_button.ForeColor = System.Drawing.Color.White;
+            this.review_button.Location = new System.Drawing.Point(139, 243);
             this.review_button.Name = "review_button";
             this.review_button.Size = new System.Drawing.Size(406, 58);
             this.review_button.TabIndex = 3;
             this.review_button.Text = "しょうがくせいむけ";
-            this.review_button.UseVisualStyleBackColor = true;
+            this.review_button.UseVisualStyleBackColor = false;
             this.review_button.Click += new System.EventHandler(this.review_button_Click_1);
             // 
             // PictureBook
             // 
             this.PictureBook.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.PictureBook.BackColor = System.Drawing.Color.White;
+            this.PictureBook.BackColor = System.Drawing.Color.Transparent;
             this.PictureBook.Image = ((System.Drawing.Image)(resources.GetObject("PictureBook.Image")));
             this.PictureBook.Location = new System.Drawing.Point(1188, 605);
             this.PictureBook.Name = "PictureBook";
@@ -95,22 +107,12 @@
             this.PictureBook.TabStop = false;
             this.PictureBook.Click += new System.EventHandler(this.PictureBook_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("MS UI Gothic", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.Location = new System.Drawing.Point(473, 73);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(350, 97);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "PROCK";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.PictureBook);
             this.Controls.Add(this.Main_Group);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -131,7 +133,6 @@
         private System.Windows.Forms.Button learn_button;
         private System.Windows.Forms.Button review_button;
         private System.Windows.Forms.PictureBox PictureBook;
-        private System.Windows.Forms.Label label1;
     }
 }
 

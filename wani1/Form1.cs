@@ -29,7 +29,6 @@ namespace wani1
         //がくしゅうもーどボタン
         private void learn_button_Click_1(object sender, EventArgs e)
         {
-            LearnSelect ls = new LearnSelect();
             if(ls.screenflg != 1)
             {
                 ls.screenflg = 1;
@@ -42,7 +41,6 @@ namespace wani1
         //ふくしゅうもーどボタン
         private void review_button_Click_1(object sender, EventArgs e)
         {
-            LearnSelect ls = new LearnSelect();
             if(ls.screenflg != 2)
             {
                 ls.screenflg = 2;
@@ -55,14 +53,13 @@ namespace wani1
         //ちゃれんじもーどボタン
         private void challenge_button_Click_1(object sender, EventArgs e)
         {
-            Challenge challenge = new Challenge();
             if (ls.screenflg != 3)
             {
                 ls.screenflg = 3;
-                challenge.Show();
+                ls.Show();
             }else if(ls.screenflg == 3)
             {
-                challenge.WindowState = FormWindowState.Normal;
+                ls.WindowState = FormWindowState.Normal;
             }
         }
         //図鑑ボタン

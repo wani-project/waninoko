@@ -8,12 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace wani1
 {
     public partial class LearnSelect : Form
     {
         public int screenflg = 0;
+        private string FilePath = Directory.GetCurrentDirectory();
         public LearnSelect()
         {
             InitializeComponent();
@@ -49,29 +51,14 @@ namespace wani1
                     quest2.Text = "イヌとネコをならべよう！";
                     quest3.Text = "ワニをおよがせよう！";
                     break;
+                case 3:
+                    break;
                 default:
                     break;
             }
         }
         private void quest1_Click(object sender, EventArgs e)
         {
-
-            //ここからテスト----------------------------
-            //DBからデータを取得する--------------
-            // コネクションを開いてテーブル作成して閉じる  
-            /*string db_file = "Test.db";
-            using (var conn = new SQLiteConnection("Data Source=" + db_file))
-            {
-                conn.Open();
-                using (SQLiteCommand command = conn.CreateCommand())
-                {
-                    command.CommandText = "create table Sample(Id INTEGER  PRIMARY KEY AUTOINCREMENT, Name TEXT, Age INTEGER)";
-                    command.ExecuteNonQuery();
-                }
-                conn.Close();
-            }
-            */
-            //------------------------------------
             Form1 f1 = new Form1();
             switch (screenflg)
             {
@@ -99,13 +86,13 @@ namespace wani1
             {
                 case 1:
                     L2 l2 = new L2();
-                    
                     l2.Show();
                     break;
                 case 2:
                     Review review = new Review();
                     review.questNum = 2;
                     review.questTitle = "イヌ→ネコのじゅんばんで３かいならべよう！";
+                    review.BackgroundImage = Image.FromFile(FilePath + "\\images\\")
                     review.Show();
                     break;
             }
