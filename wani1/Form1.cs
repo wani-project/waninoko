@@ -29,6 +29,7 @@ namespace wani1
         //がくしゅうもーどボタン
         private void learn_button_Click_1(object sender, EventArgs e)
         {
+            LearnSelect ls = new LearnSelect();
             if(ls.screenflg != 1)
             {
                 ls.screenflg = 1;
@@ -41,7 +42,8 @@ namespace wani1
         //ふくしゅうもーどボタン
         private void review_button_Click_1(object sender, EventArgs e)
         {
-            if(ls.screenflg != 2)
+            LearnSelect ls = new LearnSelect();
+            if (ls.screenflg != 2)
             {
                 ls.screenflg = 2;
                 ls.Show();
@@ -53,6 +55,7 @@ namespace wani1
         //ちゃれんじもーどボタン
         private void challenge_button_Click_1(object sender, EventArgs e)
         {
+            LearnSelect ls = new LearnSelect();
             if (ls.screenflg != 3)
             {
                 ls.screenflg = 3;
@@ -65,6 +68,7 @@ namespace wani1
         //図鑑ボタン
         private void PictureBook_Click(object sender, EventArgs e)
         {
+            LearnSelect ls = new LearnSelect();
             PictureBook zukan = new PictureBook();
             if(ls.screenflg != 4)
             {

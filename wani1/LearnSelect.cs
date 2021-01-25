@@ -77,8 +77,8 @@ namespace wani1
                     review.Show();
                     break;
                 case 3:
-                    C1 c1 = new C1();
-                    c1.Show();
+                    //C1 c1 = new C1();
+                    //c1.Show();
                     break;
                 default:
                     break;
@@ -102,8 +102,8 @@ namespace wani1
                     review.Show();
                     break;
                 case 3:
-                    C2 c2 = new C2();
-                    c2.Show();
+                    //C2 c2 = new C2();
+                    //c2.Show();
                     break;
             }
             
