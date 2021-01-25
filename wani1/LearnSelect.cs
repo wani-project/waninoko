@@ -74,6 +74,10 @@ namespace wani1
                     review.questTitle = "ぶひんをくみあわせてゴールまですすもう！";
                     review.Show();
                     break;
+                case 3:
+                    C1 c1 = new C1();
+                    c1.Show();
+                    break;
                 default:
                     break;
             }
@@ -92,8 +96,12 @@ namespace wani1
                     Review review = new Review();
                     review.questNum = 2;
                     review.questTitle = "イヌ→ネコのじゅんばんで３かいならべよう！";
-                    review.BackgroundImage = Image.FromFile(FilePath + "\\images\\")
+                    review.BackgroundImage = Image.FromFile(FilePath + "\\images\\Background\\Background_RO.png");
                     review.Show();
+                    break;
+                case 3:
+                    C2 c2 = new C2();
+                    c2.Show();
                     break;
             }
             
