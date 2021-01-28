@@ -450,8 +450,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox Review_Group;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button review_back_button;
         private System.Windows.Forms.TextBox textBox2;
@@ -480,5 +478,6 @@
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.GroupBox Review_Group;
     }
 }

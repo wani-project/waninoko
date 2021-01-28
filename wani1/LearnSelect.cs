@@ -148,6 +148,8 @@ namespace wani1
             {
                 case 1:
                     L4 l4 = new L4();
+                    l4.Review_Group.BackgroundImage = Image.FromFile(YG);
+                    l4.panel4.BackgroundImage = Image.FromFile(YG);
                     l4.Show();
                     break;
                 case 2:
