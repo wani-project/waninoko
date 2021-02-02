@@ -383,9 +383,9 @@ namespace wani1
                 label4.Parent = pictureBox1;
                 label4.Location = new Point(30, 140);
                 pictureBox2.Parent = pictureBox1;
-                pictureBox2.Location = new Point(245,130);//みかん
+                pictureBox2.Location = new Point(245,130);//みかんん
                 pictureBox3.Parent = pictureBox1;
-                pictureBox3.Location = new Point(245,70);//りんご
+                pictureBox3.Location = new Point(245,70);//りんごご
 
                 pictureBox2.BringToFront();
                 pictureBox3.BringToFront();

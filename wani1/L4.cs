@@ -19,7 +19,7 @@ namespace wani1
         public string FilePath = Directory.GetCurrentDirectory();
         public string[] AddAnimal = { "動物名" };
         private int ans = 0;
-        private Point[] points = { new Point(614, 90), new Point(738, 90), new Point(864, 90), new Point(988, 90), new Point(614, 238), new Point(738, 238), new Point(864, 239), new Point(988, 238)};
+        private Point[] points = { new Point(654, 205), new Point(778, 205), new Point(1028, 205), new Point(904, 205), new Point(654, 345), new Point(778, 345), new Point(904, 345), new Point(1028, 345) };
         private int[] count = { 9, 9, 9, 9, 9, 9, 9, 9};
 
         public L4()
@@ -32,7 +32,7 @@ namespace wani1
         {
             switch (kinds)
             {
-                case "waniChara":
+               /*ase "waniChara":
                     //パネルインスタンス
                     PictureBox wani = new PictureBox();
                     //名前
@@ -59,7 +59,7 @@ namespace wani1
                     panel4.Controls.Add(wani);
                     //最前面に設定
                     wani.BringToFront();
-                    break;
+                    break;*/
                 case "seikai":
                     PictureBox seikai = new PictureBox();
                     seikai.Name = "seikai";
@@ -91,7 +91,6 @@ namespace wani1
             
                 if (ans == 1)
                 {
-                    textBox1.Text = "せいかい！！すごい！！！";
                     CreateControl("seikai", 2);
                     await Task.Delay(2825);
                     Control[] re = new Control[0];
@@ -102,12 +101,11 @@ namespace wani1
                     }
 
                     //========================================
-                    waniTalk();
+                    //waniTalk();
                     //========================================
                 }
                 else
                 {
-                    textBox1.Text = "まちがい...つぎはできるよ！\r\nがんばって！！！";
                     CreateControl("miss", 2);
                     await Task.Delay(2800);
                     Control[] re = new Control[0];
@@ -118,7 +116,7 @@ namespace wani1
                     }
 
                     //========================================
-                    waniTalk();
+                    //waniTalk();
 
                     //========================================
 
@@ -126,7 +124,7 @@ namespace wani1
             ans = 0;
         }
 
-        private async void waniTalk()
+        /*private async void waniTalk()
         {
             //========================================
             Control[] controls = panel4.Controls.Find("wani", true);
@@ -139,9 +137,9 @@ namespace wani1
             
 
             //========================================
-        }
-
-        private void button3_Click(object sender, EventArgs e)
+        }*/
+      
+        private void button8_Click(object sender, EventArgs e)
         {
             Start();
         }
@@ -160,6 +158,26 @@ namespace wani1
         {
             CreateControl("waniChara", 0);
             SetRandomPos();
+
+            label2.Parent = pictureBox9;
+            label3.Parent = pictureBox9;
+            label4.Parent = pictureBox9;
+            label1.Parent = pictureBox9;
+            label5.Parent = pictureBox9;
+
+            label2.Location = new Point(50, 100);
+            label4.Location = new Point(50, 277);           
+
+            pictureBox8.Parent = pictureBox7;
+            label6.Parent = pictureBox8;
+
+            pictureBox8.Location = new Point(5, 42);
+            label6.Location = new Point(50, 30);
+
+            //label6.Parent = pictureBox8;
+
+            //pictureBox8.BackColor = Color.Transparent;
+            //label6.BackColor = Color.Transparent;
         }
 
         private void review_back_button_Click(object sender, EventArgs e)
@@ -205,6 +223,6 @@ namespace wani1
                     con.Location = new Point(points[index].X, points[index].Y);
                 }
             }
-        }
+        }      
     }
 }

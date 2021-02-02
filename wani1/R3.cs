@@ -24,7 +24,6 @@ namespace wani1
         {
             Start(1);
         }
-
         private void tableLayoutPanel2_Click(object sender,EventArgs e)
         {
             Start(2);
@@ -33,6 +32,11 @@ namespace wani1
         {
             Start(3);
         }
+        private void tableLayoutPanel4_Click(object sender, EventArgs e)
+        {
+            Start(4);
+        }
+
         private async void Start(int num)
         {
             Reset();
@@ -55,7 +59,7 @@ namespace wani1
 
             //右に進む
             //Chara.Image = Rotate(Chara, 1);
-            Chara.Image = Image.FromFile(FilePath + "\\images\\L3\\charaR.gif");
+            Chara.Image = Image.FromFile(FilePath + "\\images\\L4\\charaR.gif");
             await Task.Delay(1000);
             for (int r = 0; r < 3; r++)
             {
@@ -75,7 +79,7 @@ namespace wani1
                 }
             }
             //左に進む
-            Chara.Image = Image.FromFile(FilePath + "\\images\\L3\\chara.gif");
+            Chara.Image = Image.FromFile(FilePath + "\\images\\L4\\chara.gif");
             await Task.Delay(1000);
             for (int l = 0;l < 2; l++)
             {
@@ -133,6 +137,12 @@ namespace wani1
         private void L3_Load(object sender, EventArgs e)
         {
             CreateChara(0,3);
+
+            label_title.Parent = pictureBox4;
+            label1_title2.Parent = pictureBox4;
+
+            label_title.Location = new Point(150, 25);
+            label1_title2.Location = new Point(150, 65);
         }
         private void CreateChara(int column,int row)
         {
@@ -179,7 +189,7 @@ namespace wani1
                     //左折線設定
                     PictureBox turnL = new PictureBox();
                     rt.Name = "turnL";
-                    rt.Image = Image.FromFile(FilePath + "\\images\\L3L4turnL.png");
+                    rt.Image = Image.FromFile(FilePath + "\\images\\L4\\turnL.png");
                     rt.Size = new Size(110, 108);
                     rt.BackColor = Color.Transparent;
                     rt.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -188,7 +198,7 @@ namespace wani1
             return rt;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             Reset();
         }
