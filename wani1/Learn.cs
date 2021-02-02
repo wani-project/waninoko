@@ -126,7 +126,7 @@ namespace wani1
             pb.Location = test_def;
         }
         //-------------------------------------------------------------------
-        private async void button1_Click(object sender, EventArgs e)
+        /*private async void button1_Click(object sender, EventArgs e)
         {
             switch (questNum)
             {
@@ -140,7 +140,41 @@ namespace wani1
                     {
                         ans += tf.dogAns[i];
                     }
-                    
+
+
+                    if (ans == "123")
+                    {
+                        textBox1.Text = "せいかい！！";
+
+                    }
+                    else
+                    {
+                        textBox1.Text = "じゅんばんがまちがってるよ！！";
+                    }
+                    await Task.Delay(5000);
+                    RemoveWani();
+                    talkflg = false;
+                    CreateControl("waniChara", 0);
+                    break;
+                default:
+                    break;
+            }
+        }*/
+        private async void button8_Click(object sender, EventArgs e)
+        {
+            switch (questNum)
+            {
+
+                case 1:
+                    RemoveWani();
+                    talkflg = true;
+                    CreateControl("waniChara", 0);
+                    string ans = "";
+                    for (int i = 0; i < 3; i++)
+                    {
+                        ans += tf.dogAns[i];
+                    }
+
 
                     if (ans == "123")
                     {
@@ -160,10 +194,11 @@ namespace wani1
                     break;
             }
         }
+
         private void RemoveWani()
         {
             Control[] con = panel1.Controls.Find("waniGif", true);
-            foreach(Control c in con)
+            foreach (Control c in con)
             {
                 panel1.Controls.Remove(c);
             }
@@ -282,7 +317,50 @@ namespace wani1
             }
         }
         //最初からボタンの処理----------------------------------
-        private void button2_Click(object sender, EventArgs e)
+        /* private void button2_Click(object sender, EventArgs e)
+         {
+             switch (questNum)
+             {
+                 case 1:
+                     questControl.Clear();
+                     Control[] d1 = new Control[0];
+                     Control[] d2 = new Control[0];
+                     Control[] d3 = new Control[0];
+
+                     d1 = panel1.Controls.Find("dog_face1", true);
+                     d2 = panel1.Controls.Find("dog_parts1", true);
+                     d3 = panel1.Controls.Find("dog_ears1", true);
+
+                     foreach (Control c in d1)
+                     {
+                         panel1.Controls.Remove(c);
+                     }
+                     foreach (Control c in d2)
+                     {
+                         panel1.Controls.Remove(c);
+                     }
+                     foreach (Control c in d3)
+                     {
+                         panel1.Controls.Remove(c);
+                     }
+                     if(talkflg == true)
+                     {
+                         talkflg = false;
+                         CreateControl("waniChara", 0);
+                     }
+                     tf.dog1count = 0;
+                     tf.dog2count = 0;
+                     tf.dog3count = 0;
+                     textBox1.Text = "じゅんばんにきをつけてね！";
+                     break;
+                 default:
+                     break;
+             }
+
+
+         }*/
+
+        private void button3_Click(object sender, EventArgs e)
         {
             switch (questNum)
             {
@@ -308,7 +386,7 @@ namespace wani1
                     {
                         panel1.Controls.Remove(c);
                     }
-                    if(talkflg == true)
+                    if (talkflg == true)
                     {
                         talkflg = false;
                         CreateControl("waniChara", 0);
@@ -321,9 +399,7 @@ namespace wani1
                 default:
                     break;
             }
-            
-
-        }
-        //-------------------------------------------------------
+            //-------------------------------------------------------
+        }       
     }
 }

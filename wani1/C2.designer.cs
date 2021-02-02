@@ -362,9 +362,9 @@
             this.button3.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.Black;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(521, 511);
+            this.button3.Location = new System.Drawing.Point(586, 506);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(661, 66);
+            this.button3.Size = new System.Drawing.Size(507, 66);
             this.button3.TabIndex = 4;
             this.button3.Text = "すたーと";
             this.button3.UseVisualStyleBackColor = false;

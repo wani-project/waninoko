@@ -24,7 +24,7 @@ namespace wani1
         private int hanakoAns = 0;
         private int satoshiAns = 0;
         //ランダム
-        private Point[] points = { new Point(75, 27), new Point(75, 141), new Point(75, 256) };
+        private Point[] points = { new Point(103, 107), new Point(103, 191), new Point(103, 283) };
         private int[] count = { 9, 9, 9 };
         public L6()
         {
@@ -69,6 +69,7 @@ namespace wani1
             }
         }
 
+    
         //さとし--------------------------------------------------------------
         private void button5_Click(object sender, EventArgs e)
         {
@@ -112,6 +113,21 @@ namespace wani1
             CreateControl("waniChara", 0);
             SetRandomPos();
             GetAns();
+
+            //いぬ　ねこ　ねずみ
+            pictureBox0.Parent = pictureBox3;
+            pictureBox1.Parent = pictureBox3;
+            pictureBox2.Parent = pictureBox3;
+
+            //パー　チョキ　グー
+            pa.Parent = pictureBox3;
+            choki.Parent = pictureBox3;
+            gu.Parent = pictureBox3;
+
+            //ラベル
+            label2.Parent = pictureBox3;
+            label3.Parent = pictureBox3;
+            label4.Parent = pictureBox3;
         }
 
         private void button3_Click(object sender, EventArgs e)

@@ -364,7 +364,14 @@ namespace wani1
             
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        
+
+        private void learn_back_button_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
         {
             Control[] con0 = new Control[0];
             Control[] con1 = new Control[0];
@@ -398,11 +405,6 @@ namespace wani1
                 talkflg = false;
             }
             CreateControl("waniChara", 0);
-        }
-
-        private void learn_back_button_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
         }
     }
 }

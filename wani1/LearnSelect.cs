@@ -22,6 +22,30 @@ namespace wani1
         private string PP = Directory.GetCurrentDirectory() + "\\images\\Background\\Background_PP.png";
         private string YG = Directory.GetCurrentDirectory() + "\\images\\Background\\Background_YG.png";
 
+        //もんだいえらんでね背景画像
+        private string LB = Directory.GetCurrentDirectory() + "\\images\\Background\\Cat_O.png";
+        private string RB = Directory.GetCurrentDirectory() + "\\images\\Background\\DOG_G.png";
+        private string CB = Directory.GetCurrentDirectory() + "\\images\\Background\\WANI_W.png";
+
+        //ボタン背景画像
+        private string YR1 = Directory.GetCurrentDirectory() + "\\images\\Button\\YR\\Button1.png";
+        private string YR2 = Directory.GetCurrentDirectory() + "\\images\\Button\\YR\\Button2.png";
+        private string YR3 = Directory.GetCurrentDirectory() + "\\images\\Button\\YR\\Button3.png";
+        private string YR4 = Directory.GetCurrentDirectory() + "\\images\\Button\\YR\\Button4.png";
+        private string YR5 = Directory.GetCurrentDirectory() + "\\images\\Button\\YR\\Button5.png";
+
+        private string G1 = Directory.GetCurrentDirectory() + "\\images\\Button\\G\\Button6.png";
+        private string G2 = Directory.GetCurrentDirectory() + "\\images\\Button\\G\\Button7.png";
+        private string G3 = Directory.GetCurrentDirectory() + "\\images\\Button\\G\\Button8.png";
+        private string G4 = Directory.GetCurrentDirectory() + "\\images\\Button\\G\\Button9.png";
+        private string G5 = Directory.GetCurrentDirectory() + "\\images\\Button\\G\\Button10.png";
+
+        private string B1 = Directory.GetCurrentDirectory() + "\\images\\Button\\B\\Button11.png";
+        private string B2 = Directory.GetCurrentDirectory() + "\\images\\Button\\B\\Button12.png";
+        private string B3 = Directory.GetCurrentDirectory() + "\\images\\Button\\B\\Button13.png";
+        private string B4 = Directory.GetCurrentDirectory() + "\\images\\Button\\B\\Button14.png";
+        private string B5 = Directory.GetCurrentDirectory() + "\\images\\Button\\B\\Button15.png";
+
         public LearnSelect()
         {
             InitializeComponent();
@@ -51,6 +75,15 @@ namespace wani1
                     quest3.Text = "どうぶつシールでじゃんけん！";
                     quest4.Text = "ふくをわけよう！";
                     quest5.Text = "つみきゲーム！";
+
+                    quest1.BackgroundImage = Image.FromFile(YR1);
+                    quest2.BackgroundImage = Image.FromFile(YR2);
+                    quest3.BackgroundImage = Image.FromFile(YR3);
+                    quest4.BackgroundImage = Image.FromFile(YR4);
+                    quest5.BackgroundImage = Image.FromFile(YR5);
+
+                    this.BackgroundImage = Image.FromFile(LB);
+
                     break;
                 case 2:
                     quest1.Text = "キャラクターをうごかそう！";
@@ -60,6 +93,14 @@ namespace wani1
                     quest4.Enabled = false;
                     quest5.Text = "じゅんびちゅうだよ！";
                     quest5.Enabled = false;
+
+                    quest1.BackgroundImage = Image.FromFile(G1);
+                    quest2.BackgroundImage = Image.FromFile(G2);
+                    quest3.BackgroundImage = Image.FromFile(G3);
+                    quest4.BackgroundImage = Image.FromFile(G4);
+                    quest5.BackgroundImage = Image.FromFile(G5);
+
+                    this.BackgroundImage = Image.FromFile(RB);
                     break;
                 case 3:
                     quest1.Text = "ただしいみちをあるこう！";
@@ -70,6 +111,14 @@ namespace wani1
                     quest4.Enabled = false;
                     quest5.Text = "じゅんびちゅうだよ！";
                     quest5.Enabled = false;
+
+                    quest1.BackgroundImage = Image.FromFile(B1);
+                    quest2.BackgroundImage = Image.FromFile(B2);
+                    quest3.BackgroundImage = Image.FromFile(B3);
+                    quest4.BackgroundImage = Image.FromFile(B4);
+                    quest5.BackgroundImage = Image.FromFile(B5);
+
+                    this.BackgroundImage = Image.FromFile(CB);
                     break;
                 default:
                     break;
@@ -117,6 +166,7 @@ namespace wani1
                     review.questNum = 2;
                     review.questTitle = "イヌ→ネコのじゅんばんで３かいならべよう！";
                     review.BackgroundImage = Image.FromFile(RO);
+                    review.Review_Group.BackgroundImage = Image.FromFile(RO);
                     review.Show();
                     break;
                 case 3:

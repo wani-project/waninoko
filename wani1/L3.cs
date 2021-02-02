@@ -106,6 +106,19 @@ namespace wani1
         private void L3_Load_1(object sender, EventArgs e)
         {
             SetRandomPos();
+
+            label6.Parent = pictureBox11;
+            label7.Parent = pictureBox11;
+            label8.Parent = pictureBox11;
+
+            label6.Location = new Point(50, 50);
+            label7.Location = new Point(95, 120);
+            label8.Location = new Point(330, 180);
+        }
+
+        private void learn_back_button_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
