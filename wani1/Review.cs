@@ -1024,20 +1024,6 @@ namespace wani1
                     hukiS = new Size(500, 200);
                     panel4.Controls.Clear();
                     docatP = new Point(430, 200);
-                    Button b = new Button();
-                    b.Name = "button_2";
-                    b.Anchor = AnchorStyles.Top;
-                    b.Anchor = AnchorStyles.Right;
-                    b.Font = new Font(b.Font.FontFamily, 18);
-                    b.Text = "さいしょから";
-                    b.BackColor = Color.FromArgb(128, 255, 128);
-                    b.FlatStyle = FlatStyle.Flat;
-                    b.FlatAppearance.BorderSize = 0;
-                    b.Size = new Size(126, 32);
-                    b.Location = new Point(768, 3);
-                    b.Click += new EventHandler(this.button2_Click);
-                    panel4.Controls.Add(b);
-                    b.BringToFront();
                     CreateControls(this, 2);
                     break;
                 default:
