@@ -129,10 +129,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label6.Location = new System.Drawing.Point(632, 30);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(535, 39);
+            this.label6.Size = new System.Drawing.Size(538, 37);
             this.label6.TabIndex = 20;
             this.label6.Text = "この中からなかまはずれをさがしてみましょう";
             // 
@@ -198,10 +198,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label2.Location = new System.Drawing.Point(37, 92);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(490, 39);
+            this.label2.Size = new System.Drawing.Size(511, 37);
             this.label2.TabIndex = 7;
             this.label2.Text = "はんそでには☆マークのシールをはります。";
             // 
@@ -268,10 +268,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label4.Location = new System.Drawing.Point(37, 263);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(491, 39);
+            this.label4.Size = new System.Drawing.Size(513, 37);
             this.label4.TabIndex = 13;
             this.label4.Text = "ながそでには◇マークのシールをはります。";
             // 
@@ -284,7 +284,7 @@
             this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.Color.Black;
             this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
             this.button8.Location = new System.Drawing.Point(647, 511);
@@ -437,7 +437,7 @@
             // 
             this.review_back_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.review_back_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.review_back_button.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.review_back_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.review_back_button.Location = new System.Drawing.Point(-1, -1);
             this.review_back_button.Name = "review_back_button";
             this.review_back_button.Size = new System.Drawing.Size(75, 40);
@@ -450,7 +450,7 @@
             // 
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.textBox2.Location = new System.Drawing.Point(74, 0);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
@@ -470,7 +470,7 @@
             this.MaximizeBox = false;
             this.Name = "L4";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "L4";
+            this.Text = "PROCK - ようじむけもーど";
             this.Load += new System.EventHandler(this.L4_Load);
             this.Review_Group.ResumeLayout(false);
             this.panel4.ResumeLayout(false);

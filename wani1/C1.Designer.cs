@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(C1));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.label_title = new System.Windows.Forms.Label();
             this.review_back_button = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.listView2 = new System.Windows.Forms.ListView();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -54,6 +54,17 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1219, 39);
             this.panel3.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("メイリオ", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label1.Location = new System.Drawing.Point(322, 2);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(183, 36);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "ぶんきおさんぽ";
             // 
             // label_title
             // 
@@ -125,17 +136,6 @@
             this.listView2.TabIndex = 4;
             this.listView2.UseCompatibleStateImageBehavior = false;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("メイリオ", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.Location = new System.Drawing.Point(322, 2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(183, 36);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "ぶんきおさんぽ";
-            // 
             // C1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -149,7 +149,7 @@
             this.MaximizeBox = false;
             this.Name = "C1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ちゃれんじもーど";
+            this.Text = "PROCK - ちゃれんじもーど";
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);

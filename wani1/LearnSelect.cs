@@ -55,21 +55,17 @@ namespace wani1
         {
             this.Dispose();
         }
-
         
-
         private void LearnSelect_Load(object sender, EventArgs e)
         {
             this.MaximizeBox = false;
-            //ここでDBから問題を取得---------------------------------------
-
-            //-------------------------------------------------------------
 
             //問題タイトルをボタンに表示
             Form1 f1 = new Form1();
             switch (screenflg)
             {
                 case 1:
+                    this.Text = "PROCK - ようじむけもーど";
                     quest1.Text = "イヌのかおをつくろう！";
                     quest2.Text = "イヌとネコをならべよう！";
                     quest3.Text = "どうぶつシールでじゃんけん！";
@@ -86,6 +82,7 @@ namespace wani1
 
                     break;
                 case 2:
+                    this.Text = "PROCK - しょうがくせいむけもーど";
                     quest1.Text = "キャラクターをうごかそう！";
                     quest2.Text = "イヌとネコをならべよう！";
                     quest3.Text = "ワニをおよがせよう！";
@@ -103,6 +100,7 @@ namespace wani1
                     this.BackgroundImage = Image.FromFile(RB);
                     break;
                 case 3:
+                    this.Text = "PROCK - ちゃれんじもーど";
                     quest1.Text = "ただしいみちをあるこう！";
                     quest2.Text = "くだものをますにいれよう！";
                     quest3.Text = "じゅんびちゅうだよ！";

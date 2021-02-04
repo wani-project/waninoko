@@ -69,7 +69,7 @@
             this.quest1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.quest1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.quest1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.quest1.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.quest1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.quest1.Location = new System.Drawing.Point(3, 3);
             this.quest1.Name = "quest1";
             this.quest1.Size = new System.Drawing.Size(494, 84);
@@ -85,7 +85,7 @@
             this.quest2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.quest2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.quest2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.quest2.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.quest2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.quest2.Location = new System.Drawing.Point(3, 93);
             this.quest2.Name = "quest2";
             this.quest2.Size = new System.Drawing.Size(494, 84);
@@ -101,7 +101,7 @@
             this.quest3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.quest3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.quest3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.quest3.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.quest3.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.quest3.Location = new System.Drawing.Point(3, 183);
             this.quest3.Name = "quest3";
             this.quest3.Size = new System.Drawing.Size(494, 84);
@@ -117,7 +117,7 @@
             this.quest4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.quest4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.quest4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.quest4.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.quest4.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.quest4.Location = new System.Drawing.Point(3, 273);
             this.quest4.Name = "quest4";
             this.quest4.Size = new System.Drawing.Size(494, 84);
@@ -133,7 +133,7 @@
             this.quest5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.quest5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.quest5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.quest5.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.quest5.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.quest5.Location = new System.Drawing.Point(3, 363);
             this.quest5.Name = "quest5";
             this.quest5.Size = new System.Drawing.Size(494, 84);
@@ -146,10 +146,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label1.Location = new System.Drawing.Point(382, 89);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(523, 80);
+            this.label1.Size = new System.Drawing.Size(538, 73);
             this.label1.TabIndex = 1;
             this.label1.Text = "もんだいをえらんでね";
             // 
@@ -157,7 +157,7 @@
             // 
             this.quest_back_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.quest_back_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.quest_back_button.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.quest_back_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.quest_back_button.Location = new System.Drawing.Point(12, 12);
             this.quest_back_button.Name = "quest_back_button";
             this.quest_back_button.Size = new System.Drawing.Size(75, 40);
@@ -179,7 +179,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LearnSelect";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "がくしゅうもーど";
+            this.Text = "PROCK";
             this.Load += new System.EventHandler(this.LearnSelect_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
