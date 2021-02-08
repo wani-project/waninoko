@@ -24,19 +24,22 @@ namespace wani1
                     ComboBox direction = new ComboBox();
                     //ラベル設定
                     Label labelL = new Label();
+                    Font font = new Font("コーポレート・ロゴ（ラウンド）", 18);
+
                     //labelL設定
-                    labelL.Font = new Font(labelL.Font.FontFamily, 16, FontStyle.Bold);
+                    labelL.Font = new Font(font.FontFamily, 16, FontStyle.Bold);
                     labelL.Size = new Size(220, 40);
                     labelL.ForeColor = Color.White;
                     labelL.BackColor = Color.Transparent;
                     labelL.Parent = meat;
+                    
                     
                     //回数設定
                     TextBox countBox = new TextBox();
                     countBox.Multiline = true;
                     countBox.Size = new Size(35,25);
                     countBox.TextAlign = HorizontalAlignment.Center;
-                    countBox.Font = new Font(countBox.Font.FontFamily, 16);
+                    countBox.Font = new Font(font.FontFamily, 16);
                     countBox.KeyPress += new KeyPressEventHandler(countBox_KeyPress);
                     countBox.BringToFront();
 
@@ -46,25 +49,25 @@ namespace wani1
                         case "meat_0":
                             meat.Name = "meat_" + review.MeatCount;
                             meat.Image = Image.FromFile(review.FilePath + "\\images\\flowchart\\meat.png");
-                            labelL.Text = "うえに     マスすすむ";
+                            labelL.Text = "うえに      マスすすむ";
                             labelL.Location = new Point(65, 25);
                             break;
                         case "catfish_0":
                             meat.Name = "catfish_" + review.MeatCount;
                             meat.Image = Image.FromFile(review.FilePath + "\\images\\flowchart\\catfish.png");
-                            labelL.Text = "みぎに     マスすすむ";
+                            labelL.Text = "みぎに      マスすすむ";
                             labelL.Location = new Point(62, 20);                          
                             break;
                         case "crab_0":
                             meat.Name = "crab_" + review.MeatCount;
                             meat.Image = Image.FromFile(review.FilePath + "\\images\\flowchart\\crab.png");
-                            labelL.Text = "みぎに     マスすすむ";
+                            labelL.Text = "みぎに      マスすすむ";
                             labelL.Location = new Point(62, 40);                          
                             break;
                         case "shell_0":
                             meat.Name = "shell_" + review.MeatCount;
                             meat.Image = Image.FromFile(review.FilePath + "\\images\\flowchart\\shell.png");
-                            labelL.Text = "うえに     マスすすむ";
+                            labelL.Text = "うえに      マスすすむ";
                             labelL.ForeColor = Color.Black;
                             labelL.Location = new Point(65, 25);
                             break;
@@ -78,15 +81,15 @@ namespace wani1
                             meat.Location = new Point(0, 145);
                             if(name == "catfish_0")
                             {
-                                countBox.Location = new Point(123, 165);//20
+                                countBox.Location = new Point(126, 165);//20
                             }
                             else if(name == "crab_0")
                             {
-                                countBox.Location = new Point(123, 185);//40
+                                countBox.Location = new Point(126, 185);//40
                             }
                             else
                             {
-                                countBox.Location = new Point(120, 170);//25
+                                countBox.Location = new Point(123, 170);//25
                             }
                             
                             countBox.Name = "count_1";
@@ -95,15 +98,15 @@ namespace wani1
                             meat.Location = new Point(0, 235);
                             if (name == "catfish_0")
                             {
-                                countBox.Location = new Point(120, 255);
+                                countBox.Location = new Point(122, 255);
                             }
                             else if (name == "crab_0")
                             {
-                                countBox.Location = new Point(120, 275);
+                                countBox.Location = new Point(122, 275);
                             }
                             else
                             {
-                                countBox.Location = new Point(120, 260);
+                                countBox.Location = new Point(122, 260);
                             }
                             countBox.Name = "count_2";
 
@@ -112,15 +115,15 @@ namespace wani1
                             meat.Location = new Point(0, 330);
                             if (name == "catfish_0")
                             {
-                                countBox.Location = new Point(120, 350);
+                                countBox.Location = new Point(122, 350);
                             }
                             else if (name == "crab_0")
                             {
-                                countBox.Location = new Point(120, 370);
+                                countBox.Location = new Point(122, 370);
                             }
                             else
                             {
-                                countBox.Location = new Point(120, 355);
+                                countBox.Location = new Point(122, 355);
                             }
                             countBox.Name = "count_3";
                             break;
@@ -128,15 +131,15 @@ namespace wani1
                             meat.Location = new Point(0, 420);
                             if (name == "catfish_0")
                             {
-                                countBox.Location = new Point(120, 440);
+                                countBox.Location = new Point(122, 440);
                             }
                             else if (name == "crab_0")
                             {
-                                countBox.Location = new Point(120, 460);
+                                countBox.Location = new Point(122, 460);
                             }
                             else
                             {
-                                countBox.Location = new Point(120, 445);
+                                countBox.Location = new Point(122, 445);
                             }
                             countBox.Name = "count_4";
                             break;
@@ -159,10 +162,11 @@ namespace wani1
 
                     NumericUpDown upT = new NumericUpDown();
                     Label catL = new Label();
+                    font = new Font("コーポレート・ロゴ（ラウンド）", 18);
                     //ループ回数テキストボックス設定
                     upT.Text = "1";
                     upT.Name = "loopCount";
-                    upT.Font = new Font(upT.Font.FontFamily, 20);
+                    upT.Font = new Font(font.FontFamily, 20);
                     upT.TextAlign = HorizontalAlignment.Center;
                     upT.Size = new Size(45, 30);
                     upT.Location = new Point(50,25);
@@ -172,8 +176,8 @@ namespace wani1
 
                     Label label = new Label();
                     label.Text = "回くりかえす";
-                    label.Font = new Font(label.Font.FontFamily, 20);
-                    label.Size = new Size(140, 30);
+                    label.Font = new Font(font.FontFamily, 20);
+                    label.Size = new Size(142, 30);
                     label.BackColor = Color.FromArgb(235, 235, 235);
                     label.Location = new Point(95, 30);
                     label.Parent = Lcat;
