@@ -127,41 +127,6 @@ namespace wani1
             }
             pb.Location = test_def;
         }
-        //-------------------------------------------------------------------
-        /*private async void button1_Click(object sender, EventArgs e)
-        {
-            switch (questNum)
-            {
-
-                case 1:
-                    RemoveWani();
-                    talkflg = true;
-                    CreateControl("waniChara", 0);
-                    string ans = "";
-                    for (int i = 0; i < 3; i++)
-                    {
-                        ans += tf.dogAns[i];
-                    }
-
-
-                    if (ans == "123")
-                    {
-                        textBox1.Text = "せいかい！！";
-
-                    }
-                    else
-                    {
-                        textBox1.Text = "じゅんばんがまちがってるよ！！";
-                    }
-                    await Task.Delay(5000);
-                    RemoveWani();
-                    talkflg = false;
-                    CreateControl("waniChara", 0);
-                    break;
-                default:
-                    break;
-            }
-        }*/
         private async void button8_Click(object sender, EventArgs e)
         {
             switch (questNum)
@@ -181,13 +146,14 @@ namespace wani1
                     if (ans == "123")
                     {
                         textBox1.Text = "せいかい！！";
-
+                        Answer(1);
                     }
                     else
                     {
                         textBox1.Text = "じゅんばんがまちがってるよ！！";
+                        Answer(0);
                     }
-                    await Task.Delay(5000);
+                    await Task.Delay(3000);
                     RemoveWani();
                     talkflg = false;
                     CreateControl("waniChara", 0);
@@ -318,49 +284,6 @@ namespace wani1
                     break;
             }
         }
-        //最初からボタンの処理----------------------------------
-        /* private void button2_Click(object sender, EventArgs e)
-         {
-             switch (questNum)
-             {
-                 case 1:
-                     questControl.Clear();
-                     Control[] d1 = new Control[0];
-                     Control[] d2 = new Control[0];
-                     Control[] d3 = new Control[0];
-
-                     d1 = panel1.Controls.Find("dog_face1", true);
-                     d2 = panel1.Controls.Find("dog_parts1", true);
-                     d3 = panel1.Controls.Find("dog_ears1", true);
-
-                     foreach (Control c in d1)
-                     {
-                         panel1.Controls.Remove(c);
-                     }
-                     foreach (Control c in d2)
-                     {
-                         panel1.Controls.Remove(c);
-                     }
-                     foreach (Control c in d3)
-                     {
-                         panel1.Controls.Remove(c);
-                     }
-                     if(talkflg == true)
-                     {
-                         talkflg = false;
-                         CreateControl("waniChara", 0);
-                     }
-                     tf.dog1count = 0;
-                     tf.dog2count = 0;
-                     tf.dog3count = 0;
-                     textBox1.Text = "じゅんばんにきをつけてね！";
-                     break;
-                 default:
-                     break;
-             }
-
-
-         }*/
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -402,6 +325,44 @@ namespace wani1
                     break;
             }
             //-------------------------------------------------------
-        }       
+        }    
+        private async void Answer(int num)
+        {
+            switch (num)
+            {
+                case 1:
+                    PictureBox yes = new PictureBox();
+                    yes.Name = "yes";
+                    yes.Size = new Size(897, 587);
+                    yes.SizeMode = PictureBoxSizeMode.StretchImage;
+                    yes.Image = Image.FromFile(FilePath + "\\images\\seikai.gif");
+                    yes.Parent = panel1;
+                    panel1.Controls.Add(yes);
+                    yes.BringToFront();
+                    await Task.Delay(2800);
+                    Control[] c = panel1.Controls.Find("yes", true);
+                    foreach (Control con in c)
+                    {
+                        panel1.Controls.Remove(con);
+                    }
+                    break;
+                case 0:
+                    PictureBox no = new PictureBox();
+                    no.Name = "no";
+                    no.Size = new Size(897, 587);
+                    no.SizeMode = PictureBoxSizeMode.StretchImage;
+                    no.Image = Image.FromFile(FilePath + "\\images\\matigai.gif");
+                    no.Parent = panel1;
+                    panel1.Controls.Add(no);
+                    no.BringToFront();
+                    await Task.Delay(2800);
+                    c = panel1.Controls.Find("no", true);
+                    foreach (Control con in c)
+                    {
+                        panel1.Controls.Remove(con);
+                    }
+                    break;
+            }
+        }
     }
 }
