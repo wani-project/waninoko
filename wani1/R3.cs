@@ -102,7 +102,7 @@ namespace wani1
             {
                 PictureBox yes = new PictureBox();
                 yes.Name = "yes";
-                yes.Size = new Size(897, 587);
+                yes.Size = new Size(1228, 593);
                 yes.SizeMode = PictureBoxSizeMode.StretchImage;
                 yes.Image = Image.FromFile(FilePath + "\\images\\seikai.gif");
                 yes.Parent = panel4;
@@ -119,7 +119,7 @@ namespace wani1
             {
                 PictureBox no = new PictureBox();
                 no.Name = "no";
-                no.Size = new Size(897, 587);
+                no.Size = new Size(1228, 593);
                 no.SizeMode = PictureBoxSizeMode.StretchImage;
                 no.Image = Image.FromFile(FilePath + "\\images\\matigai.gif");
                 no.Parent = panel4;

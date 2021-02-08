@@ -149,30 +149,36 @@ namespace wani1
                             if(satoshi == 2)
                             {
                                 textBox1.Text = "せいかい！！";
+                                Answer(1);
                             }
                             else
                             {
                                 textBox1.Text = "まちがい";
+                                Answer(0);
                             }
                             break;
                         case 2://チョキ
                             if(satoshi == 3)
                             {
                                 textBox1.Text = "せいかい！！";
+                                Answer(1);
                             }
                             else
                             {
                                 textBox1.Text = "まちがい";
+                                Answer(0);
                             }
                             break;
                         case 3://パー
                             if(satoshi == 1)
                             {
                                 textBox1.Text = "せいかい！！";
+                                Answer(1);
                             }
                             else
                             {
                                 textBox1.Text = "まちがい";
+                                Answer(0);
                             }
                             break;
                     }
@@ -186,30 +192,36 @@ namespace wani1
                             if (hanako == 2)
                             {
                                 textBox1.Text = "せいかい！！";
+                                Answer(1);
                             }
                             else
                             {
                                 textBox1.Text = "まちがい";
+                                Answer(0);
                             }
                             break;
                         case 2://チョキ
                             if (hanako == 3)
                             {
                                 textBox1.Text = "せいかい！！";
+                                Answer(1);
                             }
                             else
                             {
                                 textBox1.Text = "まちがい";
+                                Answer(0);
                             }
                             break;
                         case 3://パー
                             if (hanako == 1)
                             {
                                 textBox1.Text = "せいかい！！";
+                                Answer(1);
                             }
                             else
                             {
                                 textBox1.Text = "まちがい";
+                                Answer(0);
                             }
                             break;
                     }
@@ -219,6 +231,7 @@ namespace wani1
             else
             {
                 textBox1.Text = "てがちがうよ！";
+                Answer(0);
             }
         }
         
@@ -326,6 +339,46 @@ namespace wani1
 
                 }
                 flg = true;
+            }
+        }
+        private async void Answer(int num)
+        {
+            switch (num)
+            {
+                case 1:
+                    PictureBox yes = new PictureBox();
+                    yes.Name = "yes";
+                    yes.Size = new Size(646, 587);
+                    yes.Location = new Point(573, 0);
+                    yes.SizeMode = PictureBoxSizeMode.StretchImage;
+                    yes.Image = Image.FromFile(FilePath + "\\images\\seikai.gif");
+                    yes.Parent = panel4;
+                    panel4.Controls.Add(yes);
+                    yes.BringToFront();
+                    await Task.Delay(2800);
+                    Control[] c = panel4.Controls.Find("yes", true);
+                    foreach (Control con in c)
+                    {
+                        panel4.Controls.Remove(con);
+                    }
+                    break;
+                case 0:
+                    PictureBox no = new PictureBox();
+                    no.Name = "no";
+                    no.Size = new Size(646, 587);
+                    no.Location = new Point(573, 0);
+                    no.SizeMode = PictureBoxSizeMode.StretchImage;
+                    no.Image = Image.FromFile(FilePath + "\\images\\matigai.gif");
+                    no.Parent = panel4;
+                    panel4.Controls.Add(no);
+                    no.BringToFront();
+                    await Task.Delay(2800);
+                    c = panel4.Controls.Find("no", true);
+                    foreach (Control con in c)
+                    {
+                        panel4.Controls.Remove(con);
+                    }
+                    break;
             }
         }
     }

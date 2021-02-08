@@ -46,7 +46,7 @@ namespace wani1
         private async void ViewAns(int i)
         {
             PictureBox ans = new PictureBox();
-            ans.Size = new Size(800, 600);
+            ans.Size = new Size(1228, 593);
             ans.SizeMode = PictureBoxSizeMode.StretchImage;
             ans.Location = new Point(0, 0);
             switch (i)

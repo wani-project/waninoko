@@ -36,7 +36,7 @@ namespace wani1
             await Task.Delay(3000);
             CreateControl("waniChara", 0);
             talkflg = false;
-            await Task.Delay(3000);
+            await Task.Delay(1500);
             CreateControl("waniChara", 0);
         }
         private async void docat_Click_Correct(object sender, EventArgs e)
@@ -48,7 +48,7 @@ namespace wani1
             await Task.Delay(3000);
             CreateControl("waniChara", 0);
             talkflg = false;
-            await Task.Delay(3000);
+            await Task.Delay(1500);
             CreateControl("waniChara", 0);
         }
         private void CreateControl(string kinds,int num)
