@@ -105,7 +105,7 @@
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.button2.ForeColor = System.Drawing.Color.Transparent;
             this.button2.Location = new System.Drawing.Point(1059, 13);
             this.button2.Name = "button2";
@@ -130,7 +130,7 @@
             // 
             this.review_back_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.review_back_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.review_back_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.review_back_button.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.review_back_button.Location = new System.Drawing.Point(-1, -1);
             this.review_back_button.Name = "review_back_button";
             this.review_back_button.Size = new System.Drawing.Size(75, 40);
@@ -143,7 +143,7 @@
             // 
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.textBox2.Location = new System.Drawing.Point(74, 0);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
@@ -229,7 +229,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label2.Location = new System.Drawing.Point(207, 137);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(135, 39);
@@ -502,7 +502,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(618, 315);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(557, 39);
@@ -512,7 +512,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(598, 210);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(603, 39);
@@ -522,7 +522,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(598, 108);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(577, 39);
@@ -551,7 +551,7 @@
             this.MaximizeBox = false;
             this.Name = "L6";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PROCK - ようじむけもーど";
+            this.Text = "ようじむけもーど";
             this.Load += new System.EventHandler(this.L6_Load);
             this.Review_Group.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

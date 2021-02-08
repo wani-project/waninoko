@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +13,7 @@ namespace wani1
     public partial class L2 : Form
     {
         private Boolean talkflg = false;
-        private string FilePath = Directory.GetCurrentDirectory();
+
         public L2()
         {
             InitializeComponent();
@@ -27,31 +26,47 @@ namespace wani1
             CreateControl("docat", 2);
         }
         //docatクリック
-        private async void docat_Click(object sender, EventArgs e)
+        private void docat_Click(object sender, EventArgs e)
         {
             //不正解
-            Answer(0);
             textBox1.Text = "ざんねん！！";
             talkflg = true;
-            await Task.Delay(2800);
             CreateControl("waniChara", 0);
-            await Task.Delay(1500);
-            talkflg = false;
-            CreateControl("waniChara", 0);
+
+            Timer timer = new Timer();
+            timer.Start();
+
+            while (timer.Interval >= 500)
+            {
+                if (timer.Interval >= 300)
+                {
+                    timer.Stop();
+                    talkflg = false;
+                    CreateControl("waniChara", 0);
+                    break;
+                }
+            }
         }
-        private async void docat_Click_Correct(object sender, EventArgs e)
+        private void docat_Click_Correct(object sender, EventArgs e)
         {
             //正解
-            Answer(1);
             textBox1.Text = "せいかい！すごいね！";
             talkflg = true;
-            await Task.Delay(2800);
             CreateControl("waniChara", 0);
-            await Task.Delay(1500);
-            talkflg = false;
-            CreateControl("waniChara", 0);
-                
-            
+
+            Timer timer = new Timer();
+            timer.Start();
+
+            while (timer.Interval >= 500)
+            {
+                if (timer.Interval >= 300)
+                {
+                    timer.Stop();
+                    talkflg = false;
+                    CreateControl("waniChara", 0);
+                    break;
+                }
+            }
         }
         private void CreateControl(string kinds,int num)
         {
@@ -390,45 +405,6 @@ namespace wani1
                 talkflg = false;
             }
             CreateControl("waniChara", 0);
-        }
-
-        private async void Answer(int i)
-        {
-            switch (i)
-            {
-                case 0:
-                    PictureBox no = new PictureBox();
-                    no.Name = "no";
-                    no.Size = new Size(1228, 593);
-                    no.SizeMode = PictureBoxSizeMode.StretchImage;
-                    no.Image = Image.FromFile(FilePath + "\\images\\matigai.gif");
-                    no.Parent = panel1;
-                    panel1.Controls.Add(no);
-                    no.BringToFront();
-                    await Task.Delay(2800);
-                    Control[] c1 = panel1.Controls.Find("no", true);
-                    foreach (Control con in c1)
-                    {
-                        panel1.Controls.Remove(con);
-                    }
-                    break;
-                case 1:
-                    PictureBox yes = new PictureBox();
-                    yes.Name = "yes";
-                    yes.Size = new Size(1228, 593);
-                    yes.SizeMode = PictureBoxSizeMode.StretchImage;
-                    yes.Image = Image.FromFile(FilePath + "\\images\\seikai.gif");
-                    yes.Parent = panel1;
-                    panel1.Controls.Add(yes);
-                    yes.BringToFront();
-                    await Task.Delay(2800);
-                    Control[] c2 = panel1.Controls.Find("yes", true);
-                    foreach (Control con in c2)
-                    {
-                        panel1.Controls.Remove(con);
-                    }
-                    break;
-            }
         }
     }
 }

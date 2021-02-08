@@ -88,6 +88,7 @@ namespace wani1
                     Label catfishL = new Label();
                     Label crabL = new Label();
                     Label shellL = new Label();
+                    Font font = new Font("コーポレート・ロゴ（ラウンド）", 18);
                     //フローチャートの下部部の追加（下顎）
                     PictureBox bottomF = new PictureBox();
                     //迷路部分の追加
@@ -113,12 +114,10 @@ namespace wani1
                     meat.MouseUp += new MouseEventHandler(this.Control_MouseUp);
                     //肉部品ラベル設定
                     meatL.Text = "うえ";
-                    meatL.Font = new Font(upL.Font.FontFamily, 20);
+                    meatL.Font = new Font(font.FontFamily, 18);
                     meatL.ForeColor = Color.White;
-                    //meatL.BackColor = Color.FromArgb(168, 104, 70);
                     meatL.BackColor = Color.Transparent;
                     meatL.Size = new Size(50, 30);
-                    //meatL.Location = new Point(155, 110);
                     meatL.Location = new Point(110,30);
 
                     //貝部品設定
@@ -134,9 +133,8 @@ namespace wani1
                     shell.MouseUp += new MouseEventHandler(this.Control_MouseUp);
                     //貝ラベル設定
                     shellL.Text = "うえ";
-                    shellL.Font = new Font(upL.Font.FontFamily, 20);
+                    shellL.Font = new Font(font.FontFamily, 18);
                     shellL.ForeColor = Color.Black;
-                    //shellL.BackColor = Color.FromArgb(255, 155, 105);
                     shellL.BackColor = Color.Transparent;
                     shellL.Size = new Size(50, 30);
                     shellL.Location = new Point(110, 20);
@@ -154,9 +152,8 @@ namespace wani1
                     catfish.MouseUp += new MouseEventHandler(this.Control_MouseUp);
                     //なまずラベル設定
                     catfishL.Text = "みぎ";
-                    catfishL.Font = new Font(upL.Font.FontFamily, 20);
+                    catfishL.Font = new Font(font.FontFamily, 18);
                     catfishL.ForeColor = Color.White;
-                    //catfishL.BackColor = Color.FromArgb(70, 70, 70);
                     catfishL.BackColor = Color.Transparent;
                     catfishL.Size = new Size(60, 30);
                     catfishL.Location = new Point(110, 20);
@@ -174,9 +171,8 @@ namespace wani1
                     crab.MouseUp += new MouseEventHandler(this.Control_MouseUp);
                     //かにラベル設定
                     crabL.Text = "みぎ";
-                    crabL.Font = new Font(upL.Font.FontFamily, 20);
+                    crabL.Font = new Font(font.FontFamily, 18);
                     crabL.ForeColor = Color.White;
-                    //crabL.BackColor = Color.FromArgb(209, 0, 0);
                     crabL.BackColor = Color.Transparent;
                     crabL.Size = new Size(60, 30);
                     crabL.Location = new Point(110, 40);
@@ -191,7 +187,7 @@ namespace wani1
                     upF.Image = Image.FromFile(review.FilePath + "\\images\\flowchart\\up.png");
                     //上部分のラベル設定
                     upL.Text = "はじめ";
-                    upL.Font = new Font(upL.Font.FontFamily, 20);
+                    upL.Font = new Font(font.FontFamily, 18);
                     upL.Size = new Size(80, 30);
                     upL.Location = new Point(110, 72);
                     upL.BackColor = Color.FromArgb(170, 218, 24);
@@ -308,7 +304,7 @@ namespace wani1
                     PictureBox Lcat = new PictureBox();
                     //ループネコブロック説明ラベル
                     Label LcatL = new Label();
-
+                    font = new Font("コーポレート・ロゴ（ラウンド）", 18);
                     //はじめネコブロック設定
                     Scat.Size = new Size(400, 580);
                     Scat.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -332,8 +328,8 @@ namespace wani1
                     LcatL.Name = "LcatL";
                     LcatL.Parent = Lcat;
                     LcatL.Text = "くりかえし";
-                    LcatL.Size = new Size(110,25);
-                    LcatL.Font = new Font(LcatL.Font.FontFamily, 20);
+                    LcatL.Size = new Size(125,28);
+                    LcatL.Font = new Font(font.FontFamily, 20);
                     LcatL.BackColor = Color.Transparent;
                     LcatL.Location = new Point(40, 10);
 
@@ -468,6 +464,7 @@ namespace wani1
         {
             this.MaximizeBox = false;
             CreateControls(this, questNum);
+            label_title.Font = new Font("コーポレート・ロゴ（ラウンド）", 18);
             label_title.Text = questTitle;
             if(questNum == 2)
             {
@@ -588,273 +585,294 @@ namespace wani1
         }
         private async void Start(int num)
         {
-            switch (num)
+            try
             {
-                case 1:
-                    for(int i = 1;i <= MeatCount; i++)
-                    {
-                        Control[] c1 = new Control[0];
-                        Control[] c2 = new Control[0];
-                        TextBox text = new TextBox();
-                        int count = 0;
-                        string Cname = "";
-                        string[] kinds = { "meat_" + i, "catfish_" + i, "crab_" + i, "shell_" + i};
-                        string find = "count_" + i;
-                        c1 = panel4.Controls.Find(find, true);
-                        foreach (Control con1 in c1)
+                switch (num)
+                {
+                    case 1:
+                        for (int i = 1; i <= MeatCount; i++)
                         {
-                            text = (TextBox)con1;
-                            count = int.Parse(con1.Text);
-                            for (int y = 0; y < 4; y++)
+                            Control[] c1 = new Control[0];
+                            Control[] c2 = new Control[0];
+                            TextBox text = new TextBox();
+                            int count = 0;
+                            string Cname = "";
+                            string[] kinds = { "meat_" + i, "catfish_" + i, "crab_" + i, "shell_" + i };
+                            string find = "count_" + i;
+                            c1 = panel4.Controls.Find(find, true);
+                            foreach (Control con1 in c1)
                             {
-                                c2 = panel4.Controls.Find(kinds[y], true);
-                                if (c2.Length != 0)
+                                text = (TextBox)con1;
+                                count = int.Parse(con1.Text);
+                                for (int y = 0; y < 4; y++)
                                 {
-                                    break;
-                                }
-                            }
-                            foreach (Control con2 in c2)
-                            {
-                                Cname = con2.Name;
-                                if (Cname == kinds[0])
-                                {
-                                    for (int c = 0; c < count; c++)
+                                    c2 = panel4.Controls.Find(kinds[y], true);
+                                    if (c2.Length != 0)
                                     {
-                                        MoveChara("up");
-                                        await Task.Delay(1000);
+                                        break;
                                     }
                                 }
-                                if (Cname == kinds[1])
+                                foreach (Control con2 in c2)
                                 {
-                                    for (int c = 0; c < count; c++)
+                                    Cname = con2.Name;
+                                    if (Cname == kinds[0])
                                     {
-                                        MoveChara("right");
-                                        await Task.Delay(1000);
-                                    }
-                                }
-                                if (Cname == kinds[2])
-                                {
-                                    for (int c = 0; c < count; c++)
-                                    {
-                                        MoveChara("right");
-                                        await Task.Delay(1000);
-                                    }
-                                }
-                                if (Cname == kinds[3])
-                                {
-                                    for (int c = 0; c < count; c++)
-                                    {
-                                        MoveChara("up");
-                                        await Task.Delay(1000);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    break;
-                case 2:
-                    if(cardflg == true)
-                    {
-                        //表示済みカードの削除
-                        if (cardCount[0] < cardCount[1])
-                        {
-                            cardCount[0] = cardCount[1];
-                        }
-                        for(int i = 1; i <= cardCount[0]; i++)
-                        {
-                            Control[] cards = panel4.Controls.Find("catC_" + i, true);
-                            foreach (Control c in cards)
-                            {
-                                panel4.Controls.Remove(c);
-                            }
-                            cards = panel4.Controls.Find("dogC_" + i, true);
-                            foreach (Control c in cards)
-                            {
-                                panel4.Controls.Remove(c);
-                            }
-                        }
-                        Control[] huki = panel4.Controls.Find("huki", true);
-                        foreach (Control c in huki)
-                        {
-                            panel4.Controls.Remove(c);
-                        }
-                        loopCount = 0;
-                        docatP = new Point(430, 200);
-                        hukiS = new Size(500, 200);
-                        hukiflg = false;
-                        cardflg = false;
-                        await Task.Delay(1000);
-                    }
-                    //吹き出し表示
-                    if (hukiflg == false)
-                    {
-                        CreateControls(this, 20);
-                        hukiflg = true;
-                        await Task.Delay(1000);
-                    }
-                    //ループ判定
-                    if (rank[0] == 1)
-                    {
-                        Control[] loop = new Control[0];
-                        loop = panel4.Controls.Find("loopCount", true);
-                        foreach (Control con in loop)
-                        {
-                            loopCount = int.Parse(con.Text);
-                        }
-                        //ループ開始
-                        for (int i = 0; i < loopCount; i++)
-                        {
-                            //カードの改行
-                            if (i == 3 || i == 6)
-                            {
-                                Control[] huki = panel4.Controls.Find("huki", true);
-                                foreach (Control c in huki)
-                                {
-                                    PictureBox p = (PictureBox)c;
-                                    p.Size = new Size(p.Width, p.Height + 120);
-                                    p.Image = Image.FromFile(FilePath + "\\images\\docat\\hukidashi" + i + ".png");
-                                }
-                                //hukiS.Height += 100;
-                                //CreateControls(this, 20);
-                                docatP = new Point(430, docatP.Y + 100);
-                            }
-                            if(rank[1] != 0 && rank[2] != 0)
-                            {
-                                if (rank[1] > rank[2]) //cat > dog
-                                {
-                                    if (rank[1] >= 1)
-                                    {
-                                        CreateControls(this, 22);
-                                        await Task.Delay(1000);
-                                    }
-                                    if (rank[2] >= 1)
-                                    {
-                                        CreateControls(this, 21);
-                                    }
-                                }
-                                else if (rank[2] > rank[1])
-                                {
-                                    if (rank[2] >= 1)
-                                    {
-                                        CreateControls(this, 21);
-                                        await Task.Delay(1000);
-                                    }
-                                    if (rank[1] >= 1)
-                                    {
-                                        CreateControls(this, 22);
-                                    }
-                                }
-                                await Task.Delay(1000);
-                            }else
-                            {
-                                if(rank[1] != 0 || rank[2] != 0)
-                                {
-                                    for (int y = 0; y < singleCount.Length; y++)
-                                    {
-                                        switch (singleCount[y])
+                                        for (int c = 0; c < count; c++)
                                         {
-                                            case 1://ネコ
-                                                CreateControls(this, 21);
-                                                await Task.Delay(1000);
-                                                break;
-                                            case 2://イヌ
-                                                CreateControls(this, 22);
-                                                await Task.Delay(1000);
-                                                break;
-                                            default:
-                                                break;
+                                            MoveChara("up");
+                                            await Task.Delay(1000);
+                                        }
+                                    }
+                                    if (Cname == kinds[1])
+                                    {
+                                        for (int c = 0; c < count; c++)
+                                        {
+                                            MoveChara("right");
+                                            await Task.Delay(1000);
+                                        }
+                                    }
+                                    if (Cname == kinds[2])
+                                    {
+                                        for (int c = 0; c < count; c++)
+                                        {
+                                            MoveChara("right");
+                                            await Task.Delay(1000);
+                                        }
+                                    }
+                                    if (Cname == kinds[3])
+                                    {
+                                        for (int c = 0; c < count; c++)
+                                        {
+                                            MoveChara("up");
+                                            await Task.Delay(1000);
                                         }
                                     }
                                 }
                             }
                         }
-                    }
-                    else if(rank[0] == 2)
-                    {
-                        Control[] loop = new Control[0];
-                        loop = panel4.Controls.Find("loopCount", true);
-                        foreach (Control con in loop)
+                        break;
+                    case 2:
+                        if (cardflg == true)
                         {
-                            loopCount = int.Parse(con.Text);
-                        }
-                        if (rank[1] == 1)
-                        {
-                            CreateControls(this, 21);
-                            await Task.Delay(1000);
-                        }
-                        if (rank[2] == 1)
-                        {
-                            CreateControls(this, 22);
-                            await Task.Delay(1000);
-                        }
-                        //ループ開始
-                        for (int i = 0; i < loopCount; i++)
-                        {
-                            //カードの改行
-                            if (i == 5 || i == 9)
+                            //表示済みカードの削除
+                            if (cardCount[0] < cardCount[1])
                             {
-                                Control[] huki = panel4.Controls.Find("huki", true);
-                                foreach (Control c in huki)
-                                {
-                                    PictureBox p = (PictureBox)c;
-                                    p.Size = new Size(p.Width, p.Height + 120);
-                                    p.Image = Image.FromFile(FilePath + "\\images\\docat\\hukidashi3.png");
-                                }
-                                //hukiS.Height += 100;
-                                //CreateControls(this, 20);
-                                docatP = new Point(430, docatP.Y + 100);
+                                cardCount[0] = cardCount[1];
                             }
-                                
-                            
-                            if (rank[1] == 3)
+                            for (int i = 1; i <= cardCount[0]; i++)
+                            {
+                                Control[] cards = panel4.Controls.Find("catC_" + i, true);
+                                foreach (Control c in cards)
+                                {
+                                    panel4.Controls.Remove(c);
+                                }
+                                cards = panel4.Controls.Find("dogC_" + i, true);
+                                foreach (Control c in cards)
+                                {
+                                    panel4.Controls.Remove(c);
+                                }
+                            }
+                            Control[] huki = panel4.Controls.Find("huki", true);
+                            foreach (Control c in huki)
+                            {
+                                panel4.Controls.Remove(c);
+                            }
+                            loopCount = 0;
+                            docatP = new Point(430, 200);
+                            hukiS = new Size(500, 200);
+                            hukiflg = false;
+                            cardflg = false;
+                            await Task.Delay(1000);
+                        }
+                        //吹き出し表示
+                        if (hukiflg == false)
+                        {
+                            CreateControls(this, 20);
+                            hukiflg = true;
+                            await Task.Delay(1000);
+                        }
+                        //ループ判定
+                        if (rank[0] == 1)
+                        {
+                            Control[] loop = new Control[0];
+                            loop = panel4.Controls.Find("loopCount", true);
+                            foreach (Control con in loop)
+                            {
+                                loopCount = int.Parse(con.Text);
+                            }
+                            //ループ開始
+                            for (int i = 0; i < loopCount; i++)
+                            {
+                                //カードの改行
+                                if (i == 3 || i == 6)
+                                {
+                                    Control[] huki = panel4.Controls.Find("huki", true);
+                                    foreach (Control c in huki)
+                                    {
+                                        PictureBox p = (PictureBox)c;
+                                        p.Size = new Size(p.Width, p.Height + 120);
+                                        p.Image = Image.FromFile(FilePath + "\\images\\docat\\hukidashi" + i + ".png");
+                                    }
+                                    //hukiS.Height += 100;
+                                    //CreateControls(this, 20);
+                                    docatP = new Point(430, docatP.Y + 100);
+                                }
+                                if (rank[1] != 0 && rank[2] != 0)
+                                {
+                                    if (rank[1] > rank[2]) //cat > dog
+                                    {
+                                        if (rank[1] >= 1)
+                                        {
+                                            CreateControls(this, 22);
+                                            await Task.Delay(1000);
+                                        }
+                                        if (rank[2] >= 1)
+                                        {
+                                            CreateControls(this, 21);
+                                        }
+                                    }
+                                    else if (rank[2] > rank[1])
+                                    {
+                                        if (rank[2] >= 1)
+                                        {
+                                            CreateControls(this, 21);
+                                            await Task.Delay(1000);
+                                        }
+                                        if (rank[1] >= 1)
+                                        {
+                                            CreateControls(this, 22);
+                                        }
+                                    }
+                                    await Task.Delay(1000);
+                                }
+                                else
+                                {
+                                    if (rank[1] != 0 || rank[2] != 0)
+                                    {
+                                        for (int y = 0; y < singleCount.Length; y++)
+                                        {
+                                            switch (singleCount[y])
+                                            {
+                                                case 1://ネコ
+                                                    CreateControls(this, 21);
+                                                    await Task.Delay(1000);
+                                                    break;
+                                                case 2://イヌ
+                                                    CreateControls(this, 22);
+                                                    await Task.Delay(1000);
+                                                    break;
+                                                default:
+                                                    break;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        else if (rank[0] == 2)
+                        {
+                            Control[] loop = new Control[0];
+                            loop = panel4.Controls.Find("loopCount", true);
+                            foreach (Control con in loop)
+                            {
+                                loopCount = int.Parse(con.Text);
+                            }
+                            if (rank[1] == 1)
                             {
                                 CreateControls(this, 21);
+                                await Task.Delay(1000);
                             }
-                            if (rank[2] == 3)
+                            if (rank[2] == 1)
                             {
                                 CreateControls(this, 22);
+                                await Task.Delay(1000);
                             }
-                            await Task.Delay(1000);
-                            
-                        }
-                    }
-                    else
-                    {
-                        for(int i = 0;i < singleCount.Length; i++)
-                        {
-                            switch (singleCount[i])
+                            //ループ開始
+                            for (int i = 0; i < loopCount; i++)
                             {
-                                case 1://ネコ
+                                //カードの改行
+                                if (i == 5 || i == 9)
+                                {
+                                    Control[] huki = panel4.Controls.Find("huki", true);
+                                    foreach (Control c in huki)
+                                    {
+                                        PictureBox p = (PictureBox)c;
+                                        p.Size = new Size(p.Width, p.Height + 120);
+                                        p.Image = Image.FromFile(FilePath + "\\images\\docat\\hukidashi3.png");
+                                    }
+                                    //hukiS.Height += 100;
+                                    //CreateControls(this, 20);
+                                    docatP = new Point(430, docatP.Y + 100);
+                                }
+
+
+                                if (rank[1] == 3)
+                                {
                                     CreateControls(this, 21);
-                                    await Task.Delay(1000);
-                                    break;
-                                case 2://イヌ
+                                }
+                                if (rank[2] == 3)
+                                {
                                     CreateControls(this, 22);
-                                    await Task.Delay(1000);
-                                    break;
-                                default:
-                                    break;
+                                }
+                                await Task.Delay(1000);
+
                             }
                         }
-                    }
-                    //正誤判定
-                    if (loopCount == randomAns)
-                    {
-                        if (rank[1] == 3 || rank[2] == 2)
+                        else
                         {
-                            PictureBox yes = new PictureBox();
-                            yes.Name = "yes";
-                            yes.Size = new Size(897, 587);
-                            yes.SizeMode = PictureBoxSizeMode.StretchImage;
-                            yes.Image = Image.FromFile(FilePath + "\\images\\seikai.gif");
-                            yes.Parent = panel4;
-                            panel4.Controls.Add(yes);
-                            yes.BringToFront();
-                            await Task.Delay(2800);
-                            Control[] c = panel4.Controls.Find("yes", true);
-                            foreach(Control con in c)
+                            for (int i = 0; i < singleCount.Length; i++)
                             {
-                                panel4.Controls.Remove(con);
+                                switch (singleCount[i])
+                                {
+                                    case 1://ネコ
+                                        CreateControls(this, 21);
+                                        await Task.Delay(1000);
+                                        break;
+                                    case 2://イヌ
+                                        CreateControls(this, 22);
+                                        await Task.Delay(1000);
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                        }
+                        //正誤判定
+                        if (loopCount == randomAns)
+                        {
+                            if (rank[1] == 3 || rank[2] == 2)
+                            {
+                                PictureBox yes = new PictureBox();
+                                yes.Name = "yes";
+                                yes.Size = new Size(897, 587);
+                                yes.SizeMode = PictureBoxSizeMode.StretchImage;
+                                yes.Image = Image.FromFile(FilePath + "\\images\\seikai.gif");
+                                yes.Parent = panel4;
+                                panel4.Controls.Add(yes);
+                                yes.BringToFront();
+                                await Task.Delay(2800);
+                                Control[] c = panel4.Controls.Find("yes", true);
+                                foreach (Control con in c)
+                                {
+                                    panel4.Controls.Remove(con);
+                                }
+                            }
+                            else
+                            {
+                                PictureBox no = new PictureBox();
+                                no.Name = "no";
+                                no.Size = new Size(897, 587);
+                                no.SizeMode = PictureBoxSizeMode.StretchImage;
+                                no.Image = Image.FromFile(FilePath + "\\images\\matigai.gif");
+                                no.Parent = panel4;
+                                panel4.Controls.Add(no);
+                                no.BringToFront();
+                                await Task.Delay(2800);
+                                Control[] c = panel4.Controls.Find("no", true);
+                                foreach (Control con in c)
+                                {
+                                    panel4.Controls.Remove(con);
+                                }
                             }
                         }
                         else
@@ -874,28 +892,14 @@ namespace wani1
                                 panel4.Controls.Remove(con);
                             }
                         }
-                    }
-                    else
-                    {
-                        PictureBox no = new PictureBox();
-                        no.Name = "no";
-                        no.Size = new Size(897, 587);
-                        no.SizeMode = PictureBoxSizeMode.StretchImage;
-                        no.Image = Image.FromFile(FilePath + "\\images\\matigai.gif");
-                        no.Parent = panel4;
-                        panel4.Controls.Add(no);
-                        no.BringToFront();
-                        await Task.Delay(2800);
-                        Control[] c = panel4.Controls.Find("no", true);
-                        foreach (Control con in c)
-                        {
-                            panel4.Controls.Remove(con);
-                        }
-                    }
-                    cardflg = true;
-                    break;
-                default:
-                    break;
+                        cardflg = true;
+                        break;
+                    default:
+                        break;
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show("すうじをいれてね！");
             }
         }
         //追加部品の移動処理------------------------------------------------------
@@ -948,8 +952,10 @@ namespace wani1
             {
                 return;
             }
+            int x = e.X + pb.Location.X;
+            int y = e.Y + pb.Location.Y;
             Point loc = new Point(pb.Location.X, panel1.Location.Y);
-            if (loc.X >= 379 && loc.Y >= 64)
+            if (x >= 379 && y >= 64)
             {
                 rcc.CreateControls(this, questNum, "meat", loc,pb.Name);
             }
@@ -1024,6 +1030,20 @@ namespace wani1
                     hukiS = new Size(500, 200);
                     panel4.Controls.Clear();
                     docatP = new Point(430, 200);
+                    Button b = new Button();
+                    b.Name = "button_2";
+                    b.Anchor = AnchorStyles.Top;
+                    b.Anchor = AnchorStyles.Right;
+                    b.Font = new Font(b.Font.FontFamily, 18);
+                    b.Text = "さいしょから";
+                    b.BackColor = Color.FromArgb(128, 255, 128);
+                    b.FlatStyle = FlatStyle.Flat;
+                    b.FlatAppearance.BorderSize = 0;
+                    b.Size = new Size(126, 32);
+                    b.Location = new Point(768, 3);
+                    b.Click += new EventHandler(this.button2_Click);
+                    panel4.Controls.Add(b);
+                    b.BringToFront();
                     CreateControls(this, 2);
                     break;
                 default:

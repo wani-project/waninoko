@@ -98,7 +98,7 @@
             // 
             this.learn_back_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.learn_back_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.learn_back_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.learn_back_button.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.learn_back_button.Location = new System.Drawing.Point(0, 0);
             this.learn_back_button.Name = "learn_back_button";
             this.learn_back_button.Size = new System.Drawing.Size(75, 40);
@@ -109,7 +109,7 @@
             // 
             // textTitle
             // 
-            this.textTitle.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.textTitle.Location = new System.Drawing.Point(373, 0);
             this.textTitle.Multiline = true;
             this.textTitle.Name = "textTitle";
@@ -388,7 +388,7 @@
             this.MaximizeBox = false;
             this.Name = "L3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PROCK - ようじむけもーど";
+            this.Text = "L3";
             this.Load += new System.EventHandler(this.L3_Load_1);
             this.Learn_Group.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
