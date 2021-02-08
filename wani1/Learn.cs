@@ -118,7 +118,9 @@ namespace wani1
                 return;
             }
             Point loc = new Point(pb.Location.X, panel3.Location.Y);
-            if (loc.X >= 379 && loc.Y >= 64)
+            int x = e.X + loc.X;
+            int y = e.Y + loc.Y;
+            if (x >= 379 && y >= 64)
             {
                 tf.CreateControl(pb.Size, loc, this, "dog", pb.Name);
                 tf.SetParent(this, "dog", questControl);
