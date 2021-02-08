@@ -109,7 +109,7 @@
             // 
             // textTitle
             // 
-            this.textTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.textTitle.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textTitle.Location = new System.Drawing.Point(373, 0);
             this.textTitle.Multiline = true;
             this.textTitle.Name = "textTitle";
@@ -347,7 +347,7 @@
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("MS UI Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.textBox1.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.textBox1.Location = new System.Drawing.Point(5, 430);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
