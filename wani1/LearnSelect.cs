@@ -103,7 +103,8 @@ namespace wani1
                     this.BackgroundImage = Image.FromFile(RB);
                     break;
                 case 3:
-                    quest1.Text = "ただしいみちをあるこう！";
+                    quest1.Text = "じゅんびちゅうだよ！";
+                    quest1.Enabled = false;
                     quest2.Text = "くだものをますにいれよう！";
                     quest3.Text = "じゅんびちゅうだよ！";
                     quest3.Enabled = false;

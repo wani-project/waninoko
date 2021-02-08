@@ -376,16 +376,14 @@ namespace wani1
         {
             try
             {
-                label1.Parent = pictureBox1;
-                label1.Location = new Point(30,40);
                 label3.Parent = pictureBox1;
-                label3.Location = new Point(30, 90);
+                label3.Location = new Point(30, 55);
                 label4.Parent = pictureBox1;
-                label4.Location = new Point(30, 140);
+                label4.Location = new Point(30, 120);
                 pictureBox2.Parent = pictureBox1;
-                pictureBox2.Location = new Point(245,130);//みかんん
+                pictureBox2.Location = new Point(245,105);//みかんん
                 pictureBox3.Parent = pictureBox1;
-                pictureBox3.Location = new Point(245,70);//りんごご
+                pictureBox3.Location = new Point(245,35);//りんごご
 
                 pictureBox2.BringToFront();
                 pictureBox3.BringToFront();

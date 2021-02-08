@@ -39,9 +39,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.wani_block = new System.Windows.Forms.PictureBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
             this.Learn_Group.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -129,10 +129,10 @@
             // label_title
             // 
             this.label_title.AutoSize = true;
-            this.label_title.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label_title.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label_title.Location = new System.Drawing.Point(373, 6);
             this.label_title.Name = "label_title";
-            this.label_title.Size = new System.Drawing.Size(0, 24);
+            this.label_title.Size = new System.Drawing.Size(0, 29);
             this.label_title.TabIndex = 7;
             // 
             // learn_back_button
@@ -182,6 +182,18 @@
             this.wani_block.TabIndex = 0;
             this.wani_block.TabStop = false;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("MS UI Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label11.Location = new System.Drawing.Point(581, 465);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(69, 48);
+            this.label11.TabIndex = 42;
+            this.label11.Text = "◆";
+            // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(7, 65);
@@ -200,18 +212,6 @@
             this.panel3.TabIndex = 5;
             this.panel3.Visible = false;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("MS UI Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.label11.Location = new System.Drawing.Point(581, 465);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(69, 48);
-            this.label11.TabIndex = 42;
-            this.label11.Text = "◆";
-            // 
             // Learn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -224,7 +224,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Learn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "がくしゅうもーど";
+            this.Text = "PROCK - ようじむけもーど";
             this.Load += new System.EventHandler(this.Learn_Load);
             this.Learn_Group.ResumeLayout(false);
             this.Learn_Group.PerformLayout();

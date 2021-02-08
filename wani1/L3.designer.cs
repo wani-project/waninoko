@@ -388,7 +388,7 @@
             this.MaximizeBox = false;
             this.Name = "L3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "L3";
+            this.Text = "PROCK - ようじむけもーど";
             this.Load += new System.EventHandler(this.L3_Load_1);
             this.Learn_Group.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

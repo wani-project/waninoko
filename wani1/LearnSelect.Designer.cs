@@ -179,7 +179,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LearnSelect";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "がくしゅうもーど";
+            this.Text = "PROCK";
             this.Load += new System.EventHandler(this.LearnSelect_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);

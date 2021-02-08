@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(R3));
             this.Review_Group = new System.Windows.Forms.GroupBox();
+            this.review_back_button = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.review_back_button = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -89,6 +89,19 @@
             this.Review_Group.TabIndex = 7;
             this.Review_Group.TabStop = false;
             // 
+            // review_back_button
+            // 
+            this.review_back_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.review_back_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.review_back_button.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.review_back_button.Location = new System.Drawing.Point(6, 18);
+            this.review_back_button.Name = "review_back_button";
+            this.review_back_button.Size = new System.Drawing.Size(75, 40);
+            this.review_back_button.TabIndex = 1;
+            this.review_back_button.Text = "もどる";
+            this.review_back_button.UseVisualStyleBackColor = false;
+            this.review_back_button.Click += new System.EventHandler(this.review_back_button_Click);
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
@@ -118,19 +131,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1044, 39);
             this.panel3.TabIndex = 3;
-            // 
-            // review_back_button
-            // 
-            this.review_back_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.review_back_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.review_back_button.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.review_back_button.Location = new System.Drawing.Point(6, 18);
-            this.review_back_button.Name = "review_back_button";
-            this.review_back_button.Size = new System.Drawing.Size(75, 40);
-            this.review_back_button.TabIndex = 1;
-            this.review_back_button.Text = "もどる";
-            this.review_back_button.UseVisualStyleBackColor = false;
-            this.review_back_button.Click += new System.EventHandler(this.review_back_button_Click);
             // 
             // panel4
             // 
@@ -488,7 +488,7 @@
             this.MaximizeBox = false;
             this.Name = "R3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "しょうがくせいむけもーど";
+            this.Text = "PROCK - しょうがくせいむけもーど";
             this.Load += new System.EventHandler(this.L3_Load);
             this.Review_Group.ResumeLayout(false);
             this.panel4.ResumeLayout(false);

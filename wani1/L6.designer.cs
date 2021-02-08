@@ -143,7 +143,7 @@
             // 
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.textBox2.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(74, 0);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
@@ -551,7 +551,7 @@
             this.MaximizeBox = false;
             this.Name = "L6";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ようじむけもーど";
+            this.Text = "PROCK - ようじむけもーど";
             this.Load += new System.EventHandler(this.L6_Load);
             this.Review_Group.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

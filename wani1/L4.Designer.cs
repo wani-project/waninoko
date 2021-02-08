@@ -470,7 +470,7 @@
             this.MaximizeBox = false;
             this.Name = "L4";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "L4";
+            this.Text = "PROCK - ようじむけもーど";
             this.Load += new System.EventHandler(this.L4_Load);
             this.Review_Group.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
