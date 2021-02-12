@@ -105,9 +105,8 @@ namespace wani1
                 case 3:
                     quest1.Text = "じゅんびちゅうだよ！";
                     quest1.Enabled = false;
-                    quest2.Text = "くだものをますにいれよう！";
-                    quest3.Text = "じゅんびちゅうだよ！";
-                    quest3.Enabled = false;
+                    quest2.Text = "くだものをマスにいれよう！";
+                    quest3.Text = "新しい紙をつくろう！";
                     quest4.Text = "じゅんびちゅうだよ！";
                     quest4.Enabled = false;
                     quest5.Text = "じゅんびちゅうだよ！";
@@ -189,6 +188,10 @@ namespace wani1
                 case 2:
                     R3 l3 = new R3();
                     l3.Show();
+                    break;
+                case 3:
+                    C3 c3 = new C3();
+                    c3.Show();
                     break;
             }            
         }
