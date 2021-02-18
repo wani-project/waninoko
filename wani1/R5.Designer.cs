@@ -365,8 +365,11 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.Review_Group);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "R5";
-            this.Text = "R5";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "PROCK - しょうがくせいむけもーど";
             this.Load += new System.EventHandler(this.R5_Load);
             this.Review_Group.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
