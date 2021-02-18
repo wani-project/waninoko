@@ -137,6 +137,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="R5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="R5.Designer.cs">
+      <DependentUpon>R5.cs</DependentUpon>
+    </Compile>
     <Compile Include="R6.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +200,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="R5.resx">
+      <DependentUpon>R5.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="R6.resx">
       <DependentUpon>R6.cs</DependentUpon>
     </EmbeddedResource>
