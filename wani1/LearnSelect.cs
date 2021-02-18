@@ -91,7 +91,7 @@ namespace wani1
                     quest3.Text = "ワニをおよがせよう！";
                     quest4.Text = "じゅんびちゅうだよ！";
                     quest4.Enabled = false;
-                    quest5.Text = "いろぬりげーむ！";
+                    quest5.Text = "どうぶつシールでいろぬり！";
 
                     quest1.BackgroundImage = Image.FromFile(G1);
                     quest2.BackgroundImage = Image.FromFile(G2);
