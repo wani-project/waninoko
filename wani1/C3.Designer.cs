@@ -35,16 +35,19 @@
             this.label7 = new System.Windows.Forms.Label();
             this.review_back_button = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.q1_t2 = new System.Windows.Forms.TableLayoutPanel();
             this.q1_ans = new System.Windows.Forms.TableLayoutPanel();
             this.q1_t1 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Review_Group.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Review_Group
@@ -81,6 +84,7 @@
             this.button1.TabIndex = 51;
             this.button1.Text = "さいしょから";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel3
             // 
@@ -126,10 +130,12 @@
             this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Controls.Add(this.q1_t2);
             this.panel4.Controls.Add(this.q1_ans);
             this.panel4.Controls.Add(this.q1_t1);
             this.panel4.Controls.Add(this.label2);
+            this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.button3);
             this.panel4.Controls.Add(this.panel2);
@@ -138,9 +144,20 @@
             this.panel4.Size = new System.Drawing.Size(1219, 587);
             this.panel4.TabIndex = 2;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(914, 164);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(89, 80);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 51;
+            this.pictureBox1.TabStop = false;
+            // 
             // q1_t2
             // 
-            this.q1_t2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("q1_t2.BackgroundImage")));
+            this.q1_t2.BackColor = System.Drawing.Color.White;
             this.q1_t2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.q1_t2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetPartial;
             this.q1_t2.ColumnCount = 3;
@@ -149,7 +166,7 @@
             this.q1_t2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.q1_t2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.q1_t2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.q1_t2.Location = new System.Drawing.Point(755, 14);
+            this.q1_t2.Location = new System.Drawing.Point(728, 113);
             this.q1_t2.Name = "q1_t2";
             this.q1_t2.RowCount = 3;
             this.q1_t2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -163,6 +180,7 @@
             // q1_ans
             // 
             this.q1_ans.BackColor = System.Drawing.Color.White;
+            this.q1_ans.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.q1_ans.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetPartial;
             this.q1_ans.ColumnCount = 3;
             this.q1_ans.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -170,7 +188,7 @@
             this.q1_ans.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.q1_ans.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.q1_ans.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.q1_ans.Location = new System.Drawing.Point(1013, 14);
+            this.q1_ans.Location = new System.Drawing.Point(1009, 113);
             this.q1_ans.Name = "q1_ans";
             this.q1_ans.RowCount = 3;
             this.q1_ans.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -185,6 +203,7 @@
             // q1_t1
             // 
             this.q1_t1.BackColor = System.Drawing.Color.White;
+            this.q1_t1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.q1_t1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetPartial;
             this.q1_t1.ColumnCount = 3;
             this.q1_t1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -192,7 +211,7 @@
             this.q1_t1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.q1_t1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.q1_t1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.q1_t1.Location = new System.Drawing.Point(504, 14);
+            this.q1_t1.Location = new System.Drawing.Point(512, 113);
             this.q1_t1.Name = "q1_t1";
             this.q1_t1.RowCount = 3;
             this.q1_t1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -215,14 +234,25 @@
             this.label2.Text = "ロボットの命令 - 新しい紙の作り方\r\n同じ場所にマスが　両方　白いとき　→　白\r\n同じ場所のマスが　１つは白、１つは黒　→　白\r\n同じ場所のマスが　両方　黒い　" +
     "→　黒";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label3.Location = new System.Drawing.Point(507, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(414, 78);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "次の紙ではどのようになりますか？\r\n答えの紙に色をぬりましょう。\r\n";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.Location = new System.Drawing.Point(3, 14);
+            this.label1.Font = new System.Drawing.Font("コーポレート・ロゴ（ラウンド）", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label1.Location = new System.Drawing.Point(0, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(419, 87);
+            this.label1.Size = new System.Drawing.Size(475, 99);
             this.label1.TabIndex = 7;
             this.label1.Text = "マスを白と黒でぬってある紙が２まいあります。\r\n２まいの紙をくらべて、\r\nロボットが新しい紙をつくります。";
             // 
@@ -244,6 +274,7 @@
             this.button3.TabIndex = 4;
             this.button3.Text = "すたーと";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel2
             // 
@@ -265,11 +296,13 @@
             this.Name = "C3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PROCK - ちゃれんじもーど";
+            this.Load += new System.EventHandler(this.C3_Load);
             this.Review_Group.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -289,5 +322,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label3;
     }
 }
